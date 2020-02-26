@@ -3,19 +3,19 @@
   <entry>
     <title>Hello World</title>
     <url>/2020/02/26/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener external nofollow noreferrer">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener external nofollow noreferrer">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener external nofollow noreferrer">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener external nofollow noreferrer">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener external nofollow noreferrer">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener external nofollow noreferrer">Server</a></p>
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener external nofollow noreferrer">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener external nofollow noreferrer">Deployment</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -314,14 +314,14 @@ Person 没有 say() 方法，但是，我们通过 prototype 给 Person 的原�
 <p>&lt;<code>https://www.baidu.com/</code>&gt;</p>
 <p>显示如下： </p>
 <blockquote>
-<p><a href="https://www.baidu.com/" target="_blank" rel="noopener">百度一下</a>   </p>
-<p><a href="https://www.baidu.com/" target="_blank" rel="noopener">https://www.baidu.com/</a>  </p>
+<p><a href="https://www.baidu.com/" target="_blank" rel="noopener external nofollow noreferrer">百度一下</a>   </p>
+<p><a href="https://www.baidu.com/" target="_blank" rel="noopener external nofollow noreferrer">https://www.baidu.com/</a>  </p>
 </blockquote>
 <h3 id="高级链接"><a href="#高级链接" class="headerlink" title="高级链接"></a>高级链接</h3><p>链接也可以用变量来代替，文档末尾附带变量地址：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">这个链接用 1 作为网址变量 [百度一下][1]</span><br><span class="line">这个链接用 runoob 作为网址变量 [百度一下][baidu]</span><br><span class="line">然后在文档的结尾为变量赋值（网址）</span><br><span class="line"></span><br><span class="line">[1]: https:&#x2F;&#x2F;www.baidu.com&#x2F;</span><br><span class="line">[baidu]: https:&#x2F;&#x2F;www.baidu.com&#x2F;</span><br></pre></td></tr></table></figure>
 <p>显示结果如下：  </p>
 <blockquote>
-<p>这个链接用 1 作为网址变量 <a href="https://www.baidu.com/" target="_blank" rel="noopener">百度一下</a><br>这个链接用 runoob 作为网址变量 <a href="https://www.baidu.com/" target="_blank" rel="noopener">百度一下</a>，然后在文档的结尾为变量赋值（网址）。  </p>
+<p>这个链接用 1 作为网址变量 <a href="https://www.baidu.com/" target="_blank" rel="noopener external nofollow noreferrer">百度一下</a><br>这个链接用 runoob 作为网址变量 <a href="https://www.baidu.com/" target="_blank" rel="noopener external nofollow noreferrer">百度一下</a>，然后在文档的结尾为变量赋值（网址）。  </p>
 </blockquote>
 <hr>
 <h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>Markdown 图片语法格式如下：</p>
@@ -421,7 +421,7 @@ Person 没有 say() 方法，但是，我们通过 prototype 给 Person 的原�
 </blockquote>
 <hr>
 <h2 id="四、把我们的博客部署到-GitHub-上"><a href="#四、把我们的博客部署到-GitHub-上" class="headerlink" title="四、把我们的博客部署到 GitHub 上"></a>四、把我们的博客部署到 GitHub 上</h2><blockquote>
-<p>1.在我们的 GitHub 上新建一个项目，项目名是你 GitHub 的用户名，例如我的GitHub用户名为 1914k 那么我就创建一个名字为：1914k.github.io 的项目<br><img src="/img/blog01/img-7.png" alt="截图"><br>2.安装 git 部署的插件，输入：<br>    <code>$ npm install --save hexo-deployer-git</code><br>3.打开 blog 文件夹里的 _config.yml 配置文件，<br><img src="/img/blog01/img-8.png" alt="截图"><br>翻到最下面，找到 deploy: ，将 type 改成 git ，把 repo 的地址换成自己的 GitHub 博客地址，如下：<br><img src="/img/blog01/img-9.png" alt="截图"><br><strong>注意/!这里的格式不能错，该有的空格要有</strong><br><strong>type，repository，branch的首字母要对齐</strong><br>4.最后输入以下三个命令：<br>    <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ hexo clean  <span class="comment">//清理一下</span></span><br><span class="line">$ hexo g      <span class="comment">//重新生成一下</span></span><br><span class="line">$ hexo d      <span class="comment">//部署到远端</span></span><br></pre></td></tr></table></figure><br>我们的博客就成功的部署到 GitHub 上了， 可以在浏览器输入<a href="https://1914k.github.io/" target="_blank" rel="noopener">https://1914k.github.io/</a> 网址打开我们的博客。<br>[^淘宝镜像]: 这里是脚注</p>
+<p>1.在我们的 GitHub 上新建一个项目，项目名是你 GitHub 的用户名，例如我的GitHub用户名为 1914k 那么我就创建一个名字为：1914k.github.io 的项目<br><img src="/img/blog01/img-7.png" alt="截图"><br>2.安装 git 部署的插件，输入：<br>    <code>$ npm install --save hexo-deployer-git</code><br>3.打开 blog 文件夹里的 _config.yml 配置文件，<br><img src="/img/blog01/img-8.png" alt="截图"><br>翻到最下面，找到 deploy: ，将 type 改成 git ，把 repo 的地址换成自己的 GitHub 博客地址，如下：<br><img src="/img/blog01/img-9.png" alt="截图"><br><strong>注意/!这里的格式不能错，该有的空格要有</strong><br><strong>type，repository，branch的首字母要对齐</strong><br>4.最后输入以下三个命令：<br>    <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ hexo clean  <span class="comment">//清理一下</span></span><br><span class="line">$ hexo g      <span class="comment">//重新生成一下</span></span><br><span class="line">$ hexo d      <span class="comment">//部署到远端</span></span><br></pre></td></tr></table></figure><br>我们的博客就成功的部署到 GitHub 上了， 可以在浏览器输入<a href="https://1914k.github.io/">https://1914k.github.io/</a> 网址打开我们的博客。<br>[^淘宝镜像]: 这里是脚注</p>
 </blockquote>
 ]]></content>
   </entry>
