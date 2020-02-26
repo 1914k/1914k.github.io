@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://1914k.github.io/"/>
-  <updated>2020-02-26T05:16:19.296Z</updated>
+  <updated>2020-02-26T14:48:01.217Z</updated>
   <id>http://1914k.github.io/</id>
   
   <author>
@@ -17,34 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://1914k.github.io/2020/02/26/hello-world/"/>
-    <id>http://1914k.github.io/2020/02/26/hello-world/</id>
-    <published>2020-02-26T10:37:09.755Z</published>
-    <updated>2020-02-26T05:16:19.296Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener external nofollow noreferrer&quot;&gt;Hexo&lt;/a&gt;! This is your very first
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>Vue 面试题 1-5</title>
     <link href="http://1914k.github.io/2020/02/23/Vue-%E9%9D%A2%E8%AF%95%E9%A2%98-1-5/"/>
     <id>http://1914k.github.io/2020/02/23/Vue-%E9%9D%A2%E8%AF%95%E9%A2%98-1-5/</id>
     <published>2020-02-23T13:59:34.000Z</published>
-    <updated>2020-02-24T07:27:17.677Z</updated>
+    <updated>2020-02-26T14:48:01.217Z</updated>
     
     <summary type="html">
     
@@ -53,6 +30,10 @@
     </summary>
     
     
+      <category term="Vue" scheme="http://1914k.github.io/categories/Vue/"/>
+    
+    
+      <category term="Vue" scheme="http://1914k.github.io/tags/Vue/"/>
     
   </entry>
   
@@ -61,7 +42,7 @@
     <link href="http://1914k.github.io/2020/02/21/OOP-%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/"/>
     <id>http://1914k.github.io/2020/02/21/OOP-%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/</id>
     <published>2020-02-21T11:19:16.000Z</published>
-    <updated>2020-02-23T07:25:55.894Z</updated>
+    <updated>2020-02-26T14:49:30.861Z</updated>
     
     <summary type="html">
     
@@ -70,6 +51,12 @@
     </summary>
     
     
+      <category term="OPP面对对象" scheme="http://1914k.github.io/categories/OPP%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1/"/>
+    
+    
+      <category term="js" scheme="http://1914k.github.io/tags/js/"/>
+    
+      <category term="OPP面对对象" scheme="http://1914k.github.io/tags/OPP%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1/"/>
     
   </entry>
   
@@ -78,7 +65,7 @@
     <link href="http://1914k.github.io/2020/02/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B8%80/"/>
     <id>http://1914k.github.io/2020/02/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B8%80/</id>
     <published>2020-02-20T03:57:49.000Z</published>
-    <updated>2020-02-25T14:10:33.969Z</updated>
+    <updated>2020-02-26T14:44:46.987Z</updated>
     
     <summary type="html">
     
@@ -88,6 +75,12 @@
     </summary>
     
     
+      <category term="web前端" scheme="http://1914k.github.io/categories/web%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="js" scheme="http://1914k.github.io/tags/js/"/>
+    
+      <category term="web前端" scheme="http://1914k.github.io/tags/web%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -119,7 +112,7 @@
     <link href="http://1914k.github.io/2020/02/13/Markdown%E8%AF%AD%E6%B3%95/"/>
     <id>http://1914k.github.io/2020/02/13/Markdown%E8%AF%AD%E6%B3%95/</id>
     <published>2020-02-13T01:14:31.000Z</published>
-    <updated>2020-02-18T11:54:25.176Z</updated>
+    <updated>2020-02-26T14:45:48.991Z</updated>
     
     <summary type="html">
     
@@ -129,6 +122,8 @@
     
     
     
+      <category term="MrakDown" scheme="http://1914k.github.io/tags/MrakDown/"/>
+    
   </entry>
   
   <entry>
@@ -136,7 +131,7 @@
     <link href="http://1914k.github.io/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
     <id>http://1914k.github.io/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</id>
     <published>2020-02-12T04:14:31.000Z</published>
-    <updated>2020-02-14T10:13:32.260Z</updated>
+    <updated>2020-02-26T14:43:36.102Z</updated>
     
     <summary type="html">
     
@@ -145,6 +140,12 @@
     </summary>
     
     
+      <category term="Hexo" scheme="http://1914k.github.io/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://1914k.github.io/tags/Hexo/"/>
+    
+      <category term="博客" scheme="http://1914k.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   

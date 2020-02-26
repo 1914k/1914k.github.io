@@ -25,7 +25,7 @@
     version: '7.7.1',
     exturl: false,
     sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
+    copycode: {"enable":true,"show_result":true,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
@@ -53,18 +53,20 @@
 <meta property="og:site_name" content="顽石不语">
 <meta property="og:description" content="1. call 和 apply 的区别？call 和 apply 都可以改变 this 的指向，如下，都是把 B 的 this 指向 A，即使用的是 A 的方法。 12A.call(B, argument1， argument2, ...);A.apply(B, [argument1， argument2, ...]);">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://1914k.github.io/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-1.png">
-<meta property="og:image" content="http://1914k.github.io/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-2.png">
-<meta property="og:image" content="http://1914k.github.io/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-3.png">
-<meta property="og:image" content="http://1914k.github.io/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-4.png">
-<meta property="og:image" content="http://1914k.github.io/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-5.png">
-<meta property="og:image" content="http://1914k.github.io/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-6.png">
-<meta property="og:image" content="http://1914k.github.io/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-7.png">
+<meta property="og:image" content="http://1914k.github.io/images/artic/qdmst01/img-1.png">
+<meta property="og:image" content="http://1914k.github.io/images/artic/qdmst01/img-2.png">
+<meta property="og:image" content="http://1914k.github.io/images/artic/qdmst01/img-3.png">
+<meta property="og:image" content="http://1914k.github.io/images/artic/qdmst01/img-4.png">
+<meta property="og:image" content="http://1914k.github.io/images/artic/qdmst01/img-5.png">
+<meta property="og:image" content="http://1914k.github.io/images/artic/qdmst01/img-6.png">
+<meta property="og:image" content="http://1914k.github.io/images/artic/qdmst01/img-7.png">
 <meta property="article:published_time" content="2020-02-20T03:57:49.000Z">
-<meta property="article:modified_time" content="2020-02-25T14:10:33.969Z">
+<meta property="article:modified_time" content="2020-02-26T14:44:46.987Z">
 <meta property="article:author" content="石头">
+<meta property="article:tag" content="js">
+<meta property="article:tag" content="web前端">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://1914k.github.io/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-1.png">
+<meta name="twitter:image" content="http://1914k.github.io/images/artic/qdmst01/img-1.png">
 
 <link rel="canonical" href="http://1914k.github.io/2020/02/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B8%80/">
 
@@ -155,17 +157,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">0</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">7</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">0</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">4</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">7</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">6</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -261,8 +263,19 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-25 22:10:33" itemprop="dateModified" datetime="2020-02-25T22:10:33+08:00">2020-02-25</time>
+                <time title="修改时间：2020-02-26 22:44:46" itemprop="dateModified" datetime="2020-02-26T22:44:46+08:00">2020-02-26</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">web前端</span>
+                  </a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -298,32 +311,32 @@
 <li>apply 后面的参数要用类似数组的方式加入<br><code>Obj1.sayHello.apply(Obj2, [&quot;张三&quot;, 18])</code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> A = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name= <span class="string">'NO.A'</span></span><br><span class="line">  <span class="keyword">this</span>.say= <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> B = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name= <span class="string">'NO.B'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> A();</span><br></pre></td></tr></table></figure>
 此时方法 say 的 this 指向它的上级 A，所以我们在控制台输入 a.say() 时输出的是 NO.A，</li>
 </ul>
-<p><img src="/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-1.png" alt="截图"></p>
+<p><img src="/images/artic/qdmst01/img-1.png" alt="截图"></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> A = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name= <span class="string">'NO.A'</span></span><br><span class="line">  <span class="keyword">this</span>.say= <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    B.call(<span class="keyword">this</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> B = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name= <span class="string">'NO.B'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> A();</span><br></pre></td></tr></table></figure>
 <p>当我们用 <code>B.call(this)</code> 把this的指向变为了 B 对象，所以控制台输入 a.say() 时输出的是 NO.B</p>
-<p><img src="/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-2.png" alt="截图"></p>
+<p><img src="/images/artic/qdmst01/img-2.png" alt="截图"></p>
 <h2 id="2-JavaScript-如何实现继承？"><a href="#2-JavaScript-如何实现继承？" class="headerlink" title="2. JavaScript 如何实现继承？"></a>2. JavaScript 如何实现继承？</h2><p>原型链继承、借用构造函数继承、寄生式继承  </p>
 <ul>
 <li>原型链继承，js 的每个对象的原型对象都有一个 constructor 属性，指向这个对象的构造函数，每个对象的实例都有一个 <strong>proto</strong> 属性，指向这个对象的原型。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'你好我是'</span> + <span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> m = <span class="keyword">new</span> Person(<span class="string">'小明'</span>);</span><br></pre></td></tr></table></figure>
 Person 没有 say() 方法，但是，我们通过 prototype 给 Person 的原型 Object 上添加了 say()方&gt;法，所以我们通过 Person 建立的实例 m 也能用 say() 方法，在控制台中输入 m.say() </li>
 </ul>
-<p><img src="/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-3.png" alt="截图"></p>
+<p><img src="/images/artic/qdmst01/img-3.png" alt="截图"></p>
 <p>可以看到，我们的 say 方法执行了，同时，我们输入 m ，可以看到 m 的属性。我们可以 通过 m.toString() 来调用 Object 对象里的方法，也可以改写该方法。</p>
-<p><img src="/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-4.png" alt="截图">  </p>
+<p><img src="/images/artic/qdmst01/img-4.png" alt="截图">  </p>
 <ul>
 <li><p>借用构造函数继承，也叫经典继承，这种技术的基本思想相当简单，即在子类型的构造函数内部调用类型的构造函数，&gt;可以通过 call() 或 apply() 方法在新创建的对象上执行构造函数，如下：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Son</span>(<span class="params">name,age</span>) </span>&#123;</span><br><span class="line">  Box.call(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">this</span>.age = age</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> one = <span class="keyword">new</span> Box(<span class="string">'大王'</span>);</span><br><span class="line"><span class="keyword">const</span> tow = <span class="keyword">new</span> Son(<span class="string">'小王'</span>，<span class="number">18</span>);</span><br></pre></td></tr></table></figure>
-<p><img src="/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-5.png" alt="截图"></p>
+<p><img src="/images/artic/qdmst01/img-5.png" alt="截图"></p>
 </li>
 <li><p>组合继承,指的是将原型链和借用构造函数的奇数组合到一块，从而发挥两者长处的一种继承方式。其思路是利用原型链实现对原型属性和方法的继承，通过构造函数实现对实例的属性方法的继承，既通过在原型上定义实现了函数方法的复用，又能保证每个实例都有自己的属性。如下：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.include = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'我是'</span> + <span class="keyword">this</span>.name + <span class="string">',我今年'</span> <span class="keyword">this</span>.age)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Worker</span>(<span class="params">name, age, job</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//继承属性</span></span><br><span class="line">  Person.call(<span class="keyword">this</span>, name, age);</span><br><span class="line">  <span class="keyword">this</span>.job=job;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//继承方法</span></span><br><span class="line">Worker.prototype = <span class="keyword">new</span> Person();</span><br><span class="line">Worker.prototype.constructor = Worker;<span class="comment">// 更改 constructor 指向</span></span><br><span class="line">Worker.prototype.myJob=<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'我的工作是'</span> + <span class="keyword">this</span>.job)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> mimg = <span class="keyword">new</span> Worker(<span class="string">'小明'</span>, <span class="number">18</span>, <span class="string">'搬砖'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(mine);</span><br><span class="line">ming.include();</span><br><span class="line">ming.myJob();</span><br></pre></td></tr></table></figure>
-<p><img src="/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-6.png" alt="截图"></p>
+<p><img src="/images/artic/qdmst01/img-6.png" alt="截图"></p>
 </li>
 <li><p>寄生式继承的思路与寄生构造函数和工厂模式类似，创建一个仅用于封装继承过程的函数，该函数在内部以某种方式来增强对象，</p>
 </li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">org</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> clone = <span class="built_in">Object</span>(org);   <span class="comment">//调用函数时会创建一个新对象</span></span><br><span class="line">  clone.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'你好！'</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> clone;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">'小明'</span>,</span><br><span class="line">  ageL: <span class="number">18</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> newPerson = createPerson(person);</span><br><span class="line"></span><br><span class="line">newPerson.sayHi();</span><br></pre></td></tr></table></figure>
-<p><img src="/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-7.png" alt=""><br>上面的例子中，新对象 newPerson 不仅具有 person 的所有属性和方法，而且还有自己的 sayHi() 方法，任何能返回新对象的函数都适用于此模式。  </p>
+<p><img src="/images/artic/qdmst01/img-7.png" alt=""><br>上面的例子中，新对象 newPerson 不仅具有 person 的所有属性和方法，而且还有自己的 sayHi() 方法，任何能返回新对象的函数都适用于此模式。  </p>
 <h2 id="3-JavaScript-创建对象的几种方式？"><a href="#3-JavaScript-创建对象的几种方式？" class="headerlink" title="3. JavaScript 创建对象的几种方式？"></a>3. JavaScript 创建对象的几种方式？</h2><ol>
 <li>对象字面量、Object构造函数</li>
 <li>构造函数  </li>
@@ -382,6 +395,10 @@ Person 没有 say() 方法，但是，我们通过 prototype 给 Person 的原�
 
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/js/" rel="tag"># js</a>
+              <a href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag"># web前端</a>
+          </div>
 
         
 
@@ -471,9 +488,21 @@ Person 没有 say() 方法，但是，我们通过 prototype 给 Person 的原�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>

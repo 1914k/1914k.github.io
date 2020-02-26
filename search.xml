@@ -1,50 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/02/26/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener external nofollow noreferrer">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener external nofollow noreferrer">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener external nofollow noreferrer">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener external nofollow noreferrer">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener external nofollow noreferrer">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener external nofollow noreferrer">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener external nofollow noreferrer">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener external nofollow noreferrer">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Vue 面试题 1-5</title>
     <url>/2020/02/23/Vue-%E9%9D%A2%E8%AF%95%E9%A2%98-1-5/</url>
     <content><![CDATA[<h2 id="1-MVVM-原理的理解"><a href="#1-MVVM-原理的理解" class="headerlink" title="1.MVVM 原理的理解"></a>1.MVVM 原理的理解</h2><p>传统的架构模型是 MVC，即 <code>Model - View - Controller</code>，是用户操作会请求服务端路由，路由会调用对应的控制器来处理，控制器会获取数据，将结果返回给前端，页面重新渲染。<a id="more"></a><br>MVVM 是 <code>Model - ViewModel - View</code>，MVVM 模式不需要用户手动操纵 dom 元素，将数据绑定到 ViewModel 层上，Vue 会自动将数据渲染到页面中，视图变化会通知 ViewModel 层更新数据，通过 ViewModel 层连接 View 层和 Model 层。MVVM 就是一个双向绑定的过程，数据变化会驱动视图变化，视图变化也会更改数据。</p>
 <h2 id="2-响应式数据的原理"><a href="#2-响应式数据的原理" class="headerlink" title="2.响应式数据的原理"></a>2.响应式数据的原理</h2><blockquote>
 <h3 id="理解："><a href="#理解：" class="headerlink" title="理解："></a>理解：</h3><ol>
 <li>核心点：object.defineProperty()。</li>
-<li>默认 Vue 在初始化数据时，会给 data 中的属性使用 Object.defineProperty 重新定义所有属性，当页面使用到对应属性时，会进行依赖手机（数当前组件的 Watcher）如果属性发生变化会通知相关依赖进行更新操作。  <h3 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h3><img src="/img/Vue%E9%9D%A2%E8%AF%95/%E5%93%8D%E5%BA%94%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%8E%9F%E7%90%86.png" alt="截图"></li>
+<li>默认 Vue 在初始化数据时，会给 data 中的属性使用 Object.defineProperty 重新定义所有属性，当页面使用到对应属性时，会进行依赖手机（数当前组件的 Watcher）如果属性发生变化会通知相关依赖进行更新操作。  <h3 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h3><img src="/images/artic/Vue-mst-1-5/%E5%93%8D%E5%BA%94%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%8E%9F%E7%90%86.png" alt="截图"></li>
 </ol>
 </blockquote>
 <h2 id="3-Vue中时如何检测数组变化的？"><a href="#3-Vue中时如何检测数组变化的？" class="headerlink" title="3.Vue中时如何检测数组变化的？"></a>3.Vue中时如何检测数组变化的？</h2><blockquote>
 <h3 id="理解：-1"><a href="#理解：-1" class="headerlink" title="理解："></a>理解：</h3><p>使用函数劫持的方式，重写数组的方法<br>Vue 将 data 中的数组进行了原型链上的重写，指向了自己定义的数组原型方法，这样当调用数组 API 时，可以通知依赖更新，如果数组中包含引用类型，会对引用类型再次进行监控。</p>
-<h3 id="原理：-1"><a href="#原理：-1" class="headerlink" title="原理："></a>原理：</h3><p><img src="/img/Vue%E9%9D%A2%E8%AF%95/%E6%95%B0%E7%BB%84%E5%93%8D%E5%BA%94%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%8E%9F%E7%90%86.png" alt="截图">  </p>
+<h3 id="原理：-1"><a href="#原理：-1" class="headerlink" title="原理："></a>原理：</h3><p><img src="/images/artic/Vue-mst-1-5/%E6%95%B0%E7%BB%84%E5%93%8D%E5%BA%94%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%8E%9F%E7%90%86.png" alt="截图">  </p>
 </blockquote>
 <h2 id="4-为何-Vue-采用异步渲染？"><a href="#4-为何-Vue-采用异步渲染？" class="headerlink" title="4.为何 Vue 采用异步渲染？"></a>4.为何 Vue 采用异步渲染？</h2><blockquote>
 <h3 id="理解：-2"><a href="#理解：-2" class="headerlink" title="理解："></a>理解：</h3><p>因为 Vue 是组件级更新，如果不采用异步更新，那么每次更新数据都会对当前组件进行重新渲染，所以为了性能考虑，Vue 会在本轮数据更新后，再去异步更新视图。</p>
-<h3 id="原理：-2"><a href="#原理：-2" class="headerlink" title="原理："></a>原理：</h3><p><img src="/img/Vue%E9%9D%A2%E8%AF%95/%E4%B8%BA%E4%BD%95%E5%BC%82%E6%AD%A5%E6%B8%B2%E6%9F%93.png" alt="截图"></p>
+<h3 id="原理：-2"><a href="#原理：-2" class="headerlink" title="原理："></a>原理：</h3><p><img src="/images/artic/Vue-mst-1-5/%E4%B8%BA%E4%BD%95%E5%BC%82%E6%AD%A5%E6%B8%B2%E6%9F%93.png" alt="截图"></p>
 </blockquote>
 <h2 id="5-nextTick-实现原理"><a href="#5-nextTick-实现原理" class="headerlink" title="5.nextTick 实现原理"></a>5.nextTick 实现原理</h2><blockquote>
 <h3 id="理解：-3"><a href="#理解：-3" class="headerlink" title="理解："></a>理解：</h3><p>nextTick 方法主要是使用了宏任务和微任务，定义了一个异步方法，多次调用 nextTick 会将方法存入队列中，通过这个异步方法清空当前队列，所以这个 nextTick 方法就是异步方法</p>
-<h3 id="原理：-3"><a href="#原理：-3" class="headerlink" title="原理："></a>原理：</h3><p><img src="/img/Vue%E9%9D%A2%E8%AF%95/nextTick%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90.png" alt="截图"></p>
+<h3 id="原理：-3"><a href="#原理：-3" class="headerlink" title="原理："></a>原理：</h3><p><img src="/images/artic/Vue-mst-1-5/nextTick%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90.png" alt="截图"></p>
 </blockquote>
 <h2 id="6-Vue-中-Computed-的特点"><a href="#6-Vue-中-Computed-的特点" class="headerlink" title="6. Vue 中 Computed 的特点"></a>6. Vue 中 Computed 的特点</h2><blockquote>
 <h3 id="理解：-4"><a href="#理解：-4" class="headerlink" title="理解："></a>理解：</h3><p>默认 computed 也是一个 watcher ，是具备缓存功能的，只有当依赖的属性发生变化是才会更新视图。和 methods 不一样，computed 里的方法在渲染时，如果依赖的属性不变，不会重新执行，而 methods 里的方法在渲染时不管数据有没有变化都会执行。<br>computed 和 watch 内部都是使用 watcher 来实现的，但是 computed 具备缓存。</p>
-<h3 id="原理：-4"><a href="#原理：-4" class="headerlink" title="原理："></a>原理：</h3><p><img src="/img/Vue%E9%9D%A2%E8%AF%95/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7.png" alt="截图"></p>
+<h3 id="原理：-4"><a href="#原理：-4" class="headerlink" title="原理："></a>原理：</h3><p><img src="/images/artic/Vue-mst-1-5/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7.png" alt="截图"></p>
 </blockquote>
 ]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
   </entry>
   <entry>
     <title>OOP 面对对象编程</title>
@@ -89,13 +77,20 @@
 <ol>
 <li>首先 new 操作符创建了一个空对象</li>
 <li>然后设置this指向这个对象</li>
-<li>最后它从函数返回这个对象<br>此时 this 指向我们创建的 Circle 对象：<br><img src="/img/OPP-1/img-01.png" alt="截图"></li>
+<li>最后它从函数返回这个对象<br>此时 this 指向我们创建的 Circle 对象：<br><img src="/images/artic/OPP-1/img-01.png" alt="截图"></li>
 </ol>
 <p>默认情况下 this 会指向全局对象，如果在浏览器环境运行，全局对象就是 window 对象，如果在 node.js 环境运行，全局对象就是 global 。如果我们删除 new 操作符：</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Circle</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'this'</span>,<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">this</span>.radius = radius;</span><br><span class="line">  <span class="keyword">this</span>.draw = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'draw'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> another = Circle(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
-<p>this 就会指向 window 对象：<br><img src="/img/OPP-1/img-02.png" alt="截图"></p>
-<p>每个 JavaScript 中的对象都有一个 constructor 属性，它是一个用于创建这个对象的构造方法的引用。例如我们在控制台中输入 another.constructor ，会返回一个 Circle 函数，就是我们刚才创建的那个。<br><img src="/img/OPP-1/img-03.png" alt="截图"></p>
+<p>this 就会指向 window 对象：<br><img src="/images/artic/OPP-1/img-02.png" alt="截图"></p>
+<p>每个 JavaScript 中的对象都有一个 constructor 属性，它是一个用于创建这个对象的构造方法的引用。例如我们在控制台中输入 another.constructor ，会返回一个 Circle 函数，就是我们刚才创建的那个。<br><img src="/images/artic/OPP-1/img-03.png" alt="截图"></p>
 ]]></content>
+      <categories>
+        <category>OPP面对对象</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+        <tag>OPP面对对象</tag>
+      </tags>
   </entry>
   <entry>
     <title>前端面试题一</title>
@@ -109,32 +104,32 @@
 <li>apply 后面的参数要用类似数组的方式加入<br><code>Obj1.sayHello.apply(Obj2, [&quot;张三&quot;, 18])</code><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> A = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name= <span class="string">'NO.A'</span></span><br><span class="line">  <span class="keyword">this</span>.say= <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> B = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name= <span class="string">'NO.B'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> A();</span><br></pre></td></tr></table></figure>
 此时方法 say 的 this 指向它的上级 A，所以我们在控制台输入 a.say() 时输出的是 NO.A，</li>
 </ul>
-<p><img src="/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-1.png" alt="截图"></p>
+<p><img src="/images/artic/qdmst01/img-1.png" alt="截图"></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> A = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name= <span class="string">'NO.A'</span></span><br><span class="line">  <span class="keyword">this</span>.say= <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    B.call(<span class="keyword">this</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> B = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name= <span class="string">'NO.B'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> A();</span><br></pre></td></tr></table></figure>
 <p>当我们用 <code>B.call(this)</code> 把this的指向变为了 B 对象，所以控制台输入 a.say() 时输出的是 NO.B</p>
-<p><img src="/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-2.png" alt="截图"></p>
+<p><img src="/images/artic/qdmst01/img-2.png" alt="截图"></p>
 <h2 id="2-JavaScript-如何实现继承？"><a href="#2-JavaScript-如何实现继承？" class="headerlink" title="2. JavaScript 如何实现继承？"></a>2. JavaScript 如何实现继承？</h2><p>原型链继承、借用构造函数继承、寄生式继承  </p>
 <ul>
 <li>原型链继承，js 的每个对象的原型对象都有一个 constructor 属性，指向这个对象的构造函数，每个对象的实例都有一个 <strong>proto</strong> 属性，指向这个对象的原型。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'你好我是'</span> + <span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> m = <span class="keyword">new</span> Person(<span class="string">'小明'</span>);</span><br></pre></td></tr></table></figure>
 Person 没有 say() 方法，但是，我们通过 prototype 给 Person 的原型 Object 上添加了 say()方&gt;法，所以我们通过 Person 建立的实例 m 也能用 say() 方法，在控制台中输入 m.say() </li>
 </ul>
-<p><img src="/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-3.png" alt="截图"></p>
+<p><img src="/images/artic/qdmst01/img-3.png" alt="截图"></p>
 <p>可以看到，我们的 say 方法执行了，同时，我们输入 m ，可以看到 m 的属性。我们可以 通过 m.toString() 来调用 Object 对象里的方法，也可以改写该方法。</p>
-<p><img src="/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-4.png" alt="截图">  </p>
+<p><img src="/images/artic/qdmst01/img-4.png" alt="截图">  </p>
 <ul>
 <li><p>借用构造函数继承，也叫经典继承，这种技术的基本思想相当简单，即在子类型的构造函数内部调用类型的构造函数，&gt;可以通过 call() 或 apply() 方法在新创建的对象上执行构造函数，如下：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Son</span>(<span class="params">name,age</span>) </span>&#123;</span><br><span class="line">  Box.call(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">this</span>.age = age</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> one = <span class="keyword">new</span> Box(<span class="string">'大王'</span>);</span><br><span class="line"><span class="keyword">const</span> tow = <span class="keyword">new</span> Son(<span class="string">'小王'</span>，<span class="number">18</span>);</span><br></pre></td></tr></table></figure>
-<p><img src="/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-5.png" alt="截图"></p>
+<p><img src="/images/artic/qdmst01/img-5.png" alt="截图"></p>
 </li>
 <li><p>组合继承,指的是将原型链和借用构造函数的奇数组合到一块，从而发挥两者长处的一种继承方式。其思路是利用原型链实现对原型属性和方法的继承，通过构造函数实现对实例的属性方法的继承，既通过在原型上定义实现了函数方法的复用，又能保证每个实例都有自己的属性。如下：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.include = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'我是'</span> + <span class="keyword">this</span>.name + <span class="string">',我今年'</span> <span class="keyword">this</span>.age)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Worker</span>(<span class="params">name, age, job</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//继承属性</span></span><br><span class="line">  Person.call(<span class="keyword">this</span>, name, age);</span><br><span class="line">  <span class="keyword">this</span>.job=job;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//继承方法</span></span><br><span class="line">Worker.prototype = <span class="keyword">new</span> Person();</span><br><span class="line">Worker.prototype.constructor = Worker;<span class="comment">// 更改 constructor 指向</span></span><br><span class="line">Worker.prototype.myJob=<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'我的工作是'</span> + <span class="keyword">this</span>.job)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> mimg = <span class="keyword">new</span> Worker(<span class="string">'小明'</span>, <span class="number">18</span>, <span class="string">'搬砖'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(mine);</span><br><span class="line">ming.include();</span><br><span class="line">ming.myJob();</span><br></pre></td></tr></table></figure>
-<p><img src="/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-6.png" alt="截图"></p>
+<p><img src="/images/artic/qdmst01/img-6.png" alt="截图"></p>
 </li>
 <li><p>寄生式继承的思路与寄生构造函数和工厂模式类似，创建一个仅用于封装继承过程的函数，该函数在内部以某种方式来增强对象，</p>
 </li>
 </ul>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">org</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> clone = <span class="built_in">Object</span>(org);   <span class="comment">//调用函数时会创建一个新对象</span></span><br><span class="line">  clone.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'你好！'</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> clone;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">'小明'</span>,</span><br><span class="line">  ageL: <span class="number">18</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> newPerson = createPerson(person);</span><br><span class="line"></span><br><span class="line">newPerson.sayHi();</span><br></pre></td></tr></table></figure>
-<p><img src="/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-7.png" alt=""><br>上面的例子中，新对象 newPerson 不仅具有 person 的所有属性和方法，而且还有自己的 sayHi() 方法，任何能返回新对象的函数都适用于此模式。  </p>
+<p><img src="/images/artic/qdmst01/img-7.png" alt=""><br>上面的例子中，新对象 newPerson 不仅具有 person 的所有属性和方法，而且还有自己的 sayHi() 方法，任何能返回新对象的函数都适用于此模式。  </p>
 <h2 id="3-JavaScript-创建对象的几种方式？"><a href="#3-JavaScript-创建对象的几种方式？" class="headerlink" title="3. JavaScript 创建对象的几种方式？"></a>3. JavaScript 创建对象的几种方式？</h2><ol>
 <li>对象字面量、Object构造函数</li>
 <li>构造函数  </li>
@@ -149,6 +144,13 @@ Person 没有 say() 方法，但是，我们通过 prototype 给 Person 的原�
 <h2 id="5-如何阻止事件冒泡和默认事件"><a href="#5-如何阻止事件冒泡和默认事件" class="headerlink" title="5. 如何阻止事件冒泡和默认事件"></a>5. 如何阻止事件冒泡和默认事件</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">e.stopPropagation();  <span class="comment">//标准浏览器阻止事件冒泡  </span></span><br><span class="line">event.canceBubble=<span class="literal">true</span>;  <span class="comment">//ie9之前阻止默认事件</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+        <tag>web前端</tag>
+      </tags>
   </entry>
   <entry>
     <title>3D浪漫照片</title>
@@ -294,12 +296,12 @@ Person 没有 say() 方法，但是，我们通过 prototype 给 Person 的原�
 <p>显示如下：  </p>
 <p>使用 <code>alert()</code> 函数</p>
 <h3 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h3><p>代码区块使用 4 个空格或者一个制表符（tab 键），代码区块上下文都要空一行 </p>
-<p><img src="/img/blog02/img-02.png" alt="截图">  </p>
+<p><img src="/images/artic/markdownyufa/img-02.png" alt="截图">  </p>
 <p>显示效果如下：</p>
 <pre><code>function sayHello() {
   alert(&quot;你好啊！&quot;);
 }</code></pre><p>你也可以用 ``` 包裹一段代码，并指定一种语言（也可以不指定）</p>
-<p><img src="/img/blog02/img-03.png" alt="截图"></p>
+<p><img src="/images/artic/markdownyufa/img-03.png" alt="截图"></p>
 <p>显示结果如下： </p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="string">'你好啊！'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
@@ -327,14 +329,14 @@ Person 没有 say() 方法，但是，我们通过 prototype 给 Person 的原�
 <h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>Markdown 图片语法格式如下：</p>
 <p>![<code>图片的替代文字</code>](<code>图片地址</code>)</p>
 <p>![<code>图片的替代文字</code>](<code>图片地址</code> <code>&quot;可选标题&quot;</code>)<br>方括号里面是图片的替代文字（图片加载不出来时显示），括号里面是图片的网址，后面还可以用引号包住并加上选择性的 ‘title’ 属性的文字。<br>例如：  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![狗狗](&#x2F;img&#x2F;blog02&#x2F;img-01.jpg)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![狗狗](&#x2F;images&#x2F;artic&#x2F;mdyf01&#x2F;img-01.jpg)</span><br></pre></td></tr></table></figure>
 
-<p>显示如下：<br><img src="/img/blog02/img-01.jpg" alt="狗狗">   </p>
-<p>也可以对图片网址使用变量：<br>这个链接用 dog 作为网址变量 <a href="/img/blog02/img-01.jpg">狗狗</a>，然后在文档的结尾为变量赋值（网址）</p>
+<p>显示如下：<br><img src="/images/artic/mdyf01/img-01.jpg" alt="狗狗">   </p>
+<p>也可以对图片网址使用变量：<br>这个链接用 dog 作为网址变量 <a href="/images/artic/mdyf01/img-01.jpg">狗狗</a>，然后在文档的结尾为变量赋值（网址）</p>
 <p>Markdown 还没有办法指定图片的高度与宽度，如果你需要的话，你可以使用普通的 <code>&lt;img&gt;</code> 标签,在外面加上 <code>&lt;div&gt;</code> 标签，配上 align=center 属性还可以居中。</p>
-<p><code>&lt;div align=center&gt;&lt;img src=&quot;/img/blog02/img-02.jpg&quot; width=&quot;400&quot;&gt;&lt;/div&gt;</code></p>
+<p><code>&lt;div align=center&gt;&lt;img src=&quot;/images/artic/mdyf01/img-02.jpg&quot; width=&quot;400&quot;&gt;&lt;/div&gt;</code></p>
 <p>显示结果如下：</p>
-<div align=center><img src="/img/blog02/img-02.jpg" width="400"></div>
+<div align=center><img src="/images/artic/mdyf01/img-02.jpg" width="400"></div>
 
 <hr>
 <h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>Markdown 制作表格使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行。  </p>
@@ -392,6 +394,9 @@ Person 没有 say() 方法，但是，我们通过 prototype 给 Person 的原�
 <p>按键<kbd>Enter</kbd>  <b>加粗b</b>  <i>文本i</i>  <em>斜体em</em><br>上标<sup>sup</sup>  下标<sub>sub</sub>  <br>换行br</p>
 <p>还有其他的技巧以后熟悉了再和大家分享。。。</p>
 ]]></content>
+      <tags>
+        <tag>MrakDown</tag>
+      </tags>
   </entry>
   <entry>
     <title>使用 Hexo + GitHub 搭建自己的个人博客</title>
@@ -408,21 +413,28 @@ Person 没有 say() 方法，但是，我们通过 prototype 给 Person 的原�
 <ul>
 <li>打开 Git Bash ，输入以下命令：<br>  <code>$ npm install -g hexo-cli</code>  </li>
 <li>等 hexo 安装完成后，输入：<br>  <code>$ hexo -v</code>  </li>
-<li>查看 hexo 的版本信息。<br><img src="/img/blog01/img-2.png" alt="截图">  </li>
+<li>查看 hexo 的版本信息。<br><img src="/images/artic/blog01/img-2.png" alt="截图">  </li>
 </ul>
 <hr>
 <h2 id="三、使用-Hexo-创建我们的博客"><a href="#三、使用-Hexo-创建我们的博客" class="headerlink" title="三、使用 Hexo 创建我们的博客"></a>三、使用 Hexo 创建我们的博客</h2><blockquote>
 <ul>
-<li>可以在你想创建个人博客的文件夹里创建一个 blog 文件夹，在里面右键打开 Git Bash ，输入：<br>  <code>$ hexo init</code><br>初始化项目，<br><img src="/img/blog01/img-3.png" alt="截图"></li>
-<li>初始化完成后会在 blog 文件夹生成一系列文件（hexo 模板），<br><img src="/img/blog01/img-4.png" alt="截图"><br>这个过程可能比较久，如果失败的话，可以把 blog 文件夹里的东西都删除了，再重复上一步，输入<br>  <code>$ hexo init</code>  </li>
-<li>我们做博客都是围绕这些文件来做。这时候就可以启动我们的博客了，输入：<br>  <code>$ hexo s</code><br><img src="/img/blog01/img-5.png" alt="截图"></li>
-<li>在我们的浏览器中输入 localhost:4000 ,即可打开我们初始化的博客<br><img src="/img/blog01/img-6.png" alt="截图">  </li>
+<li>可以在你想创建个人博客的文件夹里创建一个 blog 文件夹，在里面右键打开 Git Bash ，输入：<br>  <code>$ hexo init</code><br>初始化项目，<br><img src="/images/artic/blog01/img-3.png" alt="截图"></li>
+<li>初始化完成后会在 blog 文件夹生成一系列文件（hexo 模板），<br><img src="/images/artic/blog01/img-4.png" alt="截图"><br>这个过程可能比较久，如果失败的话，可以把 blog 文件夹里的东西都删除了，再重复上一步，输入<br>  <code>$ hexo init</code>  </li>
+<li>我们做博客都是围绕这些文件来做。这时候就可以启动我们的博客了，输入：<br>  <code>$ hexo s</code><br><img src="/images/artic/blog01/img-5.png" alt="截图"></li>
+<li>在我们的浏览器中输入 localhost:4000 ,即可打开我们初始化的博客<br><img src="/images/artic/blog01/img-6.png" alt="截图">  </li>
 </ul>
 </blockquote>
 <hr>
 <h2 id="四、把我们的博客部署到-GitHub-上"><a href="#四、把我们的博客部署到-GitHub-上" class="headerlink" title="四、把我们的博客部署到 GitHub 上"></a>四、把我们的博客部署到 GitHub 上</h2><blockquote>
-<p>1.在我们的 GitHub 上新建一个项目，项目名是你 GitHub 的用户名，例如我的GitHub用户名为 1914k 那么我就创建一个名字为：1914k.github.io 的项目<br><img src="/img/blog01/img-7.png" alt="截图"><br>2.安装 git 部署的插件，输入：<br>    <code>$ npm install --save hexo-deployer-git</code><br>3.打开 blog 文件夹里的 _config.yml 配置文件，<br><img src="/img/blog01/img-8.png" alt="截图"><br>翻到最下面，找到 deploy: ，将 type 改成 git ，把 repo 的地址换成自己的 GitHub 博客地址，如下：<br><img src="/img/blog01/img-9.png" alt="截图"><br><strong>注意/!这里的格式不能错，该有的空格要有</strong><br><strong>type，repository，branch的首字母要对齐</strong><br>4.最后输入以下三个命令：<br>    <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ hexo clean  <span class="comment">//清理一下</span></span><br><span class="line">$ hexo g      <span class="comment">//重新生成一下</span></span><br><span class="line">$ hexo d      <span class="comment">//部署到远端</span></span><br></pre></td></tr></table></figure><br>我们的博客就成功的部署到 GitHub 上了， 可以在浏览器输入<a href="https://1914k.github.io/">https://1914k.github.io/</a> 网址打开我们的博客。<br>[^淘宝镜像]: 这里是脚注</p>
+<p>1.在我们的 GitHub 上新建一个项目，项目名是你 GitHub 的用户名，例如我的GitHub用户名为 1914k 那么我就创建一个名字为：1914k.github.io 的项目<br><img src="/images/artic/blog01/img-7.png" alt="截图"><br>2.安装 git 部署的插件，输入：<br>    <code>$ npm install --save hexo-deployer-git</code><br>3.打开 blog 文件夹里的 _config.yml 配置文件，<br><img src="/images/artic/blog01/img-8.png" alt="截图"><br>翻到最下面，找到 deploy: ，将 type 改成 git ，把 repo 的地址换成自己的 GitHub 博客地址，如下：<br><img src="/img/blog01/img-9.png" alt="截图"><br><strong>注意/!这里的格式不能错，该有的空格要有</strong><br><strong>type，repository，branch的首字母要对齐</strong><br>4.最后输入以下三个命令：<br>    <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ hexo clean  <span class="comment">//清理一下</span></span><br><span class="line">$ hexo g      <span class="comment">//重新生成一下</span></span><br><span class="line">$ hexo d      <span class="comment">//部署到远端</span></span><br></pre></td></tr></table></figure><br>我们的博客就成功的部署到 GitHub 上了， 可以在浏览器输入<a href="https://1914k.github.io/">https://1914k.github.io/</a> 网址打开我们的博客。<br>[^淘宝镜像]: 这里是脚注</p>
 </blockquote>
 ]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>博客</tag>
+      </tags>
   </entry>
 </search>
