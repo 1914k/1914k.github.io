@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>顽石不语</title>
+  <icon>http://1914k.github.io/icon.png</icon>
+  <subtitle>努力很容易，坚持很难</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://1914k.github.io/"/>
+  <updated>2020-02-26T05:16:19.296Z</updated>
+  <id>http://1914k.github.io/</id>
+  
+  <author>
+    <name>石头</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://1914k.github.io/2020/02/26/hello-world/"/>
+    <id>http://1914k.github.io/2020/02/26/hello-world/</id>
+    <published>2020-02-26T10:37:09.755Z</published>
+    <updated>2020-02-26T05:16:19.296Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Vue 面试题 1-5</title>
+    <link href="http://1914k.github.io/2020/02/23/Vue-%E9%9D%A2%E8%AF%95%E9%A2%98-1-5/"/>
+    <id>http://1914k.github.io/2020/02/23/Vue-%E9%9D%A2%E8%AF%95%E9%A2%98-1-5/</id>
+    <published>2020-02-23T13:59:34.000Z</published>
+    <updated>2020-02-24T07:27:17.677Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-MVVM-原理的理解&quot;&gt;&lt;a href=&quot;#1-MVVM-原理的理解&quot; class=&quot;headerlink&quot; title=&quot;1.MVVM 原理的理解&quot;&gt;&lt;/a&gt;1.MVVM 原理的理解&lt;/h2&gt;&lt;p&gt;传统的架构模型是 MVC，即 &lt;code&gt;Model - View - Controller&lt;/code&gt;，是用户操作会请求服务端路由，路由会调用对应的控制器来处理，控制器会获取数据，将结果返回给前端，页面重新渲染。
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>OOP 面对对象编程</title>
+    <link href="http://1914k.github.io/2020/02/21/OOP-%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/"/>
+    <id>http://1914k.github.io/2020/02/21/OOP-%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/</id>
+    <published>2020-02-21T11:19:16.000Z</published>
+    <updated>2020-02-23T07:25:55.894Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;OOP 是一种编程范式，或者一种编程风格，围绕着对象而不是函数展开，很多你感兴趣的框架实际上都是基于 OOP 设计的。面向对象编程可以使你的代码更加简洁、优雅，避免你一遍遍地复制和粘贴代码行。
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>前端面试题一</title>
+    <link href="http://1914k.github.io/2020/02/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B8%80/"/>
+    <id>http://1914k.github.io/2020/02/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B8%80/</id>
+    <published>2020-02-20T03:57:49.000Z</published>
+    <updated>2020-02-25T14:10:33.969Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-call-和-apply-的区别？&quot;&gt;&lt;a href=&quot;#1-call-和-apply-的区别？&quot; class=&quot;headerlink&quot; title=&quot;1. call 和 apply 的区别？&quot;&gt;&lt;/a&gt;1. call 和 apply 的区别？&lt;/h2&gt;&lt;p&gt;call 和 apply 都可以改变 this 的指向，如下，都是把 B 的 this 指向 A，即使用的是 A 的方法。&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;A.call(B, argument1， argument2, ...);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;A.apply(B, [argument1， argument2, ...]);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>3D浪漫照片</title>
+    <link href="http://1914k.github.io/2020/02/14/3D%E6%B5%AA%E6%BC%AB%E7%85%A7%E7%89%87/"/>
+    <id>http://1914k.github.io/2020/02/14/3D%E6%B5%AA%E6%BC%AB%E7%85%A7%E7%89%87/</id>
+    <published>2020-02-14T11:03:47.000Z</published>
+    <updated>2020-02-18T02:51:49.142Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在哔哩哔哩上看到一个3D浪漫相册的前端小项目，就试着做了出来，请点击&lt;a href=&quot;/case/3D浪漫照片&quot;&gt;这里&lt;/a&gt;跳转 
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown语法</title>
+    <link href="http://1914k.github.io/2020/02/13/Markdown%E8%AF%AD%E6%B3%95/"/>
+    <id>http://1914k.github.io/2020/02/13/Markdown%E8%AF%AD%E6%B3%95/</id>
+    <published>2020-02-13T01:14:31.000Z</published>
+    <updated>2020-02-18T11:54:25.176Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;什么是-Markdown-？&quot;&gt;&lt;a href=&quot;#什么是-Markdown-？&quot; class=&quot;headerlink&quot; title=&quot;什么是 Markdown ？&quot;&gt;&lt;/a&gt;什么是 Markdown ？&lt;/h2&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>使用 Hexo + GitHub 搭建自己的个人博客</title>
+    <link href="http://1914k.github.io/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://1914k.github.io/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</id>
+    <published>2020-02-12T04:14:31.000Z</published>
+    <updated>2020-02-14T10:13:32.260Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用 Hexo + GitHub 免费搭建自己的个人博客，平时当做自己学习记笔记的地方，也可以锻炼自己写博客和编程的能力  &lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>

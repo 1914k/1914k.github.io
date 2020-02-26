@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/02/26/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Vue 面试题 1-5</title>
+    <url>/2020/02/23/Vue-%E9%9D%A2%E8%AF%95%E9%A2%98-1-5/</url>
+    <content><![CDATA[<h2 id="1-MVVM-原理的理解"><a href="#1-MVVM-原理的理解" class="headerlink" title="1.MVVM 原理的理解"></a>1.MVVM 原理的理解</h2><p>传统的架构模型是 MVC，即 <code>Model - View - Controller</code>，是用户操作会请求服务端路由，路由会调用对应的控制器来处理，控制器会获取数据，将结果返回给前端，页面重新渲染。<a id="more"></a><br>MVVM 是 <code>Model - ViewModel - View</code>，MVVM 模式不需要用户手动操纵 dom 元素，将数据绑定到 ViewModel 层上，Vue 会自动将数据渲染到页面中，视图变化会通知 ViewModel 层更新数据，通过 ViewModel 层连接 View 层和 Model 层。MVVM 就是一个双向绑定的过程，数据变化会驱动视图变化，视图变化也会更改数据。</p>
+<h2 id="2-响应式数据的原理"><a href="#2-响应式数据的原理" class="headerlink" title="2.响应式数据的原理"></a>2.响应式数据的原理</h2><blockquote>
+<h3 id="理解："><a href="#理解：" class="headerlink" title="理解："></a>理解：</h3><ol>
+<li>核心点：object.defineProperty()。</li>
+<li>默认 Vue 在初始化数据时，会给 data 中的属性使用 Object.defineProperty 重新定义所有属性，当页面使用到对应属性时，会进行依赖手机（数当前组件的 Watcher）如果属性发生变化会通知相关依赖进行更新操作。  <h3 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h3><img src="/img/Vue%E9%9D%A2%E8%AF%95/%E5%93%8D%E5%BA%94%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%8E%9F%E7%90%86.png" alt="截图"></li>
+</ol>
+</blockquote>
+<h2 id="3-Vue中时如何检测数组变化的？"><a href="#3-Vue中时如何检测数组变化的？" class="headerlink" title="3.Vue中时如何检测数组变化的？"></a>3.Vue中时如何检测数组变化的？</h2><blockquote>
+<h3 id="理解：-1"><a href="#理解：-1" class="headerlink" title="理解："></a>理解：</h3><p>使用函数劫持的方式，重写数组的方法<br>Vue 将 data 中的数组进行了原型链上的重写，指向了自己定义的数组原型方法，这样当调用数组 API 时，可以通知依赖更新，如果数组中包含引用类型，会对引用类型再次进行监控。</p>
+<h3 id="原理：-1"><a href="#原理：-1" class="headerlink" title="原理："></a>原理：</h3><p><img src="/img/Vue%E9%9D%A2%E8%AF%95/%E6%95%B0%E7%BB%84%E5%93%8D%E5%BA%94%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%8E%9F%E7%90%86.png" alt="截图">  </p>
+</blockquote>
+<h2 id="4-为何-Vue-采用异步渲染？"><a href="#4-为何-Vue-采用异步渲染？" class="headerlink" title="4.为何 Vue 采用异步渲染？"></a>4.为何 Vue 采用异步渲染？</h2><blockquote>
+<h3 id="理解：-2"><a href="#理解：-2" class="headerlink" title="理解："></a>理解：</h3><p>因为 Vue 是组件级更新，如果不采用异步更新，那么每次更新数据都会对当前组件进行重新渲染，所以为了性能考虑，Vue 会在本轮数据更新后，再去异步更新视图。</p>
+<h3 id="原理：-2"><a href="#原理：-2" class="headerlink" title="原理："></a>原理：</h3><p><img src="/img/Vue%E9%9D%A2%E8%AF%95/%E4%B8%BA%E4%BD%95%E5%BC%82%E6%AD%A5%E6%B8%B2%E6%9F%93.png" alt="截图"></p>
+</blockquote>
+<h2 id="5-nextTick-实现原理"><a href="#5-nextTick-实现原理" class="headerlink" title="5.nextTick 实现原理"></a>5.nextTick 实现原理</h2><blockquote>
+<h3 id="理解：-3"><a href="#理解：-3" class="headerlink" title="理解："></a>理解：</h3><p>nextTick 方法主要是使用了宏任务和微任务，定义了一个异步方法，多次调用 nextTick 会将方法存入队列中，通过这个异步方法清空当前队列，所以这个 nextTick 方法就是异步方法</p>
+<h3 id="原理：-3"><a href="#原理：-3" class="headerlink" title="原理："></a>原理：</h3><p><img src="/img/Vue%E9%9D%A2%E8%AF%95/nextTick%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90.png" alt="截图"></p>
+</blockquote>
+<h2 id="6-Vue-中-Computed-的特点"><a href="#6-Vue-中-Computed-的特点" class="headerlink" title="6. Vue 中 Computed 的特点"></a>6. Vue 中 Computed 的特点</h2><blockquote>
+<h3 id="理解：-4"><a href="#理解：-4" class="headerlink" title="理解："></a>理解：</h3><p>默认 computed 也是一个 watcher ，是具备缓存功能的，只有当依赖的属性发生变化是才会更新视图。和 methods 不一样，computed 里的方法在渲染时，如果依赖的属性不变，不会重新执行，而 methods 里的方法在渲染时不管数据有没有变化都会执行。<br>computed 和 watch 内部都是使用 watcher 来实现的，但是 computed 具备缓存。</p>
+<h3 id="原理：-4"><a href="#原理：-4" class="headerlink" title="原理："></a>原理：</h3><p><img src="/img/Vue%E9%9D%A2%E8%AF%95/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7.png" alt="截图"></p>
+</blockquote>
+]]></content>
+  </entry>
+  <entry>
+    <title>OOP 面对对象编程</title>
+    <url>/2020/02/21/OOP-%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<p>OOP 是一种编程范式，或者一种编程风格，围绕着对象而不是函数展开，很多你感兴趣的框架实际上都是基于 OOP 设计的。面向对象编程可以使你的代码更加简洁、优雅，避免你一遍遍地复制和粘贴代码行。<a id="more"></a>面向对象编程有四个核心概念，即 <code>封装</code>、<code>抽象</code>、<code>继承</code> 和 <code>多态</code>。<br>OOP 将一组相关的变量和函数组合成一个单元，即我们所称的对象（object）。我们把里面的变量成为[属性]（Property），函数称为[方法]（Method） </p>
+<h3 id="封装-Encapsulation"><a href="#封装-Encapsulation" class="headerlink" title="封装 Encapsulation"></a>封装 Encapsulation</h3><blockquote>
+<p>我们把属性和操作属性的方法组合到对象中，就是一种封装。<br>例如下面这种计算工资的方式是一种面向过程的编程：  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> baseSalary = <span class="number">3000</span>;</span><br><span class="line"><span class="keyword">let</span> overtime = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">let</span> rate = <span class="number">22</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getWage</span>(<span class="params">babaseSalary, overtime, rate</span>) </span>&#123;</span><br><span class="line"> <span class="keyword">return</span> babaseSalary + (overtime * rate);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>而面向对象的编程方式是：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> employee = &#123;</span><br><span class="line"> baseSalary: <span class="number">3000</span>,</span><br><span class="line"> overtime: <span class="number">10</span>,</span><br><span class="line"> rate: <span class="number">22</span>,</span><br><span class="line"> getWage: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">this</span>.baseSalary + (<span class="keyword">this</span>.overtime * <span class="keyword">this</span>.rate);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;;</span><br><span class="line">employee.getWage();</span><br></pre></td></tr></table></figure>
+<p><code>baseSalary</code>,<code>overtime</code> 和 <code>rate</code> 是 &gt;employee 的属性， <code>getWage</code> 是 employee 的&gt;方法。面向过程的编程方式的特点的函数具有多个&gt;参数，而面向对象的方法所需要的参数会越来越&gt;少，使用和维护起来也更容易，这也是一种简单的&gt;封装。</p>
+</blockquote>
+<h3 id="抽象-Abstraction"><a href="#抽象-Abstraction" class="headerlink" title="抽象 Abstraction"></a>抽象 Abstraction</h3><blockquote>
+<p>我们把对象的一些复杂的属性和方法隐藏起来，只对外暴露一些简单的属性和方法。这样可以使对象的接口更简单，因为使用具有几个属性和方法的对象比具有多个属性和方法的对象要容易；而且有助于我们减少变化的影响，因为我们没有任何代码让别人在对象之外接触到我们隐藏的方法。</p>
+</blockquote>
+<h3 id="继承-Inherittance"><a href="#继承-Inherittance" class="headerlink" title="继承 Inherittance"></a>继承 Inherittance</h3><blockquote>
+<p>继承是一种机制，可以减少程序的冗余代码。例如我们的文本框、下拉列表、复选框等HTML元素都有很多相同的属性和方法，如果我们每个元素都重新定义多有这些属性和方法，就有很多多余代码。所以我们可以只在通用对象中定义一次，然后让其他元素继承这个元素。</p>
+</blockquote>
+<h3 id="多态-Polymorphism"><a href="#多态-Polymorphism" class="headerlink" title="多态 Polymorphism"></a>多态 Polymorphism</h3><blockquote>
+<p>多态是一种技术，它可以让我们摆脱冗长的if/else 或 switch/case 语句。不同的元素在页面上有不同的渲染方式，如果使用面向过程的方式呈现多个HTML元素，我们可能会使用很多 if/else 或者 switch/case，例如：  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">switch</span> (...) &#123;</span><br><span class="line"> <span class="keyword">case</span> <span class="string">'select'</span>: renderSelect();</span><br><span class="line"> <span class="keyword">case</span> <span class="string">'text'</span>: renderTextBox();</span><br><span class="line"> <span class="keyword">case</span> <span class="string">'checkbox'</span>: renderCheckBox();</span><br><span class="line"> <span class="keyword">case</span> ...</span><br><span class="line"> <span class="keyword">case</span> ...</span><br><span class="line"> <span class="keyword">case</span> ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是在 OOP 中，我们可以在每个对象中实现一个渲染方法，渲染方法会根据引用的对象的类型不同而不同，使用如下简化代码 </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">element.render()</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="面向对象编程的好处"><a href="#面向对象编程的好处" class="headerlink" title="面向对象编程的好处"></a>面向对象编程的好处</h2><ul>
+<li>使用封装重新组合相关变量和函数， 减少复杂性，使我们在不同的地方重复使用这些对象。</li>
+<li>通过抽象，我们隐藏细节和复杂性，只显示必要的部分，降低了复杂性，也隔离的代码更改的影响。</li>
+<li>继承让我们消除多余的代码。</li>
+<li>多态可以让我们避免写出复杂的选择性代码。</li>
+</ul>
+<h1 id="对象的基本概念"><a href="#对象的基本概念" class="headerlink" title="对象的基本概念"></a>对象的基本概念</h1><p>JavaScript的对象实际上是一组键值对的集合，我们可以通过 <code>var</code>、<code>let</code>、<code>const</code>来创建一个对象，使用 let 我们创建一个可以重新声明的变量，使用 const 我们创建一个不可以重新声明的常量。例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> circle = &#123;&#125;;</span><br></pre></td></tr></table></figure>
+<p>这里的大括号表示创建一个对象，我们在大括号内加入的键值对就是这个对象的属性，如果是函数，我们可以称为方法。例如以下的 radius 和 location 就是属性，draw 就是方法。<em>属性是用来保存值的，而方法或函数是用来定义一些逻辑的</em>。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> circle = &#123;</span><br><span class="line">  radius: <span class="number">1</span>,</span><br><span class="line">  location: &#123;</span><br><span class="line">    x: <span class="number">1</span>,</span><br><span class="line">    y: <span class="number">1</span></span><br><span class="line">  &#125;,</span><br><span class="line">  draw: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'draw'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>我们可以通过点语法调用对象的属性或方法，对象创建语法是一种简单的定义对象的方法，如果我们需要创建其他的几个拥有一些相同属性或方法的对象，我们可能会通过 Ctrl + V 来复制之前的代码，但是这样容易出错，同时如果以后要改这些相同的属性或方法也非常麻烦，因为我们复制了多少份就得改多少个地方，所以对象创建语法不是好的复制对象的方法。如果对象中有多个方法，我们就说对象具有行为性，因为可以干多个不同的事，所以我们可以通过<em>工厂函数<em>（factory）和</em>构造函数</em> （constructor）创建对象来解决这个问题。</p>
+<h2 id="工厂函数"><a href="#工厂函数" class="headerlink" title="工厂函数"></a>工厂函数</h2><p>ES6新特性，如果键和值的名字一样，我们可以去除多余的代码，只写一个键或者值</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createCircle</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">		radius, </span><br><span class="line">		draw: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(<span class="string">'draw'</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> circle = createCircle(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p>我们可以通过调用上面的工厂函数来创建一个新的 cirlce 对象。</p>
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>创建构造函数的命名规则不一样，要大写第一个字母。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Circle</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'this'</span>,<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">this</span>.radius = radius;</span><br><span class="line">  <span class="keyword">this</span>.draw = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'draw'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> another = <span class="keyword">new</span> Circle(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p>我们也可以通过调用上面的构造函数来创建一个新的 cirlce 对象。<br>当使用 new 操作符调用一个函数时，会发生3件事  </p>
+<ol>
+<li>首先 new 操作符创建了一个空对象</li>
+<li>然后设置this指向这个对象</li>
+<li>最后它从函数返回这个对象<br>此时 this 指向我们创建的 Circle 对象：<br><img src="/img/OPP-1/img-01.png" alt="截图"></li>
+</ol>
+<p>默认情况下 this 会指向全局对象，如果在浏览器环境运行，全局对象就是 window 对象，如果在 node.js 环境运行，全局对象就是 global 。如果我们删除 new 操作符：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Circle</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'this'</span>,<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">this</span>.radius = radius;</span><br><span class="line">  <span class="keyword">this</span>.draw = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'draw'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> another = Circle(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p>this 就会指向 window 对象：<br><img src="/img/OPP-1/img-02.png" alt="截图"></p>
+<p>每个 JavaScript 中的对象都有一个 constructor 属性，它是一个用于创建这个对象的构造方法的引用。例如我们在控制台中输入 another.constructor ，会返回一个 Circle 函数，就是我们刚才创建的那个。<br><img src="/img/OPP-1/img-03.png" alt="截图"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>前端面试题一</title>
+    <url>/2020/02/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B8%80/</url>
+    <content><![CDATA[<h2 id="1-call-和-apply-的区别？"><a href="#1-call-和-apply-的区别？" class="headerlink" title="1. call 和 apply 的区别？"></a>1. call 和 apply 的区别？</h2><p>call 和 apply 都可以改变 this 的指向，如下，都是把 B 的 this 指向 A，即使用的是 A 的方法。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">A.call(B, argument1， argument2, ...);</span><br><span class="line">A.apply(B, [argument1， argument2, ...]);</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>不同的是后面传递的参数：</p>
+<ul>
+<li>call 后面的参数直接加入就行<br><code>Obj1.sayHello.call(Obj2, &quot;张三&quot;, 18)</code> </li>
+<li>apply 后面的参数要用类似数组的方式加入<br><code>Obj1.sayHello.apply(Obj2, [&quot;张三&quot;, 18])</code><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> A = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name= <span class="string">'NO.A'</span></span><br><span class="line">  <span class="keyword">this</span>.say= <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> B = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name= <span class="string">'NO.B'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> A();</span><br></pre></td></tr></table></figure>
+此时方法 say 的 this 指向它的上级 A，所以我们在控制台输入 a.say() 时输出的是 NO.A，</li>
+</ul>
+<p><img src="/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-1.png" alt="截图"></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> A = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name= <span class="string">'NO.A'</span></span><br><span class="line">  <span class="keyword">this</span>.say= <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    B.call(<span class="keyword">this</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> B = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name= <span class="string">'NO.B'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> A();</span><br></pre></td></tr></table></figure>
+<p>当我们用 <code>B.call(this)</code> 把this的指向变为了 B 对象，所以控制台输入 a.say() 时输出的是 NO.B</p>
+<p><img src="/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-2.png" alt="截图"></p>
+<h2 id="2-JavaScript-如何实现继承？"><a href="#2-JavaScript-如何实现继承？" class="headerlink" title="2. JavaScript 如何实现继承？"></a>2. JavaScript 如何实现继承？</h2><p>原型链继承、借用构造函数继承、寄生式继承  </p>
+<ul>
+<li>原型链继承，js 的每个对象的原型对象都有一个 constructor 属性，指向这个对象的构造函数，每个对象的实例都有一个 <strong>proto</strong> 属性，指向这个对象的原型。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'你好我是'</span> + <span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> m = <span class="keyword">new</span> Person(<span class="string">'小明'</span>);</span><br></pre></td></tr></table></figure>
+Person 没有 say() 方法，但是，我们通过 prototype 给 Person 的原型 Object 上添加了 say()方&gt;法，所以我们通过 Person 建立的实例 m 也能用 say() 方法，在控制台中输入 m.say() </li>
+</ul>
+<p><img src="/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-3.png" alt="截图"></p>
+<p>可以看到，我们的 say 方法执行了，同时，我们输入 m ，可以看到 m 的属性。我们可以 通过 m.toString() 来调用 Object 对象里的方法，也可以改写该方法。</p>
+<p><img src="/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-4.png" alt="截图">  </p>
+<ul>
+<li><p>借用构造函数继承，也叫经典继承，这种技术的基本思想相当简单，即在子类型的构造函数内部调用类型的构造函数，&gt;可以通过 call() 或 apply() 方法在新创建的对象上执行构造函数，如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Son</span>(<span class="params">name,age</span>) </span>&#123;</span><br><span class="line">  Box.call(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">this</span>.age = age</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> one = <span class="keyword">new</span> Box(<span class="string">'大王'</span>);</span><br><span class="line"><span class="keyword">const</span> tow = <span class="keyword">new</span> Son(<span class="string">'小王'</span>，<span class="number">18</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-5.png" alt="截图"></p>
+</li>
+<li><p>组合继承,指的是将原型链和借用构造函数的奇数组合到一块，从而发挥两者长处的一种继承方式。其思路是利用原型链实现对原型属性和方法的继承，通过构造函数实现对实例的属性方法的继承，既通过在原型上定义实现了函数方法的复用，又能保证每个实例都有自己的属性。如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.include = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'我是'</span> + <span class="keyword">this</span>.name + <span class="string">',我今年'</span> <span class="keyword">this</span>.age)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Worker</span>(<span class="params">name, age, job</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//继承属性</span></span><br><span class="line">  Person.call(<span class="keyword">this</span>, name, age);</span><br><span class="line">  <span class="keyword">this</span>.job=job;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//继承方法</span></span><br><span class="line">Worker.prototype = <span class="keyword">new</span> Person();</span><br><span class="line">Worker.prototype.constructor = Worker;<span class="comment">// 更改 constructor 指向</span></span><br><span class="line">Worker.prototype.myJob=<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'我的工作是'</span> + <span class="keyword">this</span>.job)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> mimg = <span class="keyword">new</span> Worker(<span class="string">'小明'</span>, <span class="number">18</span>, <span class="string">'搬砖'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(mine);</span><br><span class="line">ming.include();</span><br><span class="line">ming.myJob();</span><br></pre></td></tr></table></figure>
+<p><img src="/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-6.png" alt="截图"></p>
+</li>
+<li><p>寄生式继承的思路与寄生构造函数和工厂模式类似，创建一个仅用于封装继承过程的函数，该函数在内部以某种方式来增强对象，</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">org</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> clone = <span class="built_in">Object</span>(org);   <span class="comment">//调用函数时会创建一个新对象</span></span><br><span class="line">  clone.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'你好！'</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> clone;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">'小明'</span>,</span><br><span class="line">  ageL: <span class="number">18</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> newPerson = createPerson(person);</span><br><span class="line"></span><br><span class="line">newPerson.sayHi();</span><br></pre></td></tr></table></figure>
+<p><img src="/img/%E9%9D%A2%E8%AF%95%E9%A2%981/img-7.png" alt=""><br>上面的例子中，新对象 newPerson 不仅具有 person 的所有属性和方法，而且还有自己的 sayHi() 方法，任何能返回新对象的函数都适用于此模式。  </p>
+<h2 id="3-JavaScript-创建对象的几种方式？"><a href="#3-JavaScript-创建对象的几种方式？" class="headerlink" title="3. JavaScript 创建对象的几种方式？"></a>3. JavaScript 创建对象的几种方式？</h2><ol>
+<li>对象字面量、Object构造函数</li>
+<li>构造函数  </li>
+<li>纯构造函数  </li>
+<li>空构造函数 + 原型  </li>
+<li>混合构造函数 + 原型  </li>
+<li>动态原型<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, work</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="comment">//动态原型的方式  </span></span><br><span class="line">  <span class="keyword">if</span>(work) &#123;</span><br><span class="line">    Person.prototype.working = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'我的工作是'</span> + work);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>寄生构造函数  </li>
+<li>Object.create()—-ES5  </li>
+</ol>
+<h2 id="4-JavaScript-this-指针、闭包、作用域"><a href="#4-JavaScript-this-指针、闭包、作用域" class="headerlink" title="4. JavaScript this 指针、闭包、作用域"></a>4. JavaScript this 指针、闭包、作用域</h2><p>this： 指向调用上下文<br>闭包： 外层函数能访问内层函数的变量<br>作用域： 定义一个函数就开辟一个局部作用域，整个 js 执行环境有一个全局作用域  </p>
+<h2 id="5-如何阻止事件冒泡和默认事件"><a href="#5-如何阻止事件冒泡和默认事件" class="headerlink" title="5. 如何阻止事件冒泡和默认事件"></a>5. 如何阻止事件冒泡和默认事件</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">e.stopPropagation();  <span class="comment">//标准浏览器阻止事件冒泡  </span></span><br><span class="line">event.canceBubble=<span class="literal">true</span>;  <span class="comment">//ie9之前阻止默认事件</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>3D浪漫照片</title>
+    <url>/2020/02/14/3D%E6%B5%AA%E6%BC%AB%E7%85%A7%E7%89%87/</url>
+    <content><![CDATA[<p>在哔哩哔哩上看到一个3D浪漫相册的前端小项目，就试着做了出来，请点击<a href="/case/3D浪漫照片">这里</a>跳转  </p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Markdown语法</title>
+    <url>/2020/02/13/Markdown%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="什么是-Markdown-？"><a href="#什么是-Markdown-？" class="headerlink" title="什么是 Markdown ？"></a>什么是 Markdown ？</h2><a id="more"></a>
+<p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，Markown 编写的文档后缀名为 <code>.md</code> 或者 <code>.markdown</code>。Markdown 被广泛应在在各种文档的编写上，还能被用来编写电子书，或者用于论坛上发表消息，我们平时写博客也都使用 Markdown 语言。  </p>
+<hr>
+<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>Markdown 标题有两种格式<br>1.使用 <code>=</code> 和 <code>-</code> 标记一级标题和二级标题   </p>
+<blockquote>
+<p>一级标题<br>=<br>二级标题<br>-                              </p>
+</blockquote>
+<p>  <strong>注意上面的 <code>-</code> 和 <code>=</code> 可以写一个也可以写多个!!!</strong><br>显示效果如下：</p>
+<blockquote>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2></blockquote>
+<p>2.使用 <code>#</code> 标记  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 一级标题  </span><br><span class="line">## 二级标题  </span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题  </span><br><span class="line">##### 五级标题  </span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
+<p>显示效果如下：  </p>
+<blockquote>
+<h1 id="一级标题-1"><a href="#一级标题-1" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题-1"><a href="#二级标题-1" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6></blockquote>
+<hr>
+<hr>
+<h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><p>Markdown 段落没有什么特殊格式，直接编写文档便可，换行时用两个以上的<code>空格</code>加上<code>回车</code>，或者可以在段落后面使用一个空行来表示重新开始一个段落<br><img src="/img/blog02/img-01.png" alt="截图">  </p>
+<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><p>Markdown 可以使用以下几种字体  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*斜体文本*</span><br><span class="line">_斜体文本_</span><br><span class="line">**粗体文本**</span><br><span class="line">__粗体文本__</span><br><span class="line">***粗斜体文本***</span><br><span class="line">___粗斜体文本___</span><br></pre></td></tr></table></figure>
+<p>显示如下：  </p>
+<blockquote>
+<p><em>斜体文本</em><br><em>斜体文本</em><br><strong>粗体文本</strong><br><strong>粗体文本</strong><br><strong><em>粗斜体文本</em></strong><br><strong><em>粗斜体文本</em></strong>  </p>
+</blockquote>
+<h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在它们中间插入空格。下面每种写法都可以建立分隔线：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">***</span><br><span class="line"></span><br><span class="line">* * *</span><br><span class="line"></span><br><span class="line">*****</span><br><span class="line"></span><br><span class="line">- - -</span><br><span class="line"></span><br><span class="line">----------</span><br><span class="line"></span><br><span class="line">_ _ _</span><br></pre></td></tr></table></figure>
+<p>显示效果如下： </p>
+<blockquote>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+</blockquote>
+<h3 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h3><p>如果段落上的文字要添加删除线，只需要在文字的两端加上两个波浪线 <code>~~</code> 即可  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">无删除线  </span><br><span class="line">~~有删除线~~</span><br></pre></td></tr></table></figure>
+<p>显示效果如下所示：  </p>
+<blockquote>
+<p>无删除线<br><del>有删除线</del>  </p>
+</blockquote>
+<h3 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h3><p>下划线可以通过 HTML 的 <code>&lt;u&gt;</code> 标签来实现：</p>
+<p><code>&lt;u&gt;带下划线&lt;/u&gt;</code><br>显示效果如下所示：  </p>
+<blockquote>
+<p><u>带下划线</u>  </p>
+</blockquote>
+<hr>
+<h2 id="Markdown-列表"><a href="#Markdown-列表" class="headerlink" title="Markdown 列表"></a>Markdown 列表</h2><p>Markdown 支持有序列表和无序列表。</p>
+<p>1.无序列表使用星号(*)、加号(+)或是减号(-)作为列表标记：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 第一项  </span><br><span class="line">+ 第二项</span><br><span class="line">- 第三项</span><br></pre></td></tr></table></figure>
+<p>注意星号(*)、加号(+)或是减号(-)后面要有一个空格，显示效果如下：  </p>
+<blockquote>
+<ul>
+<li>第一项  </li>
+<li>第二项  </li>
+</ul>
+<ul>
+<li>第三项  </li>
+</ul>
+</blockquote>
+<p>2.有序列表使用数字并加上 . 号来表示，如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 第一项</span><br><span class="line">2. 第二项</span><br><span class="line">3. 第三项</span><br></pre></td></tr></table></figure>
+<p>显示结果如下：  </p>
+<blockquote>
+<ol>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ol>
+</blockquote>
+<p>3.列表嵌套<br>列表嵌套只需在子列表中的选项前添加四个空格即可：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 第一项：</span><br><span class="line">    - 第一项嵌套的第一个元素</span><br><span class="line">    - 第一项嵌套的第二个元素</span><br><span class="line">2. 第二项：</span><br><span class="line">    - 第二项嵌套的第一个元素</span><br><span class="line">    - 第二项嵌套的第二个元素</span><br></pre></td></tr></table></figure>
+<p>显示结果如下：  </p>
+<blockquote>
+<ol>
+<li>第一项：<ul>
+<li>第一项嵌套的第一个元素</li>
+<li>第一项嵌套的第二个元素</li>
+</ul>
+</li>
+<li>第二项：<ul>
+<li>第二项嵌套的第一个元素</li>
+<li>第二项嵌套的第二个元素</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<hr>
+<h2 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h2><p>Markdown 区块引用是在段落开头使用 <code>&gt;</code> 符号 ，然后后面紧跟一个<code>空格</code>符号,而且区块是可以嵌套的</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块  </span><br><span class="line">&gt; 区块</span><br><span class="line">&gt;&gt; 第一层嵌套区块  </span><br><span class="line">&gt;&gt; 第一层嵌套区块</span><br><span class="line">&gt;&gt;&gt; 第二层嵌套区块  </span><br><span class="line">&gt;&gt;&gt; 第二层嵌套区块</span><br></pre></td></tr></table></figure>
+<p>显示效果：  </p>
+<blockquote>
+<p>区块<br>区块</p>
+<blockquote>
+<p>第一层嵌套区块<br>第一层嵌套区块</p>
+<blockquote>
+<p>第二层嵌套区块<br>第二层嵌套区块  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>不想写在区块中的内容要空一行在写，不然也会在区块中显示。 </p>
+<h3 id="区块中使用列表"><a href="#区块中使用列表" class="headerlink" title="区块中使用列表"></a>区块中使用列表</h3><p>区块中使用列表直接在区块语法后接列表语法即可：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块中使用列表    </span><br><span class="line">&gt; 1. 第一项</span><br><span class="line">&gt; 2. 第二项</span><br><span class="line">&gt; + 第一项    </span><br><span class="line">&gt; + 第二项 </span><br><span class="line">&gt; + 第三项</span><br></pre></td></tr></table></figure>
+<p>显示结果如下：  </p>
+<blockquote>
+<p>区块中使用列表    </p>
+<ol>
+<li>第一项</li>
+<li>第二项</li>
+</ol>
+<ul>
+<li>第一项    </li>
+<li>第二项 </li>
+<li>第三项</li>
+</ul>
+</blockquote>
+<h3 id="在列表中使用区块"><a href="#在列表中使用区块" class="headerlink" title="在列表中使用区块"></a>在列表中使用区块</h3><p>如果要在列表项目内放进区块，那么就需要在 <code>&gt;</code> 前添加四个空格的缩进。  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">    &gt; 菜鸟教程</span><br><span class="line">    &gt; 学的不仅是技术更是梦想</span><br><span class="line">* 第二项</span><br></pre></td></tr></table></figure>
+<p>显示结果如下：  </p>
+<ul>
+<li>第一项<blockquote>
+<p>区块内容<br>区块内容</p>
+</blockquote>
+</li>
+<li>第二项<blockquote>
+<p>区块内容<br>区块内容</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>如果是段落上的一个函数或代码片段可以用反引号 ` 把它包起来:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">使用 &#96;alert()&#96; 函数</span><br></pre></td></tr></table></figure>
+<p>显示如下：  </p>
+<p>使用 <code>alert()</code> 函数</p>
+<h3 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h3><p>代码区块使用 4 个空格或者一个制表符（tab 键），代码区块上下文都要空一行 </p>
+<p><img src="/img/blog02/img-02.png" alt="截图">  </p>
+<p>显示效果如下：</p>
+<pre><code>function sayHello() {
+  alert(&quot;你好啊！&quot;);
+}</code></pre><p>你也可以用 ``` 包裹一段代码，并指定一种语言（也可以不指定）</p>
+<p><img src="/img/blog02/img-03.png" alt="截图"></p>
+<p>显示结果如下： </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="string">'你好啊！'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>链接使用方法如下：</p>
+<blockquote>
+<p>[链接名称](链接地址)</p>
+<p>或者</p>
+<p>&lt;链接地址&gt;  </p>
+</blockquote>
+<p>例如：  </p>
+<p>[百度一下](<code>https://www.baidu.com/</code>)</p>
+<p>&lt;<code>https://www.baidu.com/</code>&gt;</p>
+<p>显示如下： </p>
+<blockquote>
+<p><a href="https://www.baidu.com/" target="_blank" rel="noopener">百度一下</a>   </p>
+<p><a href="https://www.baidu.com/" target="_blank" rel="noopener">https://www.baidu.com/</a>  </p>
+</blockquote>
+<h3 id="高级链接"><a href="#高级链接" class="headerlink" title="高级链接"></a>高级链接</h3><p>链接也可以用变量来代替，文档末尾附带变量地址：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">这个链接用 1 作为网址变量 [百度一下][1]</span><br><span class="line">这个链接用 runoob 作为网址变量 [百度一下][baidu]</span><br><span class="line">然后在文档的结尾为变量赋值（网址）</span><br><span class="line"></span><br><span class="line">[1]: https:&#x2F;&#x2F;www.baidu.com&#x2F;</span><br><span class="line">[baidu]: https:&#x2F;&#x2F;www.baidu.com&#x2F;</span><br></pre></td></tr></table></figure>
+<p>显示结果如下：  </p>
+<blockquote>
+<p>这个链接用 1 作为网址变量 <a href="https://www.baidu.com/" target="_blank" rel="noopener">百度一下</a><br>这个链接用 runoob 作为网址变量 <a href="https://www.baidu.com/" target="_blank" rel="noopener">百度一下</a>，然后在文档的结尾为变量赋值（网址）。  </p>
+</blockquote>
+<hr>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>Markdown 图片语法格式如下：</p>
+<p>![<code>图片的替代文字</code>](<code>图片地址</code>)</p>
+<p>![<code>图片的替代文字</code>](<code>图片地址</code> <code>&quot;可选标题&quot;</code>)<br>方括号里面是图片的替代文字（图片加载不出来时显示），括号里面是图片的网址，后面还可以用引号包住并加上选择性的 ‘title’ 属性的文字。<br>例如：  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![狗狗](&#x2F;img&#x2F;blog02&#x2F;img-01.jpg)</span><br></pre></td></tr></table></figure>
+
+<p>显示如下：<br><img src="/img/blog02/img-01.jpg" alt="狗狗">   </p>
+<p>也可以对图片网址使用变量：<br>这个链接用 dog 作为网址变量 <a href="/img/blog02/img-01.jpg">狗狗</a>，然后在文档的结尾为变量赋值（网址）</p>
+<p>Markdown 还没有办法指定图片的高度与宽度，如果你需要的话，你可以使用普通的 <code>&lt;img&gt;</code> 标签,在外面加上 <code>&lt;div&gt;</code> 标签，配上 align=center 属性还可以居中。</p>
+<p><code>&lt;div align=center&gt;&lt;img src=&quot;/img/blog02/img-02.jpg&quot; width=&quot;400&quot;&gt;&lt;/div&gt;</code></p>
+<p>显示结果如下：</p>
+<div align=center><img src="/img/blog02/img-02.jpg" width="400"></div>
+
+<hr>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>Markdown 制作表格使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行。  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">| 表头  | 表头  | 表头  |</span><br><span class="line">| ----  | ---- | ----  |</span><br><span class="line">| 单元格 |单元格| 单元格 |</span><br><span class="line">| 单元格 |单元格| 单元格 |</span><br></pre></td></tr></table></figure>
+<p>显示效果如下：  </p>
+<table>
+<thead>
+<tr>
+<th>表头</th>
+<th>表头</th>
+<th>表头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单元格</td>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+<tr>
+<td>单元格</td>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+</tbody></table>
+<p>我们可以设置表格的对齐方式：</p>
+<blockquote>
+<p>-: 设置内容和标题栏居右对齐。<br>:- 设置内容和标题栏居左对齐。<br>:-: 设置内容和标题栏居中对齐。  </p>
+</blockquote>
+<p>例如：  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">| 左对齐 | 居中 | 右对齐 |</span><br><span class="line">| :---  | :--: | ---:  |</span><br><span class="line">| 单元格 |单元格| 单元格 |</span><br><span class="line">| 单元格 |单元格| 单元格 |</span><br></pre></td></tr></table></figure>
+<p>显示如下：  </p>
+<table>
+<thead>
+<tr>
+<th align="left">左对齐</th>
+<th align="center">居中</th>
+<th align="right">右对齐</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">单元格</td>
+<td align="center">单元格</td>
+<td align="right">单元格</td>
+</tr>
+<tr>
+<td align="left">单元格</td>
+<td align="center">单元格</td>
+<td align="right">单元格</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="高级技巧"><a href="#高级技巧" class="headerlink" title="高级技巧"></a>高级技巧</h2><h3 id="1-支持的-HTML-元素"><a href="#1-支持的-HTML-元素" class="headerlink" title="1.支持的 HTML 元素"></a>1.支持的 HTML 元素</h3><p>目前支持的 HTML 元素有：&lt;kbd&gt; 、&lt;br&gt; 、&lt;i&gt; 、&lt;em&gt; 、&lt;sup&gt; 、&lt;sub&gt; 、&lt;br&gt; 等<br>例如：  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">按键&lt;kbd&gt;Enter&lt;&#x2F;kbd&gt;  &lt;b&gt;加粗b&lt;&#x2F;b&gt;  &lt;i&gt;文本i&lt;&#x2F;i&gt;  &lt;em&gt;斜体em&lt;&#x2F;em&gt;   </span><br><span class="line">上标&lt;sup&gt;sup&lt;&#x2F;sup&gt;  下标&lt;sub&gt;sub&lt;&#x2F;sub&gt;  &lt;br&gt;换行br&lt;&#x2F;br&gt;</span><br></pre></td></tr></table></figure>
+
+<p>按键<kbd>Enter</kbd>  <b>加粗b</b>  <i>文本i</i>  <em>斜体em</em><br>上标<sup>sup</sup>  下标<sub>sub</sub>  <br>换行br</p>
+<p>还有其他的技巧以后熟悉了再和大家分享。。。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>使用 Hexo + GitHub 搭建自己的个人博客</title>
+    <url>/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>使用 Hexo + GitHub 免费搭建自己的个人博客，平时当做自己学习记笔记的地方，也可以锻炼自己写博客和编程的能力  </p>
+<a id="more"></a>
+<h2 id="一、安装前提"><a href="#一、安装前提" class="headerlink" title="一、安装前提"></a>一、安装前提</h2><blockquote>
+<p>1.你的电脑已经安装好Git。<br> 2.你的电脑已经安装好Node.js，安装镜像换成国内的[^淘宝镜像]下载会更快一些。  </p>
+</blockquote>
+<hr>
+<h2 id="二、安装-Hexo"><a href="#二、安装-Hexo" class="headerlink" title="二、安装 Hexo"></a>二、安装 Hexo</h2><blockquote>
+<p>如果已安装淘宝镜像 可以使用 cnpm 来安装 Hexo ， 否则使用 npm  </p>
+</blockquote>
+<ul>
+<li>打开 Git Bash ，输入以下命令：<br>  <code>$ npm install -g hexo-cli</code>  </li>
+<li>等 hexo 安装完成后，输入：<br>  <code>$ hexo -v</code>  </li>
+<li>查看 hexo 的版本信息。<br><img src="/img/blog01/img-2.png" alt="截图">  </li>
+</ul>
+<hr>
+<h2 id="三、使用-Hexo-创建我们的博客"><a href="#三、使用-Hexo-创建我们的博客" class="headerlink" title="三、使用 Hexo 创建我们的博客"></a>三、使用 Hexo 创建我们的博客</h2><blockquote>
+<ul>
+<li>可以在你想创建个人博客的文件夹里创建一个 blog 文件夹，在里面右键打开 Git Bash ，输入：<br>  <code>$ hexo init</code><br>初始化项目，<br><img src="/img/blog01/img-3.png" alt="截图"></li>
+<li>初始化完成后会在 blog 文件夹生成一系列文件（hexo 模板），<br><img src="/img/blog01/img-4.png" alt="截图"><br>这个过程可能比较久，如果失败的话，可以把 blog 文件夹里的东西都删除了，再重复上一步，输入<br>  <code>$ hexo init</code>  </li>
+<li>我们做博客都是围绕这些文件来做。这时候就可以启动我们的博客了，输入：<br>  <code>$ hexo s</code><br><img src="/img/blog01/img-5.png" alt="截图"></li>
+<li>在我们的浏览器中输入 localhost:4000 ,即可打开我们初始化的博客<br><img src="/img/blog01/img-6.png" alt="截图">  </li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="四、把我们的博客部署到-GitHub-上"><a href="#四、把我们的博客部署到-GitHub-上" class="headerlink" title="四、把我们的博客部署到 GitHub 上"></a>四、把我们的博客部署到 GitHub 上</h2><blockquote>
+<p>1.在我们的 GitHub 上新建一个项目，项目名是你 GitHub 的用户名，例如我的GitHub用户名为 1914k 那么我就创建一个名字为：1914k.github.io 的项目<br><img src="/img/blog01/img-7.png" alt="截图"><br>2.安装 git 部署的插件，输入：<br>    <code>$ npm install --save hexo-deployer-git</code><br>3.打开 blog 文件夹里的 _config.yml 配置文件，<br><img src="/img/blog01/img-8.png" alt="截图"><br>翻到最下面，找到 deploy: ，将 type 改成 git ，把 repo 的地址换成自己的 GitHub 博客地址，如下：<br><img src="/img/blog01/img-9.png" alt="截图"><br><strong>注意/!这里的格式不能错，该有的空格要有</strong><br><strong>type，repository，branch的首字母要对齐</strong><br>4.最后输入以下三个命令：<br>    <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ hexo clean  <span class="comment">//清理一下</span></span><br><span class="line">$ hexo g      <span class="comment">//重新生成一下</span></span><br><span class="line">$ hexo d      <span class="comment">//部署到远端</span></span><br></pre></td></tr></table></figure><br>我们的博客就成功的部署到 GitHub 上了， 可以在浏览器输入<a href="https://1914k.github.io/" target="_blank" rel="noopener">https://1914k.github.io/</a> 网址打开我们的博客。<br>[^淘宝镜像]: 这里是脚注</p>
+</blockquote>
+]]></content>
+  </entry>
+</search>
