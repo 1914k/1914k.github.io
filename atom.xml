@@ -42,7 +42,7 @@
     <link href="http://1914k.github.io/2020/02/21/OOP-%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/"/>
     <id>http://1914k.github.io/2020/02/21/OOP-%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/</id>
     <published>2020-02-21T11:19:16.000Z</published>
-    <updated>2020-02-26T14:49:30.861Z</updated>
+    <updated>2020-02-27T03:33:39.385Z</updated>
     
     <summary type="html">
     
@@ -54,9 +54,9 @@
       <category term="OPP面对对象" scheme="http://1914k.github.io/categories/OPP%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1/"/>
     
     
-      <category term="js" scheme="http://1914k.github.io/tags/js/"/>
-    
       <category term="OPP面对对象" scheme="http://1914k.github.io/tags/OPP%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1/"/>
+    
+      <category term="JS" scheme="http://1914k.github.io/tags/JS/"/>
     
   </entry>
   
@@ -65,7 +65,7 @@
     <link href="http://1914k.github.io/2020/02/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B8%80/"/>
     <id>http://1914k.github.io/2020/02/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B8%80/</id>
     <published>2020-02-20T03:57:49.000Z</published>
-    <updated>2020-02-26T14:44:46.987Z</updated>
+    <updated>2020-02-27T03:33:31.596Z</updated>
     
     <summary type="html">
     
@@ -78,9 +78,9 @@
       <category term="web前端" scheme="http://1914k.github.io/categories/web%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="web前端" scheme="http://1914k.github.io/tags/web%E5%89%8D%E7%AB%AF/"/>
+      <category term="JS" scheme="http://1914k.github.io/tags/JS/"/>
     
-      <category term="js" scheme="http://1914k.github.io/tags/js/"/>
+      <category term="web前端" scheme="http://1914k.github.io/tags/web%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
