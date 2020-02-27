@@ -148,8 +148,8 @@ Person 没有 say() 方法，但是，我们通过 prototype 给 Person 的原�
         <category>web前端</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>web前端</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
