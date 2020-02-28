@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://1914k.github.io/"/>
-  <updated>2020-02-26T14:48:01.217Z</updated>
+  <updated>2020-02-28T15:04:11.337Z</updated>
   <id>http://1914k.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vuex简介</title>
+    <link href="http://1914k.github.io/2020/02/27/Vuex%E7%AE%80%E4%BB%8B/"/>
+    <id>http://1914k.github.io/2020/02/27/Vuex%E7%AE%80%E4%BB%8B/</id>
+    <published>2020-02-27T12:40:46.000Z</published>
+    <updated>2020-02-28T15:04:11.337Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式，按我的理解就是就是一个监控全局状态的一个库，储存在这个库里的数据变化了，各个组件在使用时都会同步变化，省去了组件间反复交错传值的麻烦,即储存在 Vuex 里的数据是响应式的。&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="http://1914k.github.io/categories/Vue/"/>
+    
+    
+      <category term="Vue" scheme="http://1914k.github.io/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue 面试题 1-5</title>
