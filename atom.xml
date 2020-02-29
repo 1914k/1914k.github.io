@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://1914k.github.io/"/>
-  <updated>2020-02-28T15:04:11.337Z</updated>
+  <updated>2020-02-29T04:41:24.219Z</updated>
   <id>http://1914k.github.io/</id>
   
   <author>
@@ -21,18 +21,11 @@
     <link href="http://1914k.github.io/2020/02/27/Vuex%E7%AE%80%E4%BB%8B/"/>
     <id>http://1914k.github.io/2020/02/27/Vuex%E7%AE%80%E4%BB%8B/</id>
     <published>2020-02-27T12:40:46.000Z</published>
-    <updated>2020-02-28T15:04:11.337Z</updated>
+    <updated>2020-02-29T04:41:24.219Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式，按我的理解就是就是一个监控全局状态的一个库，储存在这个库里的数据变化了，各个组件在使用时都会同步变化，省去了组件间反复交错传值的麻烦,即储存在 Vuex 里的数据是响应式的。&lt;/p&gt;
-&lt;h2
-        
-      
+      &lt;p&gt;Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式，按我的理解就是就是一个监控全局状态的一个库，储存在这个库里的数据变化了，各个组件在使用时都会同步变化，省去了组件间反复交错传值的麻烦,即储存在 Vuex 里的数据是响应式的。&lt;/p&gt;
     
     </summary>
     
@@ -117,7 +110,7 @@
     <link href="http://1914k.github.io/2020/02/14/3D%E6%B5%AA%E6%BC%AB%E7%85%A7%E7%89%87/"/>
     <id>http://1914k.github.io/2020/02/14/3D%E6%B5%AA%E6%BC%AB%E7%85%A7%E7%89%87/</id>
     <published>2020-02-14T11:03:47.000Z</published>
-    <updated>2020-02-18T02:51:49.142Z</updated>
+    <updated>2020-02-29T05:16:13.574Z</updated>
     
     <summary type="html">
     
@@ -125,7 +118,7 @@
       
         
         
-          &lt;p&gt;在哔哩哔哩上看到一个3D浪漫相册的前端小项目，就试着做了出来，请点击&lt;a href=&quot;/case/3D浪漫照片&quot;&gt;这里&lt;/a&gt;跳转 
+          &lt;p&gt;在哔哩哔哩上看到一个3D浪漫相册的前端小项目，就试着做了出来，请点击&lt;a href=&quot;/case&quot;&gt;这里&lt;/a&gt;跳转 
         
       
     

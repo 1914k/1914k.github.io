@@ -1,0 +1,275 @@
+html, body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #2f3542;
+}
+.notrans {
+  -webkit-transition: none !important;
+	-moz-transition: none !important;
+	-ms-transition: none !important;
+	-o-transition: none !important;
+	transition: none !important;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  transform-style: preserve-3d;
+}
+
+/* 内盒子 */
+.cube-in {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  transform: rotateX(20deg) rotateY(45deg);
+  /* background-color: #fff; */
+  animation: rotate-cube 5s linear infinite;
+}
+.cube-in div {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px); 
+}
+
+/* 前 */
+.cube-in .img1 {
+  background-image: url(/images/case/3dpicture/in-01.jpg);
+  transform: rotateX(0deg) rotateY(0deg) translateZ(50px);
+}
+
+/* 后 */
+.cube-in .img2 {
+  background-image: url(/images/case/3dpicture/in-02.jpg);
+  transform: rotateX(0deg) rotateY(180deg) translateZ(50px);
+}
+
+/* 左 */
+.cube-in .img3 {
+  background-image: url(/images/case/3dpicture/in-03.jpg);
+  transform: rotateX(0deg) rotateY(-90deg) translateZ(50px);
+}
+
+/* 右 */
+.cube-in .img4 {
+  background-image: url(/images/case/3dpicture/in-04.jpg);
+  transform: rotateX(0deg) rotateY(90deg) translateZ(50px);
+}
+/* 上 */
+.cube-in .img5 {
+  background-image: url(/images/case/3dpicture/in-05.jpg);
+  transform: rotateX(90deg) rotateY(0deg) translateZ(50px);
+}
+
+/* 下 */
+.cube-in .img6 {
+  background-image: url(/images/case/3dpicture/in-06.jpg);
+  transform: rotateX(-90deg) rotateY(0deg) translateZ(50px);
+}
+
+/* 外盒子 */
+.cube-out {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  /* background-color: rgba(55,55,55,0.5); */
+  transform-style: preserve-3d;
+  transform: rotateX(20deg) rotateY(45deg);
+  animation: rotate-cube 5s linear infinite;
+  /* transition: all 2s linear; */
+}
+.cube-out div {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  opacity: 0.3;  
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+  /* transition: width 2s linear, height 2s linear, top 2s linear, left 2s linear, opacity 2s linear; */
+  transition: all 2s linear;
+}
+
+/* 前 */
+.cube-out .img1 {
+  background-image: url(/images/case/3dpicture/out-01.jpg);
+  transform: rotateX(0deg) rotateY(0deg) translateZ(100px);
+  /* transition: transform 2s linear; */
+}
+
+/* 后 */
+.cube-out .img2 {
+  background-image: url(/images/case/3dpicture/out-02.jpg);
+  transform: rotateX(0deg) rotateY(180deg) translateZ(100px);
+  /* transition: transform 2s linear; */
+}
+
+/* 左 */
+.cube-out .img3 {
+  background-image: url(/images/case/3dpicture/out-03.jpg);
+  transform: rotateX(0deg) rotateY(-90deg) translateZ(100px);
+  /* transition: transform 2s linear; */
+}
+
+/* 右 */
+.cube-out .img4 {
+  background-image: url(/images/case/3dpicture/out-04.jpg);
+  transform: rotateX(0deg) rotateY(90deg) translateZ(100px);
+  /* transition: transform 2s linear; */
+}
+/* 上 */
+.cube-out .img5 {
+  background-image: url(/images/case/3dpicture/out-05.jpg);
+  transform: rotateX(-90deg) rotateY(0deg) translateZ(100px);
+  /* transition: transform 2s linear; */
+}
+
+/* 下 */
+.cube-out .img6 {
+  background-image: url(/images/case/3dpicture/out-06.jpg);
+  transform: rotateX(90deg) rotateY(0deg) translateZ(100px);
+  /* transition: transform 2s linear; */
+}
+
+
+/* 外盒子 :hover 时 */
+
+.cube-out:hover div {
+  width: 400px;
+  height: 400px;
+  opacity: 0.8;  
+  top: calc(50% - 200px);
+  left: calc(50% - 200px);
+}
+
+/* 前 */
+.cube-out:hover .img1 {
+  transform: rotateX(0deg) rotateY(0deg) translateZ(300px);
+}
+
+/* 后 */
+.cube-out:hover .img2 {
+  transform: rotateX(0deg) rotateY(180deg) translateZ(300px);
+}
+
+/* 左 */
+.cube-out:hover .img3 {
+  transform: rotateX(0deg) rotateY(-90deg) translateZ(300px);
+}
+
+/* 右 */
+.cube-out:hover .img4 {
+  transform: rotateX(0deg) rotateY(90deg) translateZ(300px);
+}
+/* 上 */
+.cube-out:hover .img5 {
+  transform: rotateX(-90deg) rotateY(0deg) translateZ(300px);
+}
+
+/* 下 */
+.cube-out:hover .img6 {
+  transform: rotateX(90deg) rotateY(0deg) translateZ(300px);
+}
+@keyframes rotate-cube {
+  from{ transform: rotateX(20deg) rotateY(45deg);}/*相当于0%*/
+  to{ transform: rotateX(20deg) rotateY(405deg);}/*相当于100%*/
+}
+
+/* @keyframes rotate-cube {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  20% {
+    右边图片
+    transform: rotateY(-90deg);
+  }
+  40% {
+    上边图片
+    transform: rotateX(-90deg);
+  }
+  60% {
+    左边图片
+    transform: rotateY(90deg);
+  }
+  80% {
+    下边图片
+    transform: rotateX(90deg);
+  }
+  100% {
+    上边图片
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+} */
+
+.cube-out li {
+  position: absolute;
+  width: 202px;
+  height: 202px;
+  top: calc(50% - 101px);
+  left: calc(50% - 101px);
+  list-style: none;
+  transition: all 2s linear;
+}
+.ca1 {
+  transform: rotateX(0deg) rotateY(0deg) translateZ(101px);
+  /* background-color: rgba(200, 187, 75, 0.5); */
+}
+.ca2 {
+  transform: rotateX(0deg) rotateY(180deg) translateZ(101px);
+  /* background-color: rgba(200, 75, 92, 0.5); */
+}
+.ca3 {
+  transform: rotateX(0deg) rotateY(90deg) translateZ(101px);
+  /* background-color: rgba(129, 75, 200, 0.5); */
+}
+.ca4 {
+  transform: rotateX(0deg) rotateY(-90deg) translateZ(101px);
+  /* background-color: rgba(187, 200, 75, 0.5); */
+}
+.ca5 {
+  transform: rotateX(90deg) rotateY(0deg) translateZ(101px);
+  /* background-color: rgba(243, 95, 10, 0.5); */
+}
+.ca6 {
+  transform: rotateX(-90deg) rotateY(0deg) translateZ(101px);
+  /* background-color: rgba(0, 3, 177, 0.5); */
+}
+
+.cube-out:hover li {
+  width: 602px;
+  height: 602px;
+  top: calc(50% - 301px);
+  left: calc(50% - 301px);
+}
+.cube-out:hover .ca1 {
+  transform: rotateX(0deg) rotateY(0deg) translateZ(301px);
+}
+.cube-out:hover .ca2 {
+  transform: rotateX(0deg) rotateY(180deg) translateZ(301px);
+}
+.cube-out:hover .ca3 {
+  transform: rotateX(0deg) rotateY(90deg) translateZ(301px);
+}
+.cube-out:hover .ca4 {
+  transform: rotateX(0deg) rotateY(-90deg) translateZ(301px);
+}
+.cube-out:hover .ca5 {
+  transform: rotateX(90deg) rotateY(0deg) translateZ(301px);
+}
+.cube-out:hover .ca6 {
+  transform: rotateX(-90deg) rotateY(0deg) translateZ(301px);
+}
