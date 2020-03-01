@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://1914k.github.io/"/>
-  <updated>2020-02-29T04:41:24.219Z</updated>
+  <updated>2020-03-01T10:07:58.803Z</updated>
   <id>http://1914k.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue 实例的生命周期</title>
+    <link href="http://1914k.github.io/2020/03/01/Vue%E5%AE%9E%E4%BE%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    <id>http://1914k.github.io/2020/03/01/Vue%E5%AE%9E%E4%BE%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</id>
+    <published>2020-03-01T06:56:12.000Z</published>
+    <updated>2020-03-01T10:07:58.803Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;什么是生命周期&quot;&gt;&lt;a href=&quot;#什么是生命周期&quot; class=&quot;headerlink&quot; title=&quot;什么是生命周期&quot;&gt;&lt;/a&gt;什么是&lt;em&gt;&lt;a href=&quot;https://cn.vuejs.org/v2/guide/instance.html#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%BE%E7%A4%BA&quot; target=&quot;_blank&quot; rel=&quot;noopener external nofollow noreferrer&quot;&gt;生命周期&lt;/a&gt;&lt;/em&gt;&lt;/h2&gt;&lt;p&gt;Vue 从实例的创建、运行到销毁，都要经过一系列的过程，这些过程其过程中发生的事件就叫做生命周期，就像听起来一样，它记录了 Vue 实例由创建到销毁的整个过程。
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="http://1914k.github.io/categories/Vue/"/>
+    
+    
+      <category term="Vue" scheme="http://1914k.github.io/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>Vuex简介</title>

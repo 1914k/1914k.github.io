@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Vue 实例的生命周期</title>
+    <url>/2020/03/01/Vue%E5%AE%9E%E4%BE%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</url>
+    <content><![CDATA[<h2 id="什么是生命周期"><a href="#什么是生命周期" class="headerlink" title="什么是生命周期"></a>什么是<em><a href="https://cn.vuejs.org/v2/guide/instance.html#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%BE%E7%A4%BA" target="_blank" rel="noopener external nofollow noreferrer">生命周期</a></em></h2><p>Vue 从实例的创建、运行到销毁，都要经过一系列的过程，这些过程其过程中发生的事件就叫做生命周期，就像听起来一样，它记录了 Vue 实例由创建到销毁的整个过程。  <a id="more"></a></p>
+<h2 id="生命周期钩子"><a href="#生命周期钩子" class="headerlink" title="生命周期钩子"></a><em>生命周期钩子</em></h2><p><a href="https://cn.vuejs.org/v2/guide/instance.html#%E5%AE%9E%E4%BE%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90" target="_blank" rel="noopener external nofollow noreferrer">生命周期钩</a>是记录 Vue 实例生命周期中所发生的一些初始化的过程的函数，也叫生命周期事件、生命周期函数，例如 <code>created</code>、<code>mounted</code>、<code>updated</code> 和 <code>destroyed</code>等，这些生命周期钩子在 Vue 实例生命周期的不同阶段被调用，我们可以通过它们在 Vue 实例的不同阶段进行操作。  </p>
+<h2 id="Vue-实例的生命周期函数分类"><a href="#Vue-实例的生命周期函数分类" class="headerlink" title="Vue 实例的生命周期函数分类"></a>Vue 实例的生命周期函数分类</h2><p>我们可以根据生命周期函数的不同，把生命周期函数分为三类：</p>
+<ol>
+<li><p>创建期间的生命周期函数：</p>
+<ul>
+<li><p>beforeCreate: 实例完全创建出来之前会调用它，此时刚在内存中创建出实例，还没有初始化好 date 和 methods 属性，我们此时无法调用 data 和 methods 里的数据和方法\</p>
+<p><img src="/images/artic/lifecycle/img-1.png" alt="截图"><br><img src="/images/artic/lifecycle/img-2.png" alt="截图"></p>
+</li>
+<li><p>created： 实例已经创建完毕，date 和 methods 属性也初始化完毕,但是还没开始编译模板；</p>
+</li>
+<li><p>beforeMount： 已经完成了模板的编译，但是没有挂载到页面中</p>
+</li>
+<li><p>mounted: 已经将编译好了的模板挂载到了页面上</p>
+</li>
+</ul>
+</li>
+<li><p>运行期间的生命周期函数：</p>
+<ul>
+<li>beforeUpdate： 此时 data 中的数据已经是更新完了的，但还没有重新开始渲染 DOM 中的节点，所以页面上显示的还是旧的数据</li>
+<li>updated： 此时 data 和 界面上的数据都更新完毕，界面也重新渲染完毕。</li>
+</ul>
+</li>
+<li><p>销毁期间的生命周期函数：</p>
+<ul>
+<li>beforeDestroy：实例销毁之前调用，此时实例还可以完全使用。</li>
+<li>destroyed： 实例销毁后调用，调用后 Vue 实例上所有的数据状态和事件都会解除绑定或被移除，所有的子例也都会被销毁。</li>
+</ul>
+</li>
+</ol>
+<p><img src="/images/artic/lifecycle/lifecycle.jpg" alt="截图"></p>
+]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vuex简介</title>
     <url>/2020/02/27/Vuex%E7%AE%80%E4%BB%8B/</url>
     <content><![CDATA[<p>Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式，按我的理解就是就是一个监控全局状态的一个库，储存在这个库里的数据变化了，各个组件在使用时都会同步变化，省去了组件间反复交错传值的麻烦,即储存在 Vuex 里的数据是响应式的。</p>
