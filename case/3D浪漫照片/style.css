@@ -15,13 +15,12 @@ body {
 	-ms-transition: none !important;
 	-o-transition: none !important;
   transition: none !important;
-  position: absolute;
 }
 .main-3d {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50vh;
+  height: 60vh;
   transform-style: preserve-3d;
 }
 
