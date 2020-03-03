@@ -9,27 +9,27 @@
 <ol>
 <li><p>创建期间的生命周期函数：</p>
 <ul>
-<li><p>beforeCreate: 实例完全创建出来之前会调用它，此时刚在内存中创建出实例，还没有初始化好 date 和 methods 属性，我们此时无法调用 data 和 methods 里的数据和方法\</p>
+<li><p><em>beforeCreate（创建前）</em>: 实例完全创建出来之前会调用它，此时刚在内存中创建出实例，还没有初始化好 date 和 methods 属性，我们此时无法调用 data 和 methods 里的数据和方法</p>
 <p><img src="/images/artic/lifecycle/img-1.png" alt="截图"><br><img src="/images/artic/lifecycle/img-2.png" alt="截图"></p>
 </li>
-<li><p>created： 实例已经创建完毕，date 和 methods 属性也初始化完毕,但是还没开始编译模板；</p>
+<li><p><em>created（创建后）</em>： 实例已经创建完毕，date 和 methods 属性也初始化完毕,但是 el还未初始化，还没开始编译模板；</p>
 </li>
-<li><p>beforeMount： 已经完成了模板的编译，但是没有挂载到页面中</p>
+<li><p><em>beforeMount（挂载前）</em>： 已经完成了模板的编译，把 data 里面的数据和模板生成 html，但是还没有挂载到页面中；</p>
 </li>
-<li><p>mounted: 已经将编译好了的模板挂载到了页面上</p>
+<li><p><em>mounted（挂载后）</em>: 已经将编译好了的模板的 html 内容替换 el 属性指向的 DOM 对象，把模板中的 html 渲染到真实地 html 页面中；</p>
 </li>
 </ul>
 </li>
 <li><p>运行期间的生命周期函数：</p>
 <ul>
-<li>beforeUpdate： 此时 data 中的数据已经是更新完了的，但还没有重新开始渲染 DOM 中的节点，所以页面上显示的还是旧的数据</li>
-<li>updated： 此时 data 和 界面上的数据都更新完毕，界面也重新渲染完毕。</li>
+<li><em>beforeUpdate（更新前）</em>： 此时 data 中的数据已经是更新完了的，但还没有重新开始渲染 DOM 中的节点，所以页面上显示的还是旧的数据</li>
+<li><em>updated（更新后）</em>： 此时 data 和 界面上的数据都更新完毕，界面也重新渲染完毕。应该避免在此期间更改状态，因为这可能会导致更新无限循环；</li>
 </ul>
 </li>
 <li><p>销毁期间的生命周期函数：</p>
 <ul>
-<li>beforeDestroy：实例销毁之前调用，此时实例还可以完全使用。</li>
-<li>destroyed： 实例销毁后调用，调用后 Vue 实例上所有的数据状态和事件都会解除绑定或被移除，所有的子例也都会被销毁。</li>
+<li><em>beforeDestroy（销毁前）</em>：实例销毁之前调用，此时实例还可以完全使用；</li>
+<li><em>destroyed（销毁后）</em>： 实例销毁后调用，调用后 Vue 实例上所有的数据状态和事件都会解除绑定或被移除，所有的子实例也都会被销毁。</li>
 </ul>
 </li>
 </ol>
@@ -104,7 +104,7 @@
 </ol>
 </blockquote>
 <h2 id="3-Vue中时如何检测数组变化的？"><a href="#3-Vue中时如何检测数组变化的？" class="headerlink" title="3.Vue中时如何检测数组变化的？"></a>3.Vue中时如何检测数组变化的？</h2><blockquote>
-<h3 id="理解：-1"><a href="#理解：-1" class="headerlink" title="理解："></a>理解：</h3><p>使用函数劫持的方式，重写数组的方法<br>Vue 将 data 中的数组进行了原型链上的重写，指向了自己定义的数组原型方法，这样当调用数组 API 时，可以通知依赖更新，如果数组中包含引用类型，会对引用类型再次进行监控。</p>
+<h3 id="理解：-1"><a href="#理解：-1" class="headerlink" title="理解："></a>理解：</h3><p>使用函数劫持的方式，重写数组的方法。<br>Vue 将 data 中的数组进行了原型链上的重写，指向了自己定义的数组原型方法，这样当调用数组 API 时，可以通知依赖更新，如果数组中包含引用类型，会对引用类型再次进行监控。</p>
 <h3 id="原理：-1"><a href="#原理：-1" class="headerlink" title="原理："></a>原理：</h3><p><img src="/images/artic/Vue-mst-1-5/%E6%95%B0%E7%BB%84%E5%93%8D%E5%BA%94%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%8E%9F%E7%90%86.png" alt="截图">  </p>
 </blockquote>
 <h2 id="4-为何-Vue-采用异步渲染？"><a href="#4-为何-Vue-采用异步渲染？" class="headerlink" title="4.为何 Vue 采用异步渲染？"></a>4.为何 Vue 采用异步渲染？</h2><blockquote>
@@ -112,7 +112,7 @@
 <h3 id="原理：-2"><a href="#原理：-2" class="headerlink" title="原理："></a>原理：</h3><p><img src="/images/artic/Vue-mst-1-5/%E4%B8%BA%E4%BD%95%E5%BC%82%E6%AD%A5%E6%B8%B2%E6%9F%93.png" alt="截图"></p>
 </blockquote>
 <h2 id="5-nextTick-实现原理"><a href="#5-nextTick-实现原理" class="headerlink" title="5.nextTick 实现原理"></a>5.nextTick 实现原理</h2><blockquote>
-<h3 id="理解：-3"><a href="#理解：-3" class="headerlink" title="理解："></a>理解：</h3><p>nextTick 方法主要是使用了宏任务和微任务，定义了一个异步方法，多次调用 nextTick 会将方法存入队列中，通过这个异步方法清空当前队列，所以这个 nextTick 方法就是异步方法</p>
+<h3 id="理解：-3"><a href="#理解：-3" class="headerlink" title="理解："></a>理解：</h3><p>nextTick 方法主要是使用了宏任务和微任务，定义了一个异步方法，多次调用 nextTick 会将方法存入队列中，通过这个异步方法清空当前队列，所以这个 nextTick 方法就是异步方法。</p>
 <h3 id="原理：-3"><a href="#原理：-3" class="headerlink" title="原理："></a>原理：</h3><p><img src="/images/artic/Vue-mst-1-5/nextTick%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90.png" alt="截图"></p>
 </blockquote>
 <h2 id="6-Vue-中-Computed-的特点"><a href="#6-Vue-中-Computed-的特点" class="headerlink" title="6. Vue 中 Computed 的特点"></a>6. Vue 中 Computed 的特点</h2><blockquote>
@@ -136,7 +136,7 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> baseSalary = <span class="number">3000</span>;</span><br><span class="line"><span class="keyword">let</span> overtime = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">let</span> rate = <span class="number">22</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getWage</span>(<span class="params">babaseSalary, overtime, rate</span>) </span>&#123;</span><br><span class="line"> <span class="keyword">return</span> babaseSalary + (overtime * rate);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>而面向对象的编程方式是：</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> employee = &#123;</span><br><span class="line"> baseSalary: <span class="number">3000</span>,</span><br><span class="line"> overtime: <span class="number">10</span>,</span><br><span class="line"> rate: <span class="number">22</span>,</span><br><span class="line"> getWage: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">this</span>.baseSalary + (<span class="keyword">this</span>.overtime * <span class="keyword">this</span>.rate);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;;</span><br><span class="line">employee.getWage();</span><br></pre></td></tr></table></figure>
-<p><code>baseSalary</code>,<code>overtime</code> 和 <code>rate</code> 是 &gt;employee 的属性， <code>getWage</code> 是 employee 的&gt;方法。面向过程的编程方式的特点的函数具有多个&gt;参数，而面向对象的方法所需要的参数会越来越&gt;少，使用和维护起来也更容易，这也是一种简单的&gt;封装。</p>
+<p><code>baseSalary</code>,<code>overtime</code> 和 <code>rate</code> 是 employee 对象的属性， <code>getWage</code> 是 employee 对象的方法。面向过程的编程方式的特点的函数具有多个参数，而面向对象的方法所需要的参数会越来越少，使用和维护起来也更容易，这也是一种简单的封装。</p>
 </blockquote>
 <h3 id="抽象-Abstraction"><a href="#抽象-Abstraction" class="headerlink" title="抽象 Abstraction"></a>抽象 Abstraction</h3><blockquote>
 <p>我们把对象的一些复杂的属性和方法隐藏起来，只对外暴露一些简单的属性和方法。这样可以使对象的接口更简单，因为使用具有几个属性和方法的对象比具有多个属性和方法的对象要容易；而且有助于我们减少变化的影响，因为我们没有任何代码让别人在对象之外接触到我们隐藏的方法。</p>
@@ -145,10 +145,10 @@
 <p>继承是一种机制，可以减少程序的冗余代码。例如我们的文本框、下拉列表、复选框等HTML元素都有很多相同的属性和方法，如果我们每个元素都重新定义多有这些属性和方法，就有很多多余代码。所以我们可以只在通用对象中定义一次，然后让其他元素继承这个元素。</p>
 </blockquote>
 <h3 id="多态-Polymorphism"><a href="#多态-Polymorphism" class="headerlink" title="多态 Polymorphism"></a>多态 Polymorphism</h3><blockquote>
-<p>多态是一种技术，它可以让我们摆脱冗长的if/else 或 switch/case 语句。不同的元素在页面上有不同的渲染方式，如果使用面向过程的方式呈现多个HTML元素，我们可能会使用很多 if/else 或者 switch/case，例如：  </p>
+<p>多态是一种技术，它可以让我们摆脱冗长的 <code>if/else</code> 或 <code>switch/case</code> 语句。不同的元素在页面上有不同的渲染方式，如果使用面向过程的方式呈现多个HTML元素，我们可能会使用很多 <code>if/else</code> 或者 <code>switch/case</code>，例如：  </p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">switch</span> (...) &#123;</span><br><span class="line"> <span class="keyword">case</span> <span class="string">'select'</span>: renderSelect();</span><br><span class="line"> <span class="keyword">case</span> <span class="string">'text'</span>: renderTextBox();</span><br><span class="line"> <span class="keyword">case</span> <span class="string">'checkbox'</span>: renderCheckBox();</span><br><span class="line"> <span class="keyword">case</span> ...</span><br><span class="line"> <span class="keyword">case</span> ...</span><br><span class="line"> <span class="keyword">case</span> ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>但是在 OOP 中，我们可以在每个对象中实现一个渲染方法，渲染方法会根据引用的对象的类型不同而不同，使用如下简化代码 </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">element.render()</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">element.render()</span><br></pre></td></tr></table></figure>
 </blockquote>
 <h2 id="面向对象编程的好处"><a href="#面向对象编程的好处" class="headerlink" title="面向对象编程的好处"></a>面向对象编程的好处</h2><ul>
 <li>使用封装重新组合相关变量和函数， 减少复杂性，使我们在不同的地方重复使用这些对象。</li>
@@ -160,7 +160,7 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> circle = &#123;&#125;;</span><br></pre></td></tr></table></figure>
 <p>这里的大括号表示创建一个对象，我们在大括号内加入的键值对就是这个对象的属性，如果是函数，我们可以称为方法。例如以下的 radius 和 location 就是属性，draw 就是方法。<em>属性是用来保存值的，而方法或函数是用来定义一些逻辑的</em>。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> circle = &#123;</span><br><span class="line">  radius: <span class="number">1</span>,</span><br><span class="line">  location: &#123;</span><br><span class="line">    x: <span class="number">1</span>,</span><br><span class="line">    y: <span class="number">1</span></span><br><span class="line">  &#125;,</span><br><span class="line">  draw: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'draw'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>我们可以通过点语法调用对象的属性或方法，对象创建语法是一种简单的定义对象的方法，如果我们需要创建其他的几个拥有一些相同属性或方法的对象，我们可能会通过 Ctrl + V 来复制之前的代码，但是这样容易出错，同时如果以后要改这些相同的属性或方法也非常麻烦，因为我们复制了多少份就得改多少个地方，所以对象创建语法不是好的复制对象的方法。如果对象中有多个方法，我们就说对象具有行为性，因为可以干多个不同的事，所以我们可以通过<em>工厂函数<em>（factory）和</em>构造函数</em> （constructor）创建对象来解决这个问题。</p>
+<p>我们可以通过点语法调用对象的属性或方法，对象创建语法是一种简单的定义对象的方法，如果我们需要创建其他的几个拥有一些相同属性或方法的对象，我们可能会通过 <kbd>Ctrl</kbd> + <kbd>V</kbd> 来复制之前的代码，但是这样容易出错，同时如果以后要改这些相同的属性或方法也非常麻烦，因为我们复制了多少份就得改多少个地方，所以对象创建语法不是好的复制对象的方法。如果对象中有多个方法，我们就说对象具有行为性，因为可以干多个不同的事，所以我们可以通过<em>工厂函数<em>（factory）和</em>构造函数</em> （constructor）创建对象来解决这个问题。</p>
 <h2 id="工厂函数"><a href="#工厂函数" class="headerlink" title="工厂函数"></a>工厂函数</h2><p>ES6新特性，如果键和值的名字一样，我们可以去除多余的代码，只写一个键或者值</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createCircle</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">		radius, </span><br><span class="line">		draw: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(<span class="string">'draw'</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> circle = createCircle(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
 <p>我们可以通过调用上面的工厂函数来创建一个新的 cirlce 对象。</p>
@@ -170,8 +170,9 @@
 <ol>
 <li>首先 new 操作符创建了一个空对象</li>
 <li>然后设置this指向这个对象</li>
-<li>最后它从函数返回这个对象<br>此时 this 指向我们创建的 Circle 对象：<br><img src="/images/artic/OPP-1/img-01.png" alt="截图"></li>
+<li>最后它从函数返回这个对象</li>
 </ol>
+<p>此时 this 指向我们创建的 Circle 对象：<br><img src="/images/artic/OPP-1/img-01.png" alt="截图"></p>
 <p>默认情况下 this 会指向全局对象，如果在浏览器环境运行，全局对象就是 window 对象，如果在 node.js 环境运行，全局对象就是 global 。如果我们删除 new 操作符：</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Circle</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'this'</span>,<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">this</span>.radius = radius;</span><br><span class="line">  <span class="keyword">this</span>.draw = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'draw'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> another = Circle(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
 <p>this 就会指向 window 对象：<br><img src="/images/artic/OPP-1/img-02.png" alt="截图"></p>
@@ -248,14 +249,13 @@ Person 没有 say() 方法，但是，我们通过 prototype 给 Person 的原�
   <entry>
     <title>3D浪漫照片</title>
     <url>/2020/02/14/3D%E6%B5%AA%E6%BC%AB%E7%85%A7%E7%89%87/</url>
-    <content><![CDATA[<p>在哔哩哔哩上看到一个3D浪漫相册的前端小项目，就试着做了出来，请点击<a href="/case">这里</a>跳转  </p>
+    <content><![CDATA[<p>在哔哩哔哩上看到一个3D浪漫相册的前端小项目，就试着做了出来，请点击<a href="/case/3D浪漫照片">这里</a>跳转  </p>
 ]]></content>
   </entry>
   <entry>
     <title>Markdown语法</title>
     <url>/2020/02/13/Markdown%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="什么是-Markdown-？"><a href="#什么是-Markdown-？" class="headerlink" title="什么是 Markdown ？"></a>什么是 Markdown ？</h2><a id="more"></a>
-<p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，Markown 编写的文档后缀名为 <code>.md</code> 或者 <code>.markdown</code>。Markdown 被广泛应在在各种文档的编写上，还能被用来编写电子书，或者用于论坛上发表消息，我们平时写博客也都使用 Markdown 语言。  </p>
+    <content><![CDATA[<h2 id="什么是-Markdown-？"><a href="#什么是-Markdown-？" class="headerlink" title="什么是 Markdown ？"></a>什么是 Markdown ？</h2><p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，Markown 编写的文档后缀名为 <code>.md</code> 或者 <code>.markdown</code>。Markdown 被广泛应在在各种文档的编写上，还能被用来编写电子书，或者用于论坛上发表消息，我们平时写博客也都使用 Markdown 语言。<a id="more"></a>  </p>
 <hr>
 <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>Markdown 标题有两种格式<br>1.使用 <code>=</code> 和 <code>-</code> 标记一级标题和二级标题   </p>
 <blockquote>

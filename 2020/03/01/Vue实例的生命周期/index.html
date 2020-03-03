@@ -57,7 +57,7 @@
 <meta property="og:image" content="http://1914k.github.io/images/artic/lifecycle/img-2.png">
 <meta property="og:image" content="http://1914k.github.io/images/artic/lifecycle/lifecycle.jpg">
 <meta property="article:published_time" content="2020-03-01T06:56:12.000Z">
-<meta property="article:modified_time" content="2020-03-01T10:07:58.803Z">
+<meta property="article:modified_time" content="2020-03-03T07:51:44.292Z">
 <meta property="article:author" content="石头">
 <meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
@@ -250,10 +250,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-03-01 14:56:12 / 修改时间：18:07:58" itemprop="dateCreated datePublished" datetime="2020-03-01T14:56:12+08:00">2020-03-01</time>
+              <time title="创建时间：2020-03-01 14:56:12" itemprop="dateCreated datePublished" datetime="2020-03-01T14:56:12+08:00">2020-03-01</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-03-03 15:51:44" itemprop="dateModified" datetime="2020-03-03T15:51:44+08:00">2020-03-03</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -300,7 +306,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>700</span>
+              <span>836</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -325,27 +331,27 @@
 <ol>
 <li><p>创建期间的生命周期函数：</p>
 <ul>
-<li><p>beforeCreate: 实例完全创建出来之前会调用它，此时刚在内存中创建出实例，还没有初始化好 date 和 methods 属性，我们此时无法调用 data 和 methods 里的数据和方法\</p>
+<li><p><em>beforeCreate（创建前）</em>: 实例完全创建出来之前会调用它，此时刚在内存中创建出实例，还没有初始化好 date 和 methods 属性，我们此时无法调用 data 和 methods 里的数据和方法</p>
 <p><img src="/images/artic/lifecycle/img-1.png" alt="截图"><br><img src="/images/artic/lifecycle/img-2.png" alt="截图"></p>
 </li>
-<li><p>created： 实例已经创建完毕，date 和 methods 属性也初始化完毕,但是还没开始编译模板；</p>
+<li><p><em>created（创建后）</em>： 实例已经创建完毕，date 和 methods 属性也初始化完毕,但是 el还未初始化，还没开始编译模板；</p>
 </li>
-<li><p>beforeMount： 已经完成了模板的编译，但是没有挂载到页面中</p>
+<li><p><em>beforeMount（挂载前）</em>： 已经完成了模板的编译，把 data 里面的数据和模板生成 html，但是还没有挂载到页面中；</p>
 </li>
-<li><p>mounted: 已经将编译好了的模板挂载到了页面上</p>
+<li><p><em>mounted（挂载后）</em>: 已经将编译好了的模板的 html 内容替换 el 属性指向的 DOM 对象，把模板中的 html 渲染到真实地 html 页面中；</p>
 </li>
 </ul>
 </li>
 <li><p>运行期间的生命周期函数：</p>
 <ul>
-<li>beforeUpdate： 此时 data 中的数据已经是更新完了的，但还没有重新开始渲染 DOM 中的节点，所以页面上显示的还是旧的数据</li>
-<li>updated： 此时 data 和 界面上的数据都更新完毕，界面也重新渲染完毕。</li>
+<li><em>beforeUpdate（更新前）</em>： 此时 data 中的数据已经是更新完了的，但还没有重新开始渲染 DOM 中的节点，所以页面上显示的还是旧的数据</li>
+<li><em>updated（更新后）</em>： 此时 data 和 界面上的数据都更新完毕，界面也重新渲染完毕。应该避免在此期间更改状态，因为这可能会导致更新无限循环；</li>
 </ul>
 </li>
 <li><p>销毁期间的生命周期函数：</p>
 <ul>
-<li>beforeDestroy：实例销毁之前调用，此时实例还可以完全使用。</li>
-<li>destroyed： 实例销毁后调用，调用后 Vue 实例上所有的数据状态和事件都会解除绑定或被移除，所有的子例也都会被销毁。</li>
+<li><em>beforeDestroy（销毁前）</em>：实例销毁之前调用，此时实例还可以完全使用；</li>
+<li><em>destroyed（销毁后）</em>： 实例销毁后调用，调用后 Vue 实例上所有的数据状态和事件都会解除绑定或被移除，所有的子实例也都会被销毁。</li>
 </ul>
 </li>
 </ol>
