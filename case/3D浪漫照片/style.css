@@ -6,9 +6,6 @@ html, body {
   box-sizing: border-box;
 }
 
-body {
-  background-color: #2f3542;
-}
 .notrans {
   -webkit-transition: none !important;
 	-moz-transition: none !important;
@@ -96,7 +93,7 @@ body {
   background-size: cover;
   background-position: center center;
   position: absolute;
-  opacity: 0.3;  
+  opacity: 0.5;  
   top: calc(50% - 100px);
   left: calc(50% - 100px);
   /* transition: width 2s linear, height 2s linear, top 2s linear, left 2s linear, opacity 2s linear; */

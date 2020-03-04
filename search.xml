@@ -247,12 +247,6 @@ Person 没有 say() 方法，但是，我们通过 prototype 给 Person 的原�
       </tags>
   </entry>
   <entry>
-    <title>3D浪漫照片</title>
-    <url>/2020/02/14/3D%E6%B5%AA%E6%BC%AB%E7%85%A7%E7%89%87/</url>
-    <content><![CDATA[<p>在哔哩哔哩上看到一个3D浪漫相册的前端小项目，就试着做了出来，请点击<a href="/case/3D浪漫照片">这里</a>跳转  </p>
-]]></content>
-  </entry>
-  <entry>
     <title>Markdown语法</title>
     <url>/2020/02/13/Markdown%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<h2 id="什么是-Markdown-？"><a href="#什么是-Markdown-？" class="headerlink" title="什么是 Markdown ？"></a>什么是 Markdown ？</h2><p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，Markown 编写的文档后缀名为 <code>.md</code> 或者 <code>.markdown</code>。Markdown 被广泛应在在各种文档的编写上，还能被用来编写电子书，或者用于论坛上发表消息，我们平时写博客也都使用 Markdown 语言。<a id="more"></a>  </p>
