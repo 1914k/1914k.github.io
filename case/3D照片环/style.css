@@ -1,0 +1,30 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.stage{
+  height: 400px;
+}
+.stage .unit{
+  width: 800px;
+  height: 400px;
+  position: relative;
+  transform-style:preserve-3d;
+   transition:all 0.5s ease 0s;
+}
+.stage .unit ul{
+  list-style: none;
+}
+.stage .unit ul li{
+  position: absolute;
+  left: 300px;
+  top: 135px;
+}
+.stage .unit ul li img {
+  width: 200px;
+  height: 200px;
+}
+input{
+  position: relative;
+  z-index: 999;
+}
