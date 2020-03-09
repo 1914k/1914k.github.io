@@ -1,0 +1,35 @@
+.circle-room {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background: rgb(12, 162, 182);
+}
+.clrcle-body {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  transform-style: preserve-3d;
+  transform: perspective(500px) rotateX(60deg) rotateY(30deg);
+}
+
+.clrcle-body span {
+  position: absolute;
+  display: block;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+  border-radius: 50%;
+  transform: translateZ(-100px);
+  animation: animate-span 3s ease-in-out infinite;
+}
+
+@keyframes animate-span {
+  0%,100%{
+    transform: translateZ(-100px);
+  }
+  50% {
+    transform: translateZ(100px);
+  }
+}

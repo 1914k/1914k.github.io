@@ -53,11 +53,14 @@
 <meta property="og:site_name" content="顽石不语">
 <meta property="og:description" content="给定一个 n × n 的二维矩阵表示一个图像。将图像顺时针旋转 90 度。 说明： 你必须在原地旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要使用另一个矩阵来旋转图像。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://1914k.github.io/images/artic/LeetCode01/img-01.png">
+<meta property="og:image" content="http://1914k.github.io/images/artic/LeetCode01/img-02.png">
 <meta property="article:published_time" content="2020-03-03T13:28:13.000Z">
-<meta property="article:modified_time" content="2020-03-05T14:35:54.795Z">
+<meta property="article:modified_time" content="2020-03-09T04:54:54.939Z">
 <meta property="article:author" content="石头">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://1914k.github.io/images/artic/LeetCode01/img-01.png">
 
 <link rel="canonical" href="http://1914k.github.io/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F/">
 
@@ -259,7 +262,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-05 22:35:54" itemprop="dateModified" datetime="2020-03-05T22:35:54+08:00">2020-03-05</time>
+                <time title="修改时间：2020-03-09 12:54:54" itemprop="dateModified" datetime="2020-03-09T12:54:54+08:00">2020-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -313,7 +316,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>613</span>
+              <span>827</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -337,17 +340,11 @@
 <p>你必须在原地旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要使用另一个矩阵来旋转图像。</p>
 <a id="more"></a>
 <p>示例 1:</p>
-<p>给定 matrix =</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[  </span><br><span class="line">  [1,2,3],  </span><br><span class="line">  [4,5,6],  </span><br><span class="line">  [7,8,9]  </span><br><span class="line">],</span><br></pre></td></tr></table></figure>
-<p>原地旋转输入矩阵，使其变为: </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[  </span><br><span class="line">  [7,4,1],  </span><br><span class="line">  [8,5,2],  </span><br><span class="line">  [9,6,3]  </span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">给定 matrix &#x3D;</span><br><span class="line">[          </span><br><span class="line">  [1,2,3],  </span><br><span class="line">  [4,5,6],  </span><br><span class="line">  [7,8,9]  </span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">原地旋转输入矩阵，使其变为: </span><br><span class="line">[  </span><br><span class="line">  [7,4,1],  </span><br><span class="line">  [8,5,2],  </span><br><span class="line">  [9,6,3]  </span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 <p>示例 2:</p>
-<p>给定 matrix = </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[  </span><br><span class="line">  [ 5, 1, 9,11],  </span><br><span class="line">  [ 2, 4, 8,10],  </span><br><span class="line">  [13, 3, 6, 7],  </span><br><span class="line">  [15,14,12,16]  </span><br><span class="line">],</span><br></pre></td></tr></table></figure>
-<p>原地旋转输入矩阵，使其变为:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[  </span><br><span class="line">  [15,13, 2, 5],  </span><br><span class="line">  [14, 3, 4, 1],  </span><br><span class="line">  [12, 6, 8, 9],  </span><br><span class="line">  [16, 7,10,11]  </span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> rotate = <span class="function"><span class="keyword">function</span>(<span class="params">matrix</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> count = matrix.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> c = count - <span class="number">1</span>; c &gt;= <span class="number">0</span>; c--)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(matrix[c]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i  = <span class="number">0</span>; i &lt; count; i++)&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(matrix[c][i]);</span><br><span class="line">            matrix[i].push(matrix[c][i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> c = <span class="number">0</span>; c &lt; count; c++)&#123;</span><br><span class="line">        matrix[c].splice(<span class="number">0</span>,count);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> matrix;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">给定 matrix &#x3D; </span><br><span class="line">[  </span><br><span class="line">  [ 5, 1, 9,11],  </span><br><span class="line">  [ 2, 4, 8,10],  </span><br><span class="line">  [13, 3, 6, 7],  </span><br><span class="line">  [15,14,12,16]  </span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">原地旋转输入矩阵，使其变为:</span><br><span class="line">[  </span><br><span class="line">  [15,13, 2, 5],  </span><br><span class="line">  [14, 3, 4, 1],  </span><br><span class="line">  [12, 6, 8, 9],  </span><br><span class="line">  [16, 7,10,11]  </span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>要实现数组图像的旋转我们可以看做是把数组的第一行变成最后一列，第二行变成倒数第二列，依次类推…<br><img src="/images/artic/LeetCode01/img-01.png" alt="截图"><br>但是题目规定要在原数组内修改，所以我们可以在每一行的后面加上对应的列，最后再删除前面的原数组对应的列，就得到我们旋转过后的图像。<br><img src="/images/artic/LeetCode01/img-02.png" alt="截图">4</p>
+<h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[][]&#125;</span> <span class="variable">matrix</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;void&#125;</span> </span>Do not return anything, modify matrix in-place instead.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> rotate = <span class="function"><span class="keyword">function</span>(<span class="params">matrix</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> count = matrix.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> c = count - <span class="number">1</span>; c &gt;= <span class="number">0</span>; c--)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i  = <span class="number">0</span>; i &lt; count; i++)&#123;</span><br><span class="line">            matrix[i].push(matrix[c][i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> c = <span class="number">0</span>; c &lt; count; c++)&#123;</span><br><span class="line">        matrix[c].splice(<span class="number">0</span>,count);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> matrix;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -467,7 +464,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#解法"><span class="nav-number">1.</span> <span class="nav-text">解法</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">1.</span> <span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解法"><span class="nav-number">1.1.</span> <span class="nav-text">解法</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -578,7 +575,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">15k</span>
+    <span title="站点总字数">16k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
