@@ -3,7 +3,6 @@
   --blue-deep-color: #10a6ce;
   --border-style: 2px solid #000;
 }
-
 .box {
   margin: 50px
 }
@@ -27,6 +26,7 @@
   background-color: #fff;
   width: 265px;
   height: 195px;
+  border: var(--border-style);
   border-radius: 150px;
   top: 80px;
   left: 27.5px;
@@ -39,7 +39,6 @@
   height: 86px;
   top: -43px;
   left: 53.5px;
-  animation: eyes 3s linear infinite;
 }
 
 .left-eye {
@@ -66,8 +65,9 @@
   position: absolute;
   width: 46px;
   height: 16px;
-  top: 46px;
+  top: 50px;
   left: 56px;
+  animation: eyes 3s linear infinite;
 }
 
 .left-eye-ball {
@@ -85,6 +85,34 @@
   height: 14px;
   border-radius: 7px;
   background-color: #000;
+}
+
+.face:hover .eye-ball{
+  animation: none;
+}
+
+.face:hover .left-eye-ball {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 2px;
+  left: -20px;
+  background-color: #fff;
+  border-right: 5px solid #000;
+  border-bottom: 5px solid #000; 
+  border-radius: 0 0 60px 0;
+}
+
+.face:hover .right-eye-ball {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 2px;
+  right: -20px;
+  background-color: #fff;
+  border-left: 5px solid #000;
+  border-bottom: 5px solid #000; 
+  border-radius: 0 0 0 60px;
 }
 
 .nose {
@@ -150,12 +178,18 @@
   border-radius: 120px;
 }
 
+.face:hover .mouth{
+  width: 200px;
+  left: 32.5px;
+  border-radius: 50px 50px 120px 120px;
+}
+
 .line {
   position: relative;
   width: 3px;
   height: 100px;
   top: 100px;
-  left: 108.5px;
+  left: calc(50% - 1.5px);
   background-color: #000;
 }
 
@@ -340,15 +374,15 @@
 
 @keyframes eyes {
   0%,100%{
-    transform: translate(0px);
+    transform: translate(0px, 0px);
   }
   25% {
-    transform: translate(30px);
+    transform: translate(0px, -30px);
   }
   50% {
-    transform: translate(0px);
+    transform: translate(0px, 0px);
   }
   75% {
-    transform: translate(0px);
+    transform: translate(0px, 0px);
   }
 }
