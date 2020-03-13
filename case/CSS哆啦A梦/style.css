@@ -1,5 +1,7 @@
 :root {
-  --blue-color: #07bbee; 
+  --blue-light-color: #07bbee; 
+  --blue-deep-color: #10a6ce;
+  --border-style: 2px solid #000;
 }
 
 .box {
@@ -8,15 +10,15 @@
 
 .doraemon {
   position: relative;
-  top: 50%;
-  left: 50%;
+  left: calc(50% - 162px);
 }
 .head {
   position: relative;
   width: 320px;
   height: 300px;
-  background-color: var(--blue-color);
-  border: 1px solid #000;
+  background-color: var(--blue-light-color);
+  background: linear-gradient(var(--blue-light-color), 20%, var(--blue-deep-color));
+  border: var(--border-style);
   border-radius: 150px;
 }
 
@@ -28,6 +30,7 @@
   border-radius: 150px;
   top: 80px;
   left: 27.5px;
+  z-index: 2;
 }
 
 .eyes {
@@ -36,13 +39,14 @@
   height: 86px;
   top: -43px;
   left: 53.5px;
+  animation: eyes 3s linear infinite;
 }
 
 .left-eye {
   position: absolute;
   box-sizing: border-box;
   background-color: #fff;
-  border: 2px solid #000;
+  border: var(--border-style);
   width: 79px;
   height: 86px;
   border-radius: 43px;
@@ -51,7 +55,7 @@
   position: absolute;
   box-sizing: border-box;
   background-color: #fff;
-  border: 2px solid #000;
+  border: var(--border-style);
   right: 0;
   width: 79px;
   height: 86px;
@@ -88,8 +92,263 @@
   width: 30px;
   height: 30px;
   background-color: #c03300;
-  border: 2px solid #000;
+  border: var(--border-style);
   border-radius: 15px;
   top: -60px;
   left: 115px;
+}
+
+.beard {
+  position: relative;
+  width: 230px;
+  height: 63px;
+  left: 17.5px;
+  top: -60px;
+}
+
+.left-beard {
+  position: absolute;
+  height: 100%;
+  width: 60px;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.right-beard {
+  position: absolute;
+  right: 0;
+  width: 60px;
+  height: 100%;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.beard li {
+  list-style: none;
+  width: 100%;
+  height: 3px;
+  margin: 9px 0 18px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.left-beard li:first-child,.right-beard li:last-child {
+  transform: rotate(20deg);
+}
+
+.left-beard li:last-child,.right-beard li:first-child {
+  transform: rotate(-20deg);
+}
+
+.mouth {
+  position: relative;
+  width: 220px;
+  height: 200px;
+  left: 22.5px;
+  top: -223px;
+  border-bottom: 3px solid #000;
+  border-radius: 120px;
+}
+
+.line {
+  position: relative;
+  width: 3px;
+  height: 100px;
+  top: 100px;
+  left: 108.5px;
+  background-color: #000;
+}
+
+.nectlet {
+  position: relative;
+  width: 234px;
+  height: 24px;
+  background: linear-gradient(#c40,#800400);
+  background: -webkit-linear-gradient(#c40,#800400);
+  border: var(--border-style);
+  border-radius: 10px;
+  top: -40px;
+  left: 45px;
+  z-index: 2;
+}
+
+.bell {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  top: 8px;
+  left: 95px;
+  border: var(--border-style);
+  border-radius: 50%;
+  background: linear-gradient(#f9f12a,#a9a100);
+  background: -webkit-linear-gradient(#f9f12a,#a9a100);
+}
+
+.bell-line {
+  position: relative;
+  width: 36px;
+  height: 2px;
+  background: #f9f12a;
+  border: var(--border-style);
+  border-radius: 3px 3px 0 0;
+  top: 10px;
+}
+
+.bell-point {
+  position: relative;
+  width: 12px;
+  height: 10px;
+  border-radius: 5px;
+  background: #000;
+  top: 15px;
+  left: calc(50% - 6px);
+}
+
+.bell-down {
+  position: relative;
+  width: 4px;
+  height: 10px;
+  background: #000;
+  top: 15px;
+  left: calc(50% - 2px);
+}
+
+.body {
+  position: relative;
+  width: 220px;
+  height: 165px;
+  top: -42px;
+  left: 51px;
+  background-color: var(--blue-light-color);
+  background: linear-gradient(var(--blue-light-color), 20%, var(--blue-deep-color));
+  border: var(--border-style);
+  z-index: 1;
+}
+
+.tummy {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  border: var(--border-style);
+  border-radius: 50%;
+  background: #fff;
+  top: -35px;
+  left: calc(50% - 85px)
+}
+
+.pocket {
+  position: relative;
+  width: 130px;
+  height: 65px;
+  border: var(--border-style);
+  border-radius: 0 0 65px 65px;
+  top: 80px;
+  left: calc(50% - 65px)
+}
+
+.left-hand {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 274px;
+}
+
+.arm {
+  position: relative;
+  width: 80px;
+  height: 50px;
+  background-color: var(--blue-light-color);
+  background: linear-gradient(var(--blue-light-color), 20%, var(--blue-deep-color));
+  border: var(--border-style);
+  top: 20px;
+  left: -5px;
+  transform: rotate(-45deg);
+}
+
+.circle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border: var(--border-style);
+  border-radius: 50%;
+  background: #fff;
+  top: 2px;
+  left: -36px;
+}
+
+.hid {
+  position: absolute;
+  width: 8px;
+  height: 40px;
+  background-color: #0dacd8;
+  top: 10px;
+  left: 48px;
+  z-index: 1;
+}
+
+.right-hand {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 274px;
+  left: 224px;
+}
+
+.right-hand .arm {
+  left: 22px;
+  transform: rotate(45deg);
+}
+
+.right-hand .circle {
+  top: 2px;
+  left: 72px;
+}
+
+.foots {
+  position: relative;
+  width: 280px;
+  height: 40px;
+  top: -54px;
+  left: 26px;
+  z-index: 2;
+}
+
+.foot {
+  position: absolute;
+  width: 125px;
+  height: 30px;
+  background: #fff;
+  border: var(--border-style);
+  border-radius: 25px 15px 15px 5px;
+  bottom: 0;
+}
+
+.right-foot {
+  right: 12px;
+}
+
+.foot-hid {
+  position: relative;
+  width: 20px;
+  height: 10px;
+  border: var(--border-style);
+  border-radius: 40px 40px 5px 0;
+  border-bottom: none;
+  left: 125px;
+  background: #fff;
+}
+
+@keyframes eyes {
+  0%,100%{
+    transform: translate(0px);
+  }
+  25% {
+    transform: translate(30px);
+  }
+  50% {
+    transform: translate(0px);
+  }
+  75% {
+    transform: translate(0px);
+  }
 }

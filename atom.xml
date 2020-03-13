@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>顽石不语</title>
+  <icon>http://1914k.github.io/icon.png</icon>
+  <subtitle>努力很容易，坚持很难</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://1914k.github.io/"/>
+  <updated>2020-03-11T04:34:30.374Z</updated>
+  <id>http://1914k.github.io/</id>
+  
+  <author>
+    <name>石头</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode-旋转图像</title>
+    <link href="http://1914k.github.io/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%20copy/"/>
+    <id>http://1914k.github.io/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%20copy/</id>
+    <published>2020-03-03T13:28:13.000Z</published>
+    <updated>2020-03-11T04:34:30.374Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;旋转图像&quot;&gt;&lt;a href=&quot;#旋转图像&quot; class=&quot;headerlink&quot; title=&quot;旋转图像&quot;&gt;&lt;/a&gt;旋转图像&lt;/h2&gt;&lt;p&gt;给定一个 n × n 的二维矩阵表示一个图像。将图像顺时针旋转 90 度。&lt;/p&gt;
+&lt;p&gt;说明：&lt;/p&gt;
+&lt;p&gt;你必须在原地旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要使用另一个矩阵来旋转图像。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="http://1914k.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="JS" scheme="http://1914k.github.io/categories/%E7%AE%97%E6%B3%95/JS/"/>
+    
+    
+      <category term="算法" scheme="http://1914k.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode-有效的数独</title>
+    <link href="http://1914k.github.io/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/"/>
+    <id>http://1914k.github.io/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/</id>
+    <published>2020-03-03T13:28:13.000Z</published>
+    <updated>2020-03-11T06:35:57.532Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;有效的数独&quot;&gt;&lt;a href=&quot;#有效的数独&quot; class=&quot;headerlink&quot; title=&quot;有效的数独&quot;&gt;&lt;/a&gt;有效的数独&lt;/h2&gt;&lt;p&gt;判断一个 9x9 的数独是否有效。只需要根据以下规则，验证已经填入的数字是否有效即可。&lt;/p&gt;
+&lt;p&gt;数字 1-9 在每一行只能出现一次。&lt;br&gt;数字 1-9 在每一列只能出现一次。&lt;br&gt;数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="http://1914k.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="JS" scheme="http://1914k.github.io/categories/%E7%AE%97%E6%B3%95/JS/"/>
+    
+    
+      <category term="算法" scheme="http://1914k.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue 实例的生命周期</title>
+    <link href="http://1914k.github.io/2020/03/01/Vue%E5%AE%9E%E4%BE%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    <id>http://1914k.github.io/2020/03/01/Vue%E5%AE%9E%E4%BE%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</id>
+    <published>2020-03-01T06:56:12.000Z</published>
+    <updated>2020-03-03T07:51:44.292Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;什么是生命周期&quot;&gt;&lt;a href=&quot;#什么是生命周期&quot; class=&quot;headerlink&quot; title=&quot;什么是生命周期&quot;&gt;&lt;/a&gt;什么是&lt;em&gt;&lt;a href=&quot;https://cn.vuejs.org/v2/guide/instance.html#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%BE%E7%A4%BA&quot; target=&quot;_blank&quot; rel=&quot;noopener external nofollow noreferrer&quot;&gt;生命周期&lt;/a&gt;&lt;/em&gt;&lt;/h2&gt;&lt;p&gt;Vue 从实例的创建、运行到销毁，都要经过一系列的过程，这些过程其过程中发生的事件就叫做生命周期，就像听起来一样，它记录了 Vue 实例由创建到销毁的整个过程。
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="http://1914k.github.io/categories/Vue/"/>
+    
+    
+      <category term="Vue" scheme="http://1914k.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vuex简介</title>
+    <link href="http://1914k.github.io/2020/02/27/Vuex%E7%AE%80%E4%BB%8B/"/>
+    <id>http://1914k.github.io/2020/02/27/Vuex%E7%AE%80%E4%BB%8B/</id>
+    <published>2020-02-27T12:40:46.000Z</published>
+    <updated>2020-02-29T04:41:24.219Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式，按我的理解就是就是一个监控全局状态的一个库，储存在这个库里的数据变化了，各个组件在使用时都会同步变化，省去了组件间反复交错传值的麻烦,即储存在 Vuex 里的数据是响应式的。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="http://1914k.github.io/categories/Vue/"/>
+    
+    
+      <category term="Vue" scheme="http://1914k.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue 面试题 1-5</title>
+    <link href="http://1914k.github.io/2020/02/23/Vue-%E9%9D%A2%E8%AF%95%E9%A2%98-1-5/"/>
+    <id>http://1914k.github.io/2020/02/23/Vue-%E9%9D%A2%E8%AF%95%E9%A2%98-1-5/</id>
+    <published>2020-02-23T13:59:34.000Z</published>
+    <updated>2020-03-03T07:55:34.250Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-MVVM-原理的理解&quot;&gt;&lt;a href=&quot;#1-MVVM-原理的理解&quot; class=&quot;headerlink&quot; title=&quot;1.MVVM 原理的理解&quot;&gt;&lt;/a&gt;1.MVVM 原理的理解&lt;/h2&gt;&lt;p&gt;传统的架构模型是 MVC，即 &lt;code&gt;Model - View - Controller&lt;/code&gt;，是用户操作会请求服务端路由，路由会调用对应的控制器来处理，控制器会获取数据，将结果返回给前端，页面重新渲染。
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="http://1914k.github.io/categories/Vue/"/>
+    
+    
+      <category term="Vue" scheme="http://1914k.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OOP 面对对象编程</title>
+    <link href="http://1914k.github.io/2020/02/21/OOP-%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/"/>
+    <id>http://1914k.github.io/2020/02/21/OOP-%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/</id>
+    <published>2020-02-21T11:19:16.000Z</published>
+    <updated>2020-03-03T08:02:48.198Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;OOP 是一种编程范式，或者一种编程风格，围绕着对象而不是函数展开，很多你感兴趣的框架实际上都是基于 OOP 设计的。面向对象编程可以使你的代码更加简洁、优雅，避免你一遍遍地复制和粘贴代码行。
+    
+    </summary>
+    
+    
+      <category term="OPP面对对象" scheme="http://1914k.github.io/categories/OPP%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1/"/>
+    
+    
+      <category term="OPP面对对象" scheme="http://1914k.github.io/tags/OPP%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1/"/>
+    
+      <category term="JS" scheme="http://1914k.github.io/tags/JS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端面试题一</title>
+    <link href="http://1914k.github.io/2020/02/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B8%80/"/>
+    <id>http://1914k.github.io/2020/02/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B8%80/</id>
+    <published>2020-02-20T03:57:49.000Z</published>
+    <updated>2020-02-27T03:33:31.596Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-call-和-apply-的区别？&quot;&gt;&lt;a href=&quot;#1-call-和-apply-的区别？&quot; class=&quot;headerlink&quot; title=&quot;1. call 和 apply 的区别？&quot;&gt;&lt;/a&gt;1. call 和 apply 的区别？&lt;/h2&gt;&lt;p&gt;call 和 apply 都可以改变 this 的指向，如下，都是把 B 的 this 指向 A，即使用的是 A 的方法。&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;A.call(B, argument1， argument2, ...);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;A.apply(B, [argument1， argument2, ...]);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="web前端" scheme="http://1914k.github.io/categories/web%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="JS" scheme="http://1914k.github.io/tags/JS/"/>
+    
+      <category term="web前端" scheme="http://1914k.github.io/tags/web%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown语法</title>
+    <link href="http://1914k.github.io/2020/02/13/Markdown%E8%AF%AD%E6%B3%95/"/>
+    <id>http://1914k.github.io/2020/02/13/Markdown%E8%AF%AD%E6%B3%95/</id>
+    <published>2020-02-13T01:14:31.000Z</published>
+    <updated>2020-03-03T08:38:01.413Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;什么是-Markdown-？&quot;&gt;&lt;a href=&quot;#什么是-Markdown-？&quot; class=&quot;headerlink&quot; title=&quot;什么是 Markdown ？&quot;&gt;&lt;/a&gt;什么是 Markdown ？&lt;/h2&gt;&lt;p&gt;Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，Markown 编写的文档后缀名为 &lt;code&gt;.md&lt;/code&gt; 或者 &lt;code&gt;.markdown&lt;/code&gt;。Markdown 被广泛应在在各种文档的编写上，还能被用来编写电子书，或者用于论坛上发表消息，我们平时写博客也都使用 Markdown 语言。
+    
+    </summary>
+    
+    
+    
+      <category term="MrakDown" scheme="http://1914k.github.io/tags/MrakDown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 Hexo + GitHub 搭建自己的个人博客</title>
+    <link href="http://1914k.github.io/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://1914k.github.io/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</id>
+    <published>2020-02-12T04:14:31.000Z</published>
+    <updated>2020-02-26T14:43:36.102Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用 Hexo + GitHub 免费搭建自己的个人博客，平时当做自己学习记笔记的地方，也可以锻炼自己写博客和编程的能力  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Hexo" scheme="http://1914k.github.io/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://1914k.github.io/tags/Hexo/"/>
+    
+      <category term="博客" scheme="http://1914k.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+</feed>
