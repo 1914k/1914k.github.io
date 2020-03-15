@@ -27,6 +27,7 @@
   /* direction: rtl; */
   padding: 0 10px;
   box-sizing: border-box;
+  text-align: right;
 }
 
 .focus {
@@ -34,19 +35,25 @@
   width: 1px;
   height: 53px;
   top: 70px;
+  right: 10px;
   background: #009aee;
 }
 
 #one {
   position: absolute;
   display: block;
+  width: 380px;
   top: 70px;
+  height: 52px;
   font-size: 40px;
+  word-break: break-all;
+  overflow: hidden;
 }
 
 #two {
   position: absolute;
   display: block;
+  width: 380px;
   top: 122px;
   color: #a6a6a6;
 }
@@ -83,6 +90,7 @@
 .box-del img {
   margin: auto;
 }
+
 .no {
   border: none;
 }
