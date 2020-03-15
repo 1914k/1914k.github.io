@@ -74,9 +74,14 @@
   line-height: 92px;
 }
 
-.del img {
-  position: relative;
-  top: 5px;
+.box-del {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-del img {
+  margin: auto;
 }
 .no {
   border: none;
