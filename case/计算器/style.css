@@ -1,0 +1,102 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.box  {
+  position: relative;
+  background: #57eafe;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.box-room {
+  position: relative;
+  width: 400px;
+  height: 700px;
+  background: rgb(245, 239, 239);
+  border: 1px solid rgb(129, 132, 133);
+  border-collapse: collapses;
+  font-size: 25px;
+}
+
+.box-view {
+  width: 400px;
+  height: 200px;
+  /* direction: rtl; */
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.focus {
+  position: absolute;
+  width: 1px;
+  height: 53px;
+  top: 70px;
+  background: #009aee;
+}
+
+#one {
+  position: absolute;
+  display: block;
+  top: 70px;
+  font-size: 40px;
+}
+
+#two {
+  position: absolute;
+  display: block;
+  top: 122px;
+  color: #a6a6a6;
+}
+
+.box-btn {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn-item {
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgb(200, 204, 204);
+  text-align: center;
+  line-height: 100px;
+}
+
+.box-cle,.division,.multi,.del,.sub,.inc {
+  color: rgb(41, 187, 231)
+}
+
+.division {
+  font-size: 36px;
+  line-height: 92px;
+}
+
+.del img {
+  position: relative;
+  top: 5px;
+}
+.no {
+  border: none;
+}
+
+.eq {
+  position: absolute;
+  height: 200px;
+  bottom: 0;
+  right: 0;
+  line-height: 200px;
+  background: #29bbe7;
+  color: #fff;
+  border: none;
+}
+
+.btn-item:hover {
+  background: #d0d0d0;
+}
+
+.eq:hover {
+  background: #009aee;
+}
