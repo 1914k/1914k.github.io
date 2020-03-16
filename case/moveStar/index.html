@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>动态星空</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
+  <div id="app">
+    <div class="stars">
+      <div class="star" v-for="(item,index) in starCount" ref="star"></div>
+    </div>
+  </div>
+
+ 
+  <script> 
+    var app = new Vue({
+      el: "#app",
+      data:{
+        starCount: 3000, //星星数量
+        distance: 800   //间距
+      },
+      mounted() {
+        let _this = this;
+        let starArr = this.$refs.star;
+        console.log(starArr);
+        starArr.forEach(item => {
+          let speed = 0.2 +(Math.random() * 1);
+
+          let thisDistance = _this.distance + (Math.random() * 300);
+
+          item.style.transformOrigin = `0 0 ${thisDistance}px`;
+          item.style.transform = `translate3d(0, 0, -${thisDistance}px)
+                                  rotateY(${(Math.random() * 360)}deg)
+                                  rotateX(${(Math.random() * -50)}deg)
+                                  scale(${speed},${speed})` 
+        })
+      }
+    })
+  </script>
+</body>
+</html>
