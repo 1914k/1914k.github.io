@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://1914k.github.io/"/>
-  <updated>2020-03-11T06:35:57.532Z</updated>
+  <updated>2020-03-21T11:54:15.158Z</updated>
   <id>http://1914k.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Promise 用法笔记</title>
+    <link href="http://1914k.github.io/2020/03/20/Promise-%E7%94%A8%E6%B3%95%E7%AC%94%E8%AE%B0/"/>
+    <id>http://1914k.github.io/2020/03/20/Promise-%E7%94%A8%E6%B3%95%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-03-20T15:06:44.000Z</published>
+    <updated>2020-03-21T11:54:15.158Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;em&gt;Promise&lt;/em&gt; 之前搞懂几次又忘记了，这次看了一篇写的很通俗易懂的 Promise 博文，所以记录下来。&lt;/p&gt;
+&lt;p&gt;Promise 是异步编程的一种解决方案，比传统的解决方案——回调函数和事件——更合理和更强大。ES6 规定，Promise对象是一个构造函数，用来生成Promise实例。Promise 里面保存着某个未来才会结束的事件(通常是一个异步操作)，会在 promise 结束时返回事件的结果。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="JS" scheme="http://1914k.github.io/tags/JS/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode-有效的数独</title>
