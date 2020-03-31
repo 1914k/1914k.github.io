@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://1914k.github.io/"/>
-  <updated>2020-03-21T11:55:26.129Z</updated>
+  <updated>2020-03-31T14:16:53.482Z</updated>
   <id>http://1914k.github.io/</id>
   
   <author>
@@ -17,11 +17,62 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>前端跨域的处理方式</title>
+    <link href="http://1914k.github.io/2020/03/31/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/"/>
+    <id>http://1914k.github.io/2020/03/31/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/</id>
+    <published>2020-03-31T13:48:08.000Z</published>
+    <updated>2020-03-31T14:16:53.482Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;什么是跨域&quot;&gt;&lt;a href=&quot;#什么是跨域&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="web前端" scheme="http://1914k.github.io/tags/web%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="跨域" scheme="http://1914k.github.io/tags/%E8%B7%A8%E5%9F%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>set 和 map</title>
+    <link href="http://1914k.github.io/2020/03/27/set%20%E5%92%8C%20map/"/>
+    <id>http://1914k.github.io/2020/03/27/set%20%E5%92%8C%20map/</id>
+    <published>2020-03-27T08:08:13.000Z</published>
+    <updated>2020-03-31T14:04:55.603Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Map 和 Set 是 ES6 标准新增的数据类型 &lt;/p&gt;
+&lt;h3 id=&quot;set&quot;&gt;&lt;a href=&quot;#set&quot; class=&quot;headerlink&quot; title=&quot;set&quot;&gt;&lt;/a&gt;set&lt;/h3&gt;&lt;p&gt;set 类似于数组，但是成员是唯一的。&lt;br&gt;要创建一个Set，需要提供一个Array作为输入，或者直接创建一个空Set：&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="JS" scheme="http://1914k.github.io/categories/JS/"/>
+    
+      <category term="ES6" scheme="http://1914k.github.io/categories/JS/ES6/"/>
+    
+    
+      <category term="ES6" scheme="http://1914k.github.io/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Promise 用法笔记</title>
     <link href="http://1914k.github.io/2020/03/20/Promise-%E7%94%A8%E6%B3%95%E7%AC%94%E8%AE%B0/"/>
     <id>http://1914k.github.io/2020/03/20/Promise-%E7%94%A8%E6%B3%95%E7%AC%94%E8%AE%B0/</id>
     <published>2020-03-20T15:06:44.000Z</published>
-    <updated>2020-03-21T11:55:26.129Z</updated>
+    <updated>2020-03-25T12:21:23.196Z</updated>
     
     <summary type="html">
     
@@ -37,17 +88,16 @@
   </entry>
   
   <entry>
-    <title>LeetCode-旋转图像</title>
-    <link href="http://1914k.github.io/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%20copy/"/>
-    <id>http://1914k.github.io/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%20copy/</id>
+    <title>LeetCode-有效的数独</title>
+    <link href="http://1914k.github.io/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/"/>
+    <id>http://1914k.github.io/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/</id>
     <published>2020-03-03T13:28:13.000Z</published>
-    <updated>2020-03-11T04:34:30.374Z</updated>
+    <updated>2020-03-11T06:35:57.532Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;旋转图像&quot;&gt;&lt;a href=&quot;#旋转图像&quot; class=&quot;headerlink&quot; title=&quot;旋转图像&quot;&gt;&lt;/a&gt;旋转图像&lt;/h2&gt;&lt;p&gt;给定一个 n × n 的二维矩阵表示一个图像。将图像顺时针旋转 90 度。&lt;/p&gt;
-&lt;p&gt;说明：&lt;/p&gt;
-&lt;p&gt;你必须在原地旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要使用另一个矩阵来旋转图像。&lt;/p&gt;
+      &lt;h2 id=&quot;有效的数独&quot;&gt;&lt;a href=&quot;#有效的数独&quot; class=&quot;headerlink&quot; title=&quot;有效的数独&quot;&gt;&lt;/a&gt;有效的数独&lt;/h2&gt;&lt;p&gt;判断一个 9x9 的数独是否有效。只需要根据以下规则，验证已经填入的数字是否有效即可。&lt;/p&gt;
+&lt;p&gt;数字 1-9 在每一行只能出现一次。&lt;br&gt;数字 1-9 在每一列只能出现一次。&lt;br&gt;数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。&lt;/p&gt;
     
     </summary>
     
@@ -62,16 +112,17 @@
   </entry>
   
   <entry>
-    <title>LeetCode-有效的数独</title>
-    <link href="http://1914k.github.io/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/"/>
-    <id>http://1914k.github.io/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/</id>
+    <title>LeetCode-旋转图像</title>
+    <link href="http://1914k.github.io/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%20copy/"/>
+    <id>http://1914k.github.io/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%20copy/</id>
     <published>2020-03-03T13:28:13.000Z</published>
-    <updated>2020-03-11T06:35:57.532Z</updated>
+    <updated>2020-03-11T04:34:30.374Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;有效的数独&quot;&gt;&lt;a href=&quot;#有效的数独&quot; class=&quot;headerlink&quot; title=&quot;有效的数独&quot;&gt;&lt;/a&gt;有效的数独&lt;/h2&gt;&lt;p&gt;判断一个 9x9 的数独是否有效。只需要根据以下规则，验证已经填入的数字是否有效即可。&lt;/p&gt;
-&lt;p&gt;数字 1-9 在每一行只能出现一次。&lt;br&gt;数字 1-9 在每一列只能出现一次。&lt;br&gt;数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。&lt;/p&gt;
+      &lt;h2 id=&quot;旋转图像&quot;&gt;&lt;a href=&quot;#旋转图像&quot; class=&quot;headerlink&quot; title=&quot;旋转图像&quot;&gt;&lt;/a&gt;旋转图像&lt;/h2&gt;&lt;p&gt;给定一个 n × n 的二维矩阵表示一个图像。将图像顺时针旋转 90 度。&lt;/p&gt;
+&lt;p&gt;说明：&lt;/p&gt;
+&lt;p&gt;你必须在原地旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要使用另一个矩阵来旋转图像。&lt;/p&gt;
     
     </summary>
     
@@ -200,7 +251,7 @@
     <link href="http://1914k.github.io/2020/02/13/Markdown%E8%AF%AD%E6%B3%95/"/>
     <id>http://1914k.github.io/2020/02/13/Markdown%E8%AF%AD%E6%B3%95/</id>
     <published>2020-02-13T01:14:31.000Z</published>
-    <updated>2020-03-03T08:38:01.413Z</updated>
+    <updated>2020-03-31T14:22:40.065Z</updated>
     
     <summary type="html">
     
@@ -219,7 +270,7 @@
     <link href="http://1914k.github.io/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
     <id>http://1914k.github.io/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</id>
     <published>2020-02-12T04:14:31.000Z</published>
-    <updated>2020-02-26T14:43:36.102Z</updated>
+    <updated>2020-03-31T14:24:15.563Z</updated>
     
     <summary type="html">
     

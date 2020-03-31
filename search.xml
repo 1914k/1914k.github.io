@@ -1,6 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>前端跨域的处理方式</title>
+    <url>/2020/03/31/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域"></a>什么是跨域</h2><p>当一个请求url的<strong>协议</strong>、<strong>域名</strong>、<strong>端口</strong>三者之间任意一个与当前页面url不同即为跨域</p>
+<table>
+<thead>
+<tr>
+<th align="left">当前页面 URL</th>
+<th align="left">被请求页面 URL</th>
+<th align="center">是否跨域</th>
+<th align="left">原因</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="http://www.test.com/" target="_blank" rel="noopener external nofollow noreferrer">http://www.test.com/</a></td>
+<td align="left"><a href="http://www.test.com/index.html" target="_blank" rel="noopener external nofollow noreferrer">http://www.test.com/index.html</a></td>
+<td align="center">否</td>
+<td align="left">同源（协议、域名、端口号相同</td>
+</tr>
+<tr>
+<td align="left"><a href="http://www.test.com/" target="_blank" rel="noopener external nofollow noreferrer">http://www.test.com/</a></td>
+<td align="left"><a href="https://www.test.com/index.html" target="_blank" rel="noopener external nofollow noreferrer">https://www.test.com/index.html</a></td>
+<td align="center">跨域</td>
+<td align="left">协议不同（http/https</td>
+</tr>
+<tr>
+<td align="left"><a href="http://www.test.com/" target="_blank" rel="noopener external nofollow noreferrer">http://www.test.com/</a></td>
+<td align="left"><a href="http://www.baidu.com/" target="_blank" rel="noopener external nofollow noreferrer">http://www.baidu.com/</a></td>
+<td align="center">跨域</td>
+<td align="left">主域名不同（test/baidu）</td>
+</tr>
+<tr>
+<td align="left"><a href="http://www.test.com/" target="_blank" rel="noopener external nofollow noreferrer">http://www.test.com/</a></td>
+<td align="left"><a href="http://blog.test.com/" target="_blank" rel="noopener external nofollow noreferrer">http://blog.test.com/</a></td>
+<td align="center">跨域</td>
+<td align="left">子域名不同（www/blog）</td>
+</tr>
+<tr>
+<td align="left"><a href="http://www.test.com:8080/" target="_blank" rel="noopener external nofollow noreferrer">http://www.test.com:8080/</a></td>
+<td align="left"><a href="http://www.test.com:7001/" target="_blank" rel="noopener external nofollow noreferrer">http://www.test.com:7001/</a></td>
+<td align="center">跨域</td>
+<td align="left">端口号不同（8080/7001）</td>
+</tr>
+</tbody></table>
+]]></content>
+      <tags>
+        <tag>web前端</tag>
+        <tag>跨域</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>set 和 map</title>
+    <url>/2020/03/27/set%20%E5%92%8C%20map/</url>
+    <content><![CDATA[<p>Map 和 Set 是 ES6 标准新增的数据类型 </p>
+<h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><p>set 类似于数组，但是成员是唯一的。<br>要创建一个Set，需要提供一个Array作为输入，或者直接创建一个空Set：</p>
+<a id="more"></a>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> s = <span class="keyword">new</span> <span class="built_in">Set</span>();  </span><br><span class="line"><span class="keyword">const</span> s1 = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]);</span><br><span class="line"><span class="comment">//可以链式调用</span></span><br><span class="line">s.add(<span class="number">1</span>).add(<span class="number">2</span>).add(<span class="number">3</span>).add(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//此时 s 的值是[1,2,3];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//可用于数组去重</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">435</span>,<span class="number">7</span>,<span class="number">7</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">8</span>,<span class="number">8</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">9</span>,<span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> arr1 = <span class="keyword">new</span> <span class="built_in">Set</span>(arr);</span><br><span class="line"><span class="comment">//上述写法 arr1 是 Set 类型，可以用扩展运算符 ... 转换为数组类型</span></span><br><span class="line"><span class="keyword">var</span> arr1 = [...new <span class="built_in">Set</span>(arr)];</span><br></pre></td></tr></table></figure>
+
+<p>通过add(key)方法可以添加元素到Set中，可以重复添加，但不会有效果:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">s.add(<span class="number">4</span>);</span><br><span class="line">s; <span class="comment">// Set &#123;1, 2, 3, 4&#125;</span></span><br><span class="line">s.add(<span class="number">4</span>);</span><br><span class="line">s; <span class="comment">// 仍然是 Set &#123;1, 2, 3, 4&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>通过delete(key)方法可以删除元素：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</span><br><span class="line">s; <span class="comment">// Set &#123;1, 2, 3&#125;</span></span><br><span class="line">s.delete(<span class="number">3</span>);</span><br><span class="line">s; <span class="comment">// Set &#123;1, 2&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>map 类似于对象,是一组键值对的结构，具有极快的查找速度。<br>举个例子，假设要根据同学的名字查找对应的成绩，如果用 Array 实现，需要两个 Array：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> names = [<span class="string">'小明'</span>, <span class="string">'小红'</span>, <span class="string">'小刚'</span>];</span><br><span class="line"><span class="keyword">var</span> scores = [<span class="number">65</span>, <span class="number">74</span>, <span class="number">85</span>];</span><br></pre></td></tr></table></figure>
+<p>给定一个名字，要查找对应的成绩，就先要在names中找到对应的位置，再从scores取出对应的成绩，Array 越长，耗时越长。<br>但是，如果用 Map 实现，只需要一个 “姓名” - “成绩” 的对照表，直接根据名字查找成绩，无论这个表有多大，查找速度都不会变。如下是一个 Map;</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> m = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="string">'小明'</span>,<span class="number">65</span>],[<span class="string">'小红'</span>,<span class="number">74</span>],[<span class="string">'小刚'</span>,<span class="number">85</span>]]);</span><br><span class="line">m.get(<span class="string">'小明'</span>);</span><br><span class="line"><span class="comment">// 就会得到小明的成绩 65</span></span><br></pre></td></tr></table></figure>
+
+<p>初始化Map需要一个二维数组，或者直接初始化一个空Map。Map具有以下方法：<br>set、has、get、delete  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> m = <span class="keyword">new</span> <span class="built_in">Map</span>(); <span class="comment">// 空Map</span></span><br><span class="line">m.set(<span class="string">'小明'</span>, <span class="number">67</span>); <span class="comment">// 添加新的key-value</span></span><br><span class="line">m.set(<span class="string">'小红'</span>, <span class="number">59</span>);</span><br><span class="line">m.has(<span class="string">'小明'</span>); <span class="comment">// 是否存在key '小明': true</span></span><br><span class="line">m.get(<span class="string">'小明'</span>); <span class="comment">// 67</span></span><br><span class="line">m.delete(<span class="string">'小明'</span>); <span class="comment">// 删除key '小明'</span></span><br><span class="line">m.get(<span class="string">'小明'</span>); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>由于一个key只能对应一个value，所以，多次对一个key放入value，后面的值会把前面的值冲掉：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> m = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">m.set(<span class="string">'小明'</span>, <span class="number">67</span>);</span><br><span class="line">m.set(<span class="string">'小明'</span>, <span class="number">88</span>);</span><br><span class="line">m.get(<span class="string">'小明'</span>); <span class="comment">// 88</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>JS</category>
+        <category>ES6</category>
+      </categories>
+      <tags>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Promise 用法笔记</title>
     <url>/2020/03/20/Promise-%E7%94%A8%E6%B3%95%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p><em>Promise</em> 之前搞懂几次又忘记了，这次看了一篇写的很通俗易懂的 Promise 博文，所以记录下来。</p>
@@ -65,35 +147,13 @@
 <p>下面是一个例子，如果指定时间内没有获得结果，就将 Promise 的状态变为reject，否则变为resolve。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 设定 5 秒超时</span></span><br><span class="line">timeout = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      reject(<span class="string">'请求超时！'</span>);</span><br><span class="line">  &#125;, <span class="number">5000</span>);</span><br><span class="line">  <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 请求</span></span><br><span class="line">requist = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">res, err</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 数据请求等异步操作</span></span><br><span class="line">      resolve(res);</span><br><span class="line">  <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.race([timeout(), requist()]);</span><br><span class="line">       .then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="built_in">console</span>.log</span><br><span class="line">        &#125;)</span><br><span class="line">       .catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="built_in">console</span>.error</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
 <p>上面代码中，如果 5 秒之内数据请求无法返回结果，变量 p 的状态就会变为 rejected，从而触发 catch 方法指定的回调函数。</p>
-<h3 id="文字推荐"><a href="#文字推荐" class="headerlink" title="文字推荐"></a>文字推荐</h3><ol>
+<h3 id="文章推荐"><a href="#文章推荐" class="headerlink" title="文章推荐"></a>文章推荐</h3><ol>
 <li><a href="https://es6.ruanyifeng.com/?search=promise&x=6&y=11#docs/promise" target="_blank" rel="noopener external nofollow noreferrer">ES6 Promise 对象</a></li>
-<li><a href="https://blog.csdn.net/qq_34645412/article/details/81170576" target="_blank" rel="noopener external nofollow noreferrer">ES6 Promise用法小结</a></li>
+<li><a href="https://blog.csdn.net/qq_34645412/article/details/81170576" target="_blank" rel="noopener external nofollow noreferrer">ES6 Promise用法小结</a>         </li>
 </ol>
 ]]></content>
       <tags>
         <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode-旋转图像</title>
-    <url>/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%20copy/</url>
-    <content><![CDATA[<h2 id="旋转图像"><a href="#旋转图像" class="headerlink" title="旋转图像"></a>旋转图像</h2><p>给定一个 n × n 的二维矩阵表示一个图像。将图像顺时针旋转 90 度。</p>
-<p>说明：</p>
-<p>你必须在原地旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要使用另一个矩阵来旋转图像。</p>
-<a id="more"></a>
-<p>示例 1:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定 matrix &#x3D;</span><br><span class="line">[          </span><br><span class="line">  [1,2,3],  </span><br><span class="line">  [4,5,6],  </span><br><span class="line">  [7,8,9]  </span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">原地旋转输入矩阵，使其变为: </span><br><span class="line">[  </span><br><span class="line">  [7,4,1],  </span><br><span class="line">  [8,5,2],  </span><br><span class="line">  [9,6,3]  </span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<p>示例 2:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定 matrix &#x3D; </span><br><span class="line">[  </span><br><span class="line">  [ 5, 1, 9,11],  </span><br><span class="line">  [ 2, 4, 8,10],  </span><br><span class="line">  [13, 3, 6, 7],  </span><br><span class="line">  [15,14,12,16]  </span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">原地旋转输入矩阵，使其变为:</span><br><span class="line">[  </span><br><span class="line">  [15,13, 2, 5],  </span><br><span class="line">  [14, 3, 4, 1],  </span><br><span class="line">  [12, 6, 8, 9],  </span><br><span class="line">  [16, 7,10,11]  </span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>要实现数组图像的旋转我们可以看做是把数组的第一行变成最后一列，第二行变成倒数第二列，依次类推…<br><img src="/images/artic/LeetCode/01/img-01.png" alt="截图"><br>但是题目规定要在原数组内修改，所以我们可以在每一行的后面加上对应的列，最后再删除前面的原数组对应的列，就得到我们旋转过后的图像。<br><img src="/images/artic/LeetCode/01/img-02.png" alt="截图">4</p>
-<h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[][]&#125;</span> <span class="variable">matrix</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;void&#125;</span> </span>Do not return anything, modify matrix in-place instead.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> rotate = <span class="function"><span class="keyword">function</span>(<span class="params">matrix</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> count = matrix.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> c = count - <span class="number">1</span>; c &gt;= <span class="number">0</span>; c--)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i  = <span class="number">0</span>; i &lt; count; i++)&#123;</span><br><span class="line">            matrix[i].push(matrix[c][i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> c = <span class="number">0</span>; c &lt; count; c++)&#123;</span><br><span class="line">        matrix[c].splice(<span class="number">0</span>,count);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> matrix;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>算法</category>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -146,6 +206,28 @@
 <p>这时我们行、列和小宫格都判断完了，如果没有重复的我们就 <code>return true</code>。由于 sort 会改变原数组的排列，所以我定义了三个新的数组用于行、列和小宫格的判断。</p>
 </blockquote>
 <h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;character[][]&#125;</span> <span class="variable">board</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> isValidSudoku = <span class="function"><span class="keyword">function</span>(<span class="params">board</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> arr1 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(board));</span><br><span class="line">	<span class="keyword">var</span> arr2 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(board));</span><br><span class="line">	<span class="keyword">var</span> arr3 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(board));</span><br><span class="line">    <span class="comment">// 检查行</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++)&#123;</span><br><span class="line">    	<span class="keyword">var</span> a = arr1[i];</span><br><span class="line">    	a.sort();</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">8</span>; a[j]*<span class="number">1</span>; j--)&#123;</span><br><span class="line">    		<span class="keyword">if</span>(a[j] === a[j<span class="number">-1</span>])&#123;</span><br><span class="line">    			<span class="comment">// console.log(a);</span></span><br><span class="line">    			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    		&#125;</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 检查列   </span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++)&#123;</span><br><span class="line">    	<span class="keyword">var</span> b = [];</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="number">9</span>; j++)&#123;</span><br><span class="line">    		b.push(arr2[j][i]);</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="comment">// console.log(b);</span></span><br><span class="line">    	b.sort();</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">8</span>; b[j]*<span class="number">1</span>; j--)&#123;</span><br><span class="line">    		<span class="keyword">if</span>(b[j] === b[j<span class="number">-1</span>])&#123;</span><br><span class="line">    			<span class="comment">// console.log(b);</span></span><br><span class="line">    			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    		&#125;</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 检查九宫格</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i+=<span class="number">3</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> ii = i + <span class="number">3</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="number">9</span>; j+=<span class="number">3</span>)&#123;</span><br><span class="line">            <span class="keyword">var</span> jj = j + <span class="number">3</span>;</span><br><span class="line">            <span class="keyword">var</span> c = [];</span><br><span class="line">            <span class="keyword">for</span>(i; i &lt; ii; i++)&#123;</span><br><span class="line">                <span class="keyword">for</span>(j; j &lt; jj; j++)&#123;</span><br><span class="line">                    c.push(arr3[i][j]);</span><br><span class="line">                &#125;</span><br><span class="line">                j = jj - <span class="number">3</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// console.log(i);</span></span><br><span class="line">            i = ii - <span class="number">3</span>;</span><br><span class="line">            <span class="comment">// console.log(c);</span></span><br><span class="line">            c.sort();</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> k = <span class="number">8</span>; c[k]*<span class="number">1</span>; k--)&#123;</span><br><span class="line">                <span class="keyword">if</span>(c[k] === c[k<span class="number">-1</span>])&#123;</span><br><span class="line">                    <span class="comment">// console.log(c);</span></span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>算法</category>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode-旋转图像</title>
+    <url>/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%20copy/</url>
+    <content><![CDATA[<h2 id="旋转图像"><a href="#旋转图像" class="headerlink" title="旋转图像"></a>旋转图像</h2><p>给定一个 n × n 的二维矩阵表示一个图像。将图像顺时针旋转 90 度。</p>
+<p>说明：</p>
+<p>你必须在原地旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要使用另一个矩阵来旋转图像。</p>
+<a id="more"></a>
+<p>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定 matrix &#x3D;</span><br><span class="line">[          </span><br><span class="line">  [1,2,3],  </span><br><span class="line">  [4,5,6],  </span><br><span class="line">  [7,8,9]  </span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">原地旋转输入矩阵，使其变为: </span><br><span class="line">[  </span><br><span class="line">  [7,4,1],  </span><br><span class="line">  [8,5,2],  </span><br><span class="line">  [9,6,3]  </span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定 matrix &#x3D; </span><br><span class="line">[  </span><br><span class="line">  [ 5, 1, 9,11],  </span><br><span class="line">  [ 2, 4, 8,10],  </span><br><span class="line">  [13, 3, 6, 7],  </span><br><span class="line">  [15,14,12,16]  </span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">原地旋转输入矩阵，使其变为:</span><br><span class="line">[  </span><br><span class="line">  [15,13, 2, 5],  </span><br><span class="line">  [14, 3, 4, 1],  </span><br><span class="line">  [12, 6, 8, 9],  </span><br><span class="line">  [16, 7,10,11]  </span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>要实现数组图像的旋转我们可以看做是把数组的第一行变成最后一列，第二行变成倒数第二列，依次类推…<br><img src="/images/artic/LeetCode/01/img-01.png" alt="截图"><br>但是题目规定要在原数组内修改，所以我们可以在每一行的后面加上对应的列，最后再删除前面的原数组对应的列，就得到我们旋转过后的图像。<br><img src="/images/artic/LeetCode/01/img-02.png" alt="截图">4</p>
+<h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[][]&#125;</span> <span class="variable">matrix</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;void&#125;</span> </span>Do not return anything, modify matrix in-place instead.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> rotate = <span class="function"><span class="keyword">function</span>(<span class="params">matrix</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> count = matrix.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> c = count - <span class="number">1</span>; c &gt;= <span class="number">0</span>; c--)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i  = <span class="number">0</span>; i &lt; count; i++)&#123;</span><br><span class="line">            matrix[i].push(matrix[c][i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> c = <span class="number">0</span>; c &lt; count; c++)&#123;</span><br><span class="line">        matrix[c].splice(<span class="number">0</span>,count);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> matrix;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
         <category>算法</category>
         <category>JS</category>
@@ -419,7 +501,7 @@ Person 没有 say() 方法，但是，我们通过 prototype 给 Person 的原�
 <h1 id="一级标题-1"><a href="#一级标题-1" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题-1"><a href="#二级标题-1" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6></blockquote>
 <hr>
 <hr>
-<h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><p>Markdown 段落没有什么特殊格式，直接编写文档便可，换行时用两个以上的<code>空格</code>加上<code>回车</code>，或者可以在段落后面使用一个空行来表示重新开始一个段落<br><img src="/img/blog02/img-01.png" alt="截图">  </p>
+<h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><p>Markdown 段落没有什么特殊格式，直接编写文档便可，换行时用两个以上的<code>空格</code>加上<code>回车</code>，或者可以在段落后面使用一个空行来表示重新开始一个段落<br><img src="/images/artic/mdyf01/img-01.png" alt="截图">  </p>
 <h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><p>Markdown 可以使用以下几种字体  </p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*斜体文本*</span><br><span class="line">_斜体文本_</span><br><span class="line">**粗体文本**</span><br><span class="line">__粗体文本__</span><br><span class="line">***粗斜体文本***</span><br><span class="line">___粗斜体文本___</span><br></pre></td></tr></table></figure>
 <p>显示如下：  </p>
@@ -537,12 +619,12 @@ Person 没有 say() 方法，但是，我们通过 prototype 给 Person 的原�
 <p>显示如下：  </p>
 <p>使用 <code>alert()</code> 函数</p>
 <h3 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h3><p>代码区块使用 4 个空格或者一个制表符（tab 键），代码区块上下文都要空一行 </p>
-<p><img src="/images/artic/markdownyufa/img-02.png" alt="截图">  </p>
+<p><img src="/images/artic/mdyf01/img-02.png" alt="截图">  </p>
 <p>显示效果如下：</p>
 <pre><code>function sayHello() {
   alert(&quot;你好啊！&quot;);
 }</code></pre><p>你也可以用 ``` 包裹一段代码，并指定一种语言（也可以不指定）</p>
-<p><img src="/images/artic/markdownyufa/img-03.png" alt="截图"></p>
+<p><img src="/images/artic/mdyf01/img-03.png" alt="截图"></p>
 <p>显示结果如下： </p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="string">'你好啊！'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
@@ -667,7 +749,7 @@ Person 没有 say() 方法，但是，我们通过 prototype 给 Person 的原�
 </blockquote>
 <hr>
 <h2 id="四、把我们的博客部署到-GitHub-上"><a href="#四、把我们的博客部署到-GitHub-上" class="headerlink" title="四、把我们的博客部署到 GitHub 上"></a>四、把我们的博客部署到 GitHub 上</h2><blockquote>
-<p>1.在我们的 GitHub 上新建一个项目，项目名是你 GitHub 的用户名，例如我的GitHub用户名为 1914k 那么我就创建一个名字为：1914k.github.io 的项目<br><img src="/images/artic/blog01/img-7.png" alt="截图"><br>2.安装 git 部署的插件，输入：<br>    <code>$ npm install --save hexo-deployer-git</code><br>3.打开 blog 文件夹里的 _config.yml 配置文件，<br><img src="/images/artic/blog01/img-8.png" alt="截图"><br>翻到最下面，找到 deploy: ，将 type 改成 git ，把 repo 的地址换成自己的 GitHub 博客地址，如下：<br><img src="/img/blog01/img-9.png" alt="截图"><br><strong>注意/!这里的格式不能错，该有的空格要有</strong><br><strong>type，repository，branch的首字母要对齐</strong><br>4.最后输入以下三个命令：<br>    <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ hexo clean  <span class="comment">//清理一下</span></span><br><span class="line">$ hexo g      <span class="comment">//重新生成一下</span></span><br><span class="line">$ hexo d      <span class="comment">//部署到远端</span></span><br></pre></td></tr></table></figure><br>我们的博客就成功的部署到 GitHub 上了， 可以在浏览器输入<a href="https://1914k.github.io/">https://1914k.github.io/</a> 网址打开我们的博客。<br>[^淘宝镜像]: 这里是脚注</p>
+<p>1.在我们的 GitHub 上新建一个项目，项目名是你 GitHub 的用户名，例如我的GitHub用户名为 1914k 那么我就创建一个名字为：1914k.github.io 的项目<br><img src="/images/artic/blog01/img-7.png" alt="截图"><br>2.安装 git 部署的插件，输入：<br>    <code>$ npm install --save hexo-deployer-git</code><br>3.打开 blog 文件夹里的 _config.yml 配置文件，<br><img src="/images/artic/blog01/img-8.png" alt="截图"><br>翻到最下面，找到 deploy: ，将 type 改成 git ，把 repo 的地址换成自己的 GitHub 博客地址，如下：<br><img src="/img/artic/blog01/img-9.png" alt="截图"><br><strong>注意/!这里的格式不能错，该有的空格要有</strong><br><strong>type，repository，branch的首字母要对齐</strong><br>4.最后输入以下三个命令：<br>    <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ hexo clean  <span class="comment">//清理一下</span></span><br><span class="line">$ hexo g      <span class="comment">//重新生成一下</span></span><br><span class="line">$ hexo d      <span class="comment">//部署到远端</span></span><br></pre></td></tr></table></figure><br>我们的博客就成功的部署到 GitHub 上了， 可以在浏览器输入<a href="https://1914k.github.io/">https://1914k.github.io/</a> 网址打开我们的博客。<br>[^淘宝镜像]: 这里是脚注</p>
 </blockquote>
 ]]></content>
       <categories>
