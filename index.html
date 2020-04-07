@@ -150,7 +150,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">8</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -222,141 +222,9 @@
             
 
   <div class="posts-expand">
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://1914k.github.io/2020/03/31/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/asset/touxiang.jpg">
-      <meta itemprop="name" content="石头">
-      <meta itemprop="description" content="提升自己技术的个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="顽石不语">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/31/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/" class="post-title-link" itemprop="url">前端跨域的处理方式</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-03-31 21:48:08 / 修改时间：22:16:53" itemprop="dateCreated datePublished" datetime="2020-03-31T21:48:08+08:00">2020-03-31</time>
-            </span>
-
-          
-            <span id="/2020/03/31/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/" class="post-meta-item leancloud_visitors" data-flag-title="前端跨域的处理方式" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/03/31/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/31/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>384</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
-          <h2 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域"></a>什么是跨域</h2><p>当一个请求url的<strong>协议</strong>、<strong>域名</strong>、<strong>端口</strong>三者之间任意一个与当前页面url不同即为跨域</p>
-<table>
-<thead>
-<tr>
-<th align="left">当前页面 URL</th>
-<th align="left">被请求页面 URL</th>
-<th align="center">是否跨域</th>
-<th align="left">原因</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><a href="http://www.test.com/" target="_blank" rel="noopener external nofollow noreferrer">http://www.test.com/</a></td>
-<td align="left"><a href="http://www.test.com/index.html" target="_blank" rel="noopener external nofollow noreferrer">http://www.test.com/index.html</a></td>
-<td align="center">否</td>
-<td align="left">同源（协议、域名、端口号相同</td>
-</tr>
-<tr>
-<td align="left"><a href="http://www.test.com/" target="_blank" rel="noopener external nofollow noreferrer">http://www.test.com/</a></td>
-<td align="left"><a href="https://www.test.com/index.html" target="_blank" rel="noopener external nofollow noreferrer">https://www.test.com/index.html</a></td>
-<td align="center">跨域</td>
-<td align="left">协议不同（http/https</td>
-</tr>
-<tr>
-<td align="left"><a href="http://www.test.com/" target="_blank" rel="noopener external nofollow noreferrer">http://www.test.com/</a></td>
-<td align="left"><a href="http://www.baidu.com/" target="_blank" rel="noopener external nofollow noreferrer">http://www.baidu.com/</a></td>
-<td align="center">跨域</td>
-<td align="left">主域名不同（test/baidu）</td>
-</tr>
-<tr>
-<td align="left"><a href="http://www.test.com/" target="_blank" rel="noopener external nofollow noreferrer">http://www.test.com/</a></td>
-<td align="left"><a href="http://blog.test.com/" target="_blank" rel="noopener external nofollow noreferrer">http://blog.test.com/</a></td>
-<td align="center">跨域</td>
-<td align="left">子域名不同（www/blog）</td>
-</tr>
-<tr>
-<td align="left"><a href="http://www.test.com:8080/" target="_blank" rel="noopener external nofollow noreferrer">http://www.test.com:8080/</a></td>
-<td align="left"><a href="http://www.test.com:7001/" target="_blank" rel="noopener external nofollow noreferrer">http://www.test.com:7001/</a></td>
-<td align="center">跨域</td>
-<td align="left">端口号不同（8080/7001）</td>
-</tr>
-</tbody></table>
-
       
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
+          
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
@@ -481,7 +349,9 @@
   
   
 
-        
+      
+      
+          
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
@@ -589,132 +459,9 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://1914k.github.io/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/asset/touxiang.jpg">
-      <meta itemprop="name" content="石头">
-      <meta itemprop="description" content="提升自己技术的个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="顽石不语">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/" class="post-title-link" itemprop="url">LeetCode-有效的数独</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-03 21:28:13" itemprop="dateCreated datePublished" datetime="2020-03-03T21:28:13+08:00">2020-03-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-11 14:35:57" itemprop="dateModified" datetime="2020-03-11T14:35:57+08:00">2020-03-11</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/JS/" itemprop="url" rel="index">
-                    <span itemprop="name">JS</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode-有效的数独" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>5.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
-          <h2 id="有效的数独"><a href="#有效的数独" class="headerlink" title="有效的数独"></a>有效的数独</h2><p>判断一个 9x9 的数独是否有效。只需要根据以下规则，验证已经填入的数字是否有效即可。</p>
-<p>数字 1-9 在每一行只能出现一次。<br>数字 1-9 在每一列只能出现一次。<br>数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
       
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
+          
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
@@ -840,7 +587,136 @@
   
   
 
+      
+      
+          
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://1914k.github.io/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/asset/touxiang.jpg">
+      <meta itemprop="name" content="石头">
+      <meta itemprop="description" content="提升自己技术的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="顽石不语">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/" class="post-title-link" itemprop="url">LeetCode-有效的数独</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-03 21:28:13" itemprop="dateCreated datePublished" datetime="2020-03-03T21:28:13+08:00">2020-03-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-03-11 14:35:57" itemprop="dateModified" datetime="2020-03-11T14:35:57+08:00">2020-03-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/JS/" itemprop="url" rel="index">
+                    <span itemprop="name">JS</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode-有效的数独" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="有效的数独"><a href="#有效的数独" class="headerlink" title="有效的数独"></a>有效的数独</h2><p>判断一个 9x9 的数独是否有效。只需要根据以下规则，验证已经填入的数字是否有效即可。</p>
+<p>数字 1-9 在每一行只能出现一次。<br>数字 1-9 在每一列只能出现一次。<br>数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+      
+          
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
@@ -958,7 +834,9 @@
   
   
 
-        
+      
+      
+          
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
@@ -1076,7 +954,9 @@
   
   
 
-        
+      
+      
+          
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
@@ -1194,7 +1074,9 @@
   
   
 
-        
+      
+      
+          
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
@@ -1312,7 +1194,9 @@
   
   
 
-        
+      
+      
+          
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
@@ -1431,6 +1315,7 @@
   
   
 
+      
   </div>
 
   
@@ -1510,7 +1395,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">

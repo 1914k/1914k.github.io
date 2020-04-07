@@ -1,53 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>前端跨域的处理方式</title>
-    <url>/2020/03/31/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/</url>
-    <content><![CDATA[<h2 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域"></a>什么是跨域</h2><p>当一个请求url的<strong>协议</strong>、<strong>域名</strong>、<strong>端口</strong>三者之间任意一个与当前页面url不同即为跨域</p>
-<table>
-<thead>
-<tr>
-<th align="left">当前页面 URL</th>
-<th align="left">被请求页面 URL</th>
-<th align="center">是否跨域</th>
-<th align="left">原因</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><a href="http://www.test.com/" target="_blank" rel="noopener external nofollow noreferrer">http://www.test.com/</a></td>
-<td align="left"><a href="http://www.test.com/index.html" target="_blank" rel="noopener external nofollow noreferrer">http://www.test.com/index.html</a></td>
-<td align="center">否</td>
-<td align="left">同源（协议、域名、端口号相同</td>
-</tr>
-<tr>
-<td align="left"><a href="http://www.test.com/" target="_blank" rel="noopener external nofollow noreferrer">http://www.test.com/</a></td>
-<td align="left"><a href="https://www.test.com/index.html" target="_blank" rel="noopener external nofollow noreferrer">https://www.test.com/index.html</a></td>
-<td align="center">跨域</td>
-<td align="left">协议不同（http/https</td>
-</tr>
-<tr>
-<td align="left"><a href="http://www.test.com/" target="_blank" rel="noopener external nofollow noreferrer">http://www.test.com/</a></td>
-<td align="left"><a href="http://www.baidu.com/" target="_blank" rel="noopener external nofollow noreferrer">http://www.baidu.com/</a></td>
-<td align="center">跨域</td>
-<td align="left">主域名不同（test/baidu）</td>
-</tr>
-<tr>
-<td align="left"><a href="http://www.test.com/" target="_blank" rel="noopener external nofollow noreferrer">http://www.test.com/</a></td>
-<td align="left"><a href="http://blog.test.com/" target="_blank" rel="noopener external nofollow noreferrer">http://blog.test.com/</a></td>
-<td align="center">跨域</td>
-<td align="left">子域名不同（www/blog）</td>
-</tr>
-<tr>
-<td align="left"><a href="http://www.test.com:8080/" target="_blank" rel="noopener external nofollow noreferrer">http://www.test.com:8080/</a></td>
-<td align="left"><a href="http://www.test.com:7001/" target="_blank" rel="noopener external nofollow noreferrer">http://www.test.com:7001/</a></td>
-<td align="center">跨域</td>
-<td align="left">端口号不同（8080/7001）</td>
-</tr>
-</tbody></table>
+    <title>利用vue制作扫雷游戏</title>
+    <url>/2020/04/03/%E5%88%A9%E7%94%A8vue%E5%88%B6%E4%BD%9C%E6%89%AB%E9%9B%B7%E6%B8%B8%E6%88%8F/</url>
+    <content><![CDATA[<h2 id="扫雷小游戏"><a href="#扫雷小游戏" class="headerlink" title="扫雷小游戏"></a>扫雷小游戏</h2><h3 id="功能列表"><a href="#功能列表" class="headerlink" title="功能列表"></a>功能列表</h3><ol>
+<li>有简单、一般、困难和自定义四种模式，根据点击模式按钮选择模式;</li>
+<li>根据不同模式生成不同大小和雷数的雷区;</li>
+<li>有计时和计数功能;</li>
+<li>游戏失败和成功时有相应的提示;</li>
+<li>有游戏重置功能;</li>
+<li>左键点击触发当前格子，右键点击标记当前格子或取消已标记的格子;</li>
+<li>已标记的格子不能被触发，且当标记数达到雷的数量时不能再添加新的标记。</li>
+<li>左键点击到雷时游戏失败结束游戏，显示所有标记正确和标记错误的以及没标记的雷;</li>
+<li>左键点击到没有雷的格子则在该格子上显示临近 8 个格子的雷的数量，若这 8 个格子存在显示为 0 的格子，则不显示，且继续扩散寻找该格子的临近的格子。</li>
+<li>找到所有的雷时游戏成功，自动结束游戏;</li>
+</ol>
 ]]></content>
+      <categories>
+        <category>游戏</category>
+        <category>Vue</category>
+      </categories>
       <tags>
-        <tag>web前端</tag>
-        <tag>跨域</tag>
+        <tag>Vue</tag>
+        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -157,6 +132,28 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode-旋转图像</title>
+    <url>/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%20copy/</url>
+    <content><![CDATA[<h2 id="旋转图像"><a href="#旋转图像" class="headerlink" title="旋转图像"></a>旋转图像</h2><p>给定一个 n × n 的二维矩阵表示一个图像。将图像顺时针旋转 90 度。</p>
+<p>说明：</p>
+<p>你必须在原地旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要使用另一个矩阵来旋转图像。</p>
+<a id="more"></a>
+<p>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定 matrix &#x3D;</span><br><span class="line">[          </span><br><span class="line">  [1,2,3],  </span><br><span class="line">  [4,5,6],  </span><br><span class="line">  [7,8,9]  </span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">原地旋转输入矩阵，使其变为: </span><br><span class="line">[  </span><br><span class="line">  [7,4,1],  </span><br><span class="line">  [8,5,2],  </span><br><span class="line">  [9,6,3]  </span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定 matrix &#x3D; </span><br><span class="line">[  </span><br><span class="line">  [ 5, 1, 9,11],  </span><br><span class="line">  [ 2, 4, 8,10],  </span><br><span class="line">  [13, 3, 6, 7],  </span><br><span class="line">  [15,14,12,16]  </span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">原地旋转输入矩阵，使其变为:</span><br><span class="line">[  </span><br><span class="line">  [15,13, 2, 5],  </span><br><span class="line">  [14, 3, 4, 1],  </span><br><span class="line">  [12, 6, 8, 9],  </span><br><span class="line">  [16, 7,10,11]  </span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>要实现数组图像的旋转我们可以看做是把数组的第一行变成最后一列，第二行变成倒数第二列，依次类推…<br><img src="/images/artic/LeetCode/01/img-01.png" alt="截图"><br>但是题目规定要在原数组内修改，所以我们可以在每一行的后面加上对应的列，最后再删除前面的原数组对应的列，就得到我们旋转过后的图像。<br><img src="/images/artic/LeetCode/01/img-02.png" alt="截图">4</p>
+<h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[][]&#125;</span> <span class="variable">matrix</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;void&#125;</span> </span>Do not return anything, modify matrix in-place instead.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> rotate = <span class="function"><span class="keyword">function</span>(<span class="params">matrix</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> count = matrix.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> c = count - <span class="number">1</span>; c &gt;= <span class="number">0</span>; c--)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i  = <span class="number">0</span>; i &lt; count; i++)&#123;</span><br><span class="line">            matrix[i].push(matrix[c][i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> c = <span class="number">0</span>; c &lt; count; c++)&#123;</span><br><span class="line">        matrix[c].splice(<span class="number">0</span>,count);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> matrix;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode-有效的数独</title>
     <url>/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/</url>
     <content><![CDATA[<h2 id="有效的数独"><a href="#有效的数独" class="headerlink" title="有效的数独"></a>有效的数独</h2><p>判断一个 9x9 的数独是否有效。只需要根据以下规则，验证已经填入的数字是否有效即可。</p>
@@ -206,28 +203,6 @@
 <p>这时我们行、列和小宫格都判断完了，如果没有重复的我们就 <code>return true</code>。由于 sort 会改变原数组的排列，所以我定义了三个新的数组用于行、列和小宫格的判断。</p>
 </blockquote>
 <h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;character[][]&#125;</span> <span class="variable">board</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> isValidSudoku = <span class="function"><span class="keyword">function</span>(<span class="params">board</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> arr1 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(board));</span><br><span class="line">	<span class="keyword">var</span> arr2 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(board));</span><br><span class="line">	<span class="keyword">var</span> arr3 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(board));</span><br><span class="line">    <span class="comment">// 检查行</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++)&#123;</span><br><span class="line">    	<span class="keyword">var</span> a = arr1[i];</span><br><span class="line">    	a.sort();</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">8</span>; a[j]*<span class="number">1</span>; j--)&#123;</span><br><span class="line">    		<span class="keyword">if</span>(a[j] === a[j<span class="number">-1</span>])&#123;</span><br><span class="line">    			<span class="comment">// console.log(a);</span></span><br><span class="line">    			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    		&#125;</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 检查列   </span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++)&#123;</span><br><span class="line">    	<span class="keyword">var</span> b = [];</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="number">9</span>; j++)&#123;</span><br><span class="line">    		b.push(arr2[j][i]);</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="comment">// console.log(b);</span></span><br><span class="line">    	b.sort();</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">8</span>; b[j]*<span class="number">1</span>; j--)&#123;</span><br><span class="line">    		<span class="keyword">if</span>(b[j] === b[j<span class="number">-1</span>])&#123;</span><br><span class="line">    			<span class="comment">// console.log(b);</span></span><br><span class="line">    			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    		&#125;</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 检查九宫格</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i+=<span class="number">3</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> ii = i + <span class="number">3</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="number">9</span>; j+=<span class="number">3</span>)&#123;</span><br><span class="line">            <span class="keyword">var</span> jj = j + <span class="number">3</span>;</span><br><span class="line">            <span class="keyword">var</span> c = [];</span><br><span class="line">            <span class="keyword">for</span>(i; i &lt; ii; i++)&#123;</span><br><span class="line">                <span class="keyword">for</span>(j; j &lt; jj; j++)&#123;</span><br><span class="line">                    c.push(arr3[i][j]);</span><br><span class="line">                &#125;</span><br><span class="line">                j = jj - <span class="number">3</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// console.log(i);</span></span><br><span class="line">            i = ii - <span class="number">3</span>;</span><br><span class="line">            <span class="comment">// console.log(c);</span></span><br><span class="line">            c.sort();</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> k = <span class="number">8</span>; c[k]*<span class="number">1</span>; k--)&#123;</span><br><span class="line">                <span class="keyword">if</span>(c[k] === c[k<span class="number">-1</span>])&#123;</span><br><span class="line">                    <span class="comment">// console.log(c);</span></span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>算法</category>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode-旋转图像</title>
-    <url>/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%20copy/</url>
-    <content><![CDATA[<h2 id="旋转图像"><a href="#旋转图像" class="headerlink" title="旋转图像"></a>旋转图像</h2><p>给定一个 n × n 的二维矩阵表示一个图像。将图像顺时针旋转 90 度。</p>
-<p>说明：</p>
-<p>你必须在原地旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要使用另一个矩阵来旋转图像。</p>
-<a id="more"></a>
-<p>示例 1:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定 matrix &#x3D;</span><br><span class="line">[          </span><br><span class="line">  [1,2,3],  </span><br><span class="line">  [4,5,6],  </span><br><span class="line">  [7,8,9]  </span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">原地旋转输入矩阵，使其变为: </span><br><span class="line">[  </span><br><span class="line">  [7,4,1],  </span><br><span class="line">  [8,5,2],  </span><br><span class="line">  [9,6,3]  </span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<p>示例 2:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定 matrix &#x3D; </span><br><span class="line">[  </span><br><span class="line">  [ 5, 1, 9,11],  </span><br><span class="line">  [ 2, 4, 8,10],  </span><br><span class="line">  [13, 3, 6, 7],  </span><br><span class="line">  [15,14,12,16]  </span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">原地旋转输入矩阵，使其变为:</span><br><span class="line">[  </span><br><span class="line">  [15,13, 2, 5],  </span><br><span class="line">  [14, 3, 4, 1],  </span><br><span class="line">  [12, 6, 8, 9],  </span><br><span class="line">  [16, 7,10,11]  </span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>要实现数组图像的旋转我们可以看做是把数组的第一行变成最后一列，第二行变成倒数第二列，依次类推…<br><img src="/images/artic/LeetCode/01/img-01.png" alt="截图"><br>但是题目规定要在原数组内修改，所以我们可以在每一行的后面加上对应的列，最后再删除前面的原数组对应的列，就得到我们旋转过后的图像。<br><img src="/images/artic/LeetCode/01/img-02.png" alt="截图">4</p>
-<h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[][]&#125;</span> <span class="variable">matrix</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;void&#125;</span> </span>Do not return anything, modify matrix in-place instead.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> rotate = <span class="function"><span class="keyword">function</span>(<span class="params">matrix</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> count = matrix.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> c = count - <span class="number">1</span>; c &gt;= <span class="number">0</span>; c--)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i  = <span class="number">0</span>; i &lt; count; i++)&#123;</span><br><span class="line">            matrix[i].push(matrix[c][i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> c = <span class="number">0</span>; c &lt; count; c++)&#123;</span><br><span class="line">        matrix[c].splice(<span class="number">0</span>,count);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> matrix;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
       <categories>
         <category>算法</category>
         <category>JS</category>
@@ -418,8 +393,8 @@
         <category>OPP面对对象</category>
       </categories>
       <tags>
-        <tag>OPP面对对象</tag>
         <tag>JS</tag>
+        <tag>OPP面对对象</tag>
       </tags>
   </entry>
   <entry>
@@ -478,8 +453,8 @@ Person 没有 say() 方法，但是，我们通过 prototype 给 Person 的原�
         <category>web前端</category>
       </categories>
       <tags>
-        <tag>JS</tag>
         <tag>web前端</tag>
+        <tag>JS</tag>
       </tags>
   </entry>
   <entry>

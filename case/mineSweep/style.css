@@ -1,0 +1,146 @@
+*{
+  padding: 0;
+  margin:  0;
+}
+#app {
+  position: absolute;
+  font-size: 16px;
+  user-select: none;
+}
+.content {
+  position: relative;
+  top: 100px;
+  margin-left: 400px;
+  background: #c0c0c0;
+  border-left: 1px solid #000;
+  border-top: 1px solid #000;
+}
+.game-content {
+  position: relative;
+  padding: 10px;
+}
+.lt-border {
+  border: 2px solid #808080;
+  border-left-color: #fff;
+  border-top-color: #fff;
+  background: #c0c0c0;
+}
+.lt-border:hover {
+  border: none;
+}
+.rb-border {
+  border: 2px solid #808080;
+  border-right-color: #fff;
+  border-bottom-color: #fff;
+}
+.btnkey {
+  position: absolute;
+  top: 100px;
+  left: 200px;
+}
+.mode {
+  position: relative;
+  display: block;
+  padding-top: 10px;
+}
+.mode:hover {
+  font-size: 2rem;
+}
+.cur {
+  color: red;
+}
+.diy {
+  position: relative;
+  margin-top: 20px;
+}
+.diy-item {
+  padding: 5px;
+}
+.diy-item label {
+  width: 50px;
+}
+.diy-item input {
+  width: 50px;
+  text-align: center;
+}
+.game-tags {
+  position: relative;
+  height: 2rem;
+  line-height: 2rem;
+  padding: 5px 6px;
+  margin-bottom: 0.5rem;
+}
+.count {
+  position: absolute;
+  left: 10px;
+}
+.reset {
+  position: absolute;
+  width: 2rem;
+  padding: 5px;
+  left: calc(50% - 1rem);
+}
+.time {
+  position: absolute;
+  right: 10px;
+}
+.game-map {
+  position: relative;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-weight: bolder;
+}
+table {
+  border-spacing: 0;
+}
+.grid {
+  position: relative;
+  display: block;
+  width: 25px;
+  height: 25px;
+  font-size: 16px;
+  line-height: 25px;
+  box-sizing: border-box;
+}
+.cover {
+  position: relative;
+  margin-bottom: -25px;
+  z-index: 1;
+}
+.over {
+  pointer-events: none;
+}
+.mark {
+  background: url(./img/flag.gif) no-repeat center;
+}
+.num {
+  border-left: 1px solid #818181;
+  border-top: 1px solid #818181;
+}
+.mine {
+  background: url(./img/mine.gif) no-repeat center;
+}
+.blood {
+  background: url(./img/blood.gif) no-repeat center;
+}
+.error {
+  background: url(./img/error.gif) no-repeat center;
+}
+.zero {
+  color: #c0c0c0;
+}
+.one {
+  color: #0000ff;
+}
+.two {
+  color: #008000;
+}
+.three {
+  color: #ff0000;
+}
+.four {
+  color: #0000ff;
+}
+.five {
+  color: #800000;
+}

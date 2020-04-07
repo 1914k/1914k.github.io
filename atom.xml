@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://1914k.github.io/"/>
-  <updated>2020-03-31T14:16:53.482Z</updated>
+  <updated>2020-04-07T07:43:13.184Z</updated>
   <id>http://1914k.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>前端跨域的处理方式</title>
-    <link href="http://1914k.github.io/2020/03/31/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/"/>
-    <id>http://1914k.github.io/2020/03/31/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/</id>
-    <published>2020-03-31T13:48:08.000Z</published>
-    <updated>2020-03-31T14:16:53.482Z</updated>
+    <title>利用vue制作扫雷游戏</title>
+    <link href="http://1914k.github.io/2020/04/03/%E5%88%A9%E7%94%A8vue%E5%88%B6%E4%BD%9C%E6%89%AB%E9%9B%B7%E6%B8%B8%E6%88%8F/"/>
+    <id>http://1914k.github.io/2020/04/03/%E5%88%A9%E7%94%A8vue%E5%88%B6%E4%BD%9C%E6%89%AB%E9%9B%B7%E6%B8%B8%E6%88%8F/</id>
+    <published>2020-04-03T06:04:03.000Z</published>
+    <updated>2020-04-07T07:43:13.184Z</updated>
     
     <summary type="html">
     
@@ -29,17 +29,21 @@
       
         
         
-          &lt;h2 id=&quot;什么是跨域&quot;&gt;&lt;a href=&quot;#什么是跨域&quot; class=&quot;headerlink&quot;
+          &lt;h2 id=&quot;扫雷小游戏&quot;&gt;&lt;a href=&quot;#扫雷小游戏&quot; class=&quot;headerlink&quot; title=&quot;扫雷小游戏&quot;&gt;&lt;/a&gt;扫雷小游戏&lt;/h2&gt;&lt;h3 id=&quot;功能列表&quot;&gt;&lt;a href=&quot;#功能列表&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
     
+      <category term="游戏" scheme="http://1914k.github.io/categories/%E6%B8%B8%E6%88%8F/"/>
     
-      <category term="web前端" scheme="http://1914k.github.io/tags/web%E5%89%8D%E7%AB%AF/"/>
+      <category term="Vue" scheme="http://1914k.github.io/categories/%E6%B8%B8%E6%88%8F/Vue/"/>
     
-      <category term="跨域" scheme="http://1914k.github.io/tags/%E8%B7%A8%E5%9F%9F/"/>
+    
+      <category term="Vue" scheme="http://1914k.github.io/tags/Vue/"/>
+    
+      <category term="游戏" scheme="http://1914k.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
     
   </entry>
   
@@ -88,16 +92,17 @@
   </entry>
   
   <entry>
-    <title>LeetCode-有效的数独</title>
-    <link href="http://1914k.github.io/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/"/>
-    <id>http://1914k.github.io/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/</id>
+    <title>LeetCode-旋转图像</title>
+    <link href="http://1914k.github.io/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%20copy/"/>
+    <id>http://1914k.github.io/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%20copy/</id>
     <published>2020-03-03T13:28:13.000Z</published>
-    <updated>2020-03-11T06:35:57.532Z</updated>
+    <updated>2020-03-11T04:34:30.374Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;有效的数独&quot;&gt;&lt;a href=&quot;#有效的数独&quot; class=&quot;headerlink&quot; title=&quot;有效的数独&quot;&gt;&lt;/a&gt;有效的数独&lt;/h2&gt;&lt;p&gt;判断一个 9x9 的数独是否有效。只需要根据以下规则，验证已经填入的数字是否有效即可。&lt;/p&gt;
-&lt;p&gt;数字 1-9 在每一行只能出现一次。&lt;br&gt;数字 1-9 在每一列只能出现一次。&lt;br&gt;数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。&lt;/p&gt;
+      &lt;h2 id=&quot;旋转图像&quot;&gt;&lt;a href=&quot;#旋转图像&quot; class=&quot;headerlink&quot; title=&quot;旋转图像&quot;&gt;&lt;/a&gt;旋转图像&lt;/h2&gt;&lt;p&gt;给定一个 n × n 的二维矩阵表示一个图像。将图像顺时针旋转 90 度。&lt;/p&gt;
+&lt;p&gt;说明：&lt;/p&gt;
+&lt;p&gt;你必须在原地旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要使用另一个矩阵来旋转图像。&lt;/p&gt;
     
     </summary>
     
@@ -112,17 +117,16 @@
   </entry>
   
   <entry>
-    <title>LeetCode-旋转图像</title>
-    <link href="http://1914k.github.io/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%20copy/"/>
-    <id>http://1914k.github.io/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%20copy/</id>
+    <title>LeetCode-有效的数独</title>
+    <link href="http://1914k.github.io/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/"/>
+    <id>http://1914k.github.io/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/</id>
     <published>2020-03-03T13:28:13.000Z</published>
-    <updated>2020-03-11T04:34:30.374Z</updated>
+    <updated>2020-03-11T06:35:57.532Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;旋转图像&quot;&gt;&lt;a href=&quot;#旋转图像&quot; class=&quot;headerlink&quot; title=&quot;旋转图像&quot;&gt;&lt;/a&gt;旋转图像&lt;/h2&gt;&lt;p&gt;给定一个 n × n 的二维矩阵表示一个图像。将图像顺时针旋转 90 度。&lt;/p&gt;
-&lt;p&gt;说明：&lt;/p&gt;
-&lt;p&gt;你必须在原地旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要使用另一个矩阵来旋转图像。&lt;/p&gt;
+      &lt;h2 id=&quot;有效的数独&quot;&gt;&lt;a href=&quot;#有效的数独&quot; class=&quot;headerlink&quot; title=&quot;有效的数独&quot;&gt;&lt;/a&gt;有效的数独&lt;/h2&gt;&lt;p&gt;判断一个 9x9 的数独是否有效。只需要根据以下规则，验证已经填入的数字是否有效即可。&lt;/p&gt;
+&lt;p&gt;数字 1-9 在每一行只能出现一次。&lt;br&gt;数字 1-9 在每一列只能出现一次。&lt;br&gt;数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。&lt;/p&gt;
     
     </summary>
     
@@ -216,9 +220,9 @@
       <category term="OPP面对对象" scheme="http://1914k.github.io/categories/OPP%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1/"/>
     
     
-      <category term="OPP面对对象" scheme="http://1914k.github.io/tags/OPP%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1/"/>
-    
       <category term="JS" scheme="http://1914k.github.io/tags/JS/"/>
+    
+      <category term="OPP面对对象" scheme="http://1914k.github.io/tags/OPP%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1/"/>
     
   </entry>
   
@@ -240,9 +244,9 @@
       <category term="web前端" scheme="http://1914k.github.io/categories/web%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="JS" scheme="http://1914k.github.io/tags/JS/"/>
-    
       <category term="web前端" scheme="http://1914k.github.io/tags/web%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="JS" scheme="http://1914k.github.io/tags/JS/"/>
     
   </entry>
   

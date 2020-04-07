@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>扫雷</title>
+</head>
+<body>
+  <div id="app">
+    <div class="btnkey">
+      <!-- total: {{total}}<br>
+      mineNum: {{mineNum}}<br>
+      mineArr: {{mineArr}}<br>
+      markArr: {{markArr}}<br> -->
+      <h2 class="btn">模式选择</h2>
+      <h3 :class="{cur: index === currentLevel.id}" class="btn mode" @click="modeClick(index)" v-for="(item,index) in levels">{{item.text}}</h3>
+      <div v-show="currentLevel.id === 3" class="diy">
+          <div class="diy-item">
+            <label form="row-num">行数:</label>
+            <input id="row-num" type="number" placeholder="5" min="4" max="80" v-model="currentLevelValue[0]">
+          </div>
+          <div class="diy-item">
+            <label form="col-num">列数:</label>
+            <input id="col-num" type="number" placeholder="5" min="5" max="80" v-model="currentLevelValue[1]">
+          </div>
+          <div class="diy-item">
+            <label form="mine-num">雷数:</label>
+            <input id="mine-num" type="number" placeholder="5" min="1" max="99" v-model="currentLevelValue[2]">
+          </div>
+      </div>
+    </div>
+    <div class="content">
+        <div class="game-content border">
+          <div class="game-tags rb-border">
+            <div class="count">{{mineNum}}</div>
+            <div class="reset" @click="reset(currentLevel)">
+              <img v-if="isOver === false && win === false" src="./img/face_normal.gif" alt="">
+              <img v-if="isOver === true && win === false" src="./img/face_fail.gif" alt="">
+              <img v-if="win === true" src="./img/face_success.gif" alt="">
+            </div>
+            <div class="time">{{time}}</div>
+          </div>
+          <div class="game-map rb-border">
+            <table>
+              <tr v-for="item in mineMap">
+                <td v-for="i in item" @click="leftGridClick(i)" @contextmenu.prevent="rightClick(i)">
+                  <span v-show="i.isCover === true" :class="{mark: i.isMark === true,
+                                                            error: i.isMark === true && isOver === true && i.mine === 0,
+                                                            over: isOver === true
+                                                            }" class="grid cover lt-border"></span>
+                  <span v-if="i.mine === 0" 
+                        :class="{zero: i.mineNum === 0,one:i.mineNum === 1,two:i.mineNum === 2,two:i.mineNum === 2,three:i.mineNum === 3,four:i.mineNum === 4,five:i.mineNum === 5}"
+                        class="grid num">{{i.mineNum}}</span>
+                  <span v-if="i.mine === 1" class="grid num mine"></span>
+                  <span v-if="i.mine === 2" class="grid num blood"></span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+    </div>
+  </div>
+  <script src="./js/vue.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
