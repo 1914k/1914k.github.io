@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://1914k.github.io/"/>
-  <updated>2020-04-07T07:43:13.184Z</updated>
+  <updated>2020-04-07T10:01:36.681Z</updated>
   <id>http://1914k.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://1914k.github.io/2020/04/03/%E5%88%A9%E7%94%A8vue%E5%88%B6%E4%BD%9C%E6%89%AB%E9%9B%B7%E6%B8%B8%E6%88%8F/"/>
     <id>http://1914k.github.io/2020/04/03/%E5%88%A9%E7%94%A8vue%E5%88%B6%E4%BD%9C%E6%89%AB%E9%9B%B7%E6%B8%B8%E6%88%8F/</id>
     <published>2020-04-03T06:04:03.000Z</published>
-    <updated>2020-04-07T07:43:13.184Z</updated>
+    <updated>2020-04-07T10:01:36.681Z</updated>
     
     <summary type="html">
     
@@ -36,9 +36,7 @@
     </summary>
     
     
-      <category term="游戏" scheme="http://1914k.github.io/categories/%E6%B8%B8%E6%88%8F/"/>
-    
-      <category term="Vue" scheme="http://1914k.github.io/categories/%E6%B8%B8%E6%88%8F/Vue/"/>
+      <category term="Vue" scheme="http://1914k.github.io/categories/Vue/"/>
     
     
       <category term="Vue" scheme="http://1914k.github.io/tags/Vue/"/>
@@ -52,7 +50,7 @@
     <link href="http://1914k.github.io/2020/03/27/set%20%E5%92%8C%20map/"/>
     <id>http://1914k.github.io/2020/03/27/set%20%E5%92%8C%20map/</id>
     <published>2020-03-27T08:08:13.000Z</published>
-    <updated>2020-04-07T07:48:35.399Z</updated>
+    <updated>2020-04-07T10:29:10.309Z</updated>
     
     <summary type="html">
     
@@ -62,9 +60,7 @@
     </summary>
     
     
-      <category term="JS" scheme="http://1914k.github.io/categories/JS/"/>
-    
-      <category term="ES6" scheme="http://1914k.github.io/categories/JS/ES6/"/>
+      <category term="ES6" scheme="http://1914k.github.io/categories/ES6/"/>
     
     
       <category term="ES6" scheme="http://1914k.github.io/tags/ES6/"/>
@@ -76,7 +72,7 @@
     <link href="http://1914k.github.io/2020/03/20/Promise-%E7%94%A8%E6%B3%95%E7%AC%94%E8%AE%B0/"/>
     <id>http://1914k.github.io/2020/03/20/Promise-%E7%94%A8%E6%B3%95%E7%AC%94%E8%AE%B0/</id>
     <published>2020-03-20T15:06:44.000Z</published>
-    <updated>2020-03-25T12:21:23.196Z</updated>
+    <updated>2020-04-07T10:07:41.545Z</updated>
     
     <summary type="html">
     
@@ -85,6 +81,8 @@
     
     </summary>
     
+    
+      <category term="JS" scheme="http://1914k.github.io/categories/JS/"/>
     
     
       <category term="JS" scheme="http://1914k.github.io/tags/JS/"/>
@@ -96,7 +94,7 @@
     <link href="http://1914k.github.io/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/"/>
     <id>http://1914k.github.io/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/</id>
     <published>2020-03-03T13:28:13.000Z</published>
-    <updated>2020-03-11T06:35:57.532Z</updated>
+    <updated>2020-04-07T10:03:25.761Z</updated>
     
     <summary type="html">
     
@@ -106,9 +104,7 @@
     </summary>
     
     
-      <category term="算法" scheme="http://1914k.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="JS" scheme="http://1914k.github.io/categories/%E7%AE%97%E6%B3%95/JS/"/>
+      <category term="JS算法题" scheme="http://1914k.github.io/categories/JS%E7%AE%97%E6%B3%95%E9%A2%98/"/>
     
     
       <category term="算法" scheme="http://1914k.github.io/tags/%E7%AE%97%E6%B3%95/"/>
@@ -120,7 +116,7 @@
     <link href="http://1914k.github.io/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%20copy/"/>
     <id>http://1914k.github.io/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%20copy/</id>
     <published>2020-03-03T13:28:13.000Z</published>
-    <updated>2020-03-11T04:34:30.374Z</updated>
+    <updated>2020-04-07T10:03:32.813Z</updated>
     
     <summary type="html">
     
@@ -131,9 +127,7 @@
     </summary>
     
     
-      <category term="算法" scheme="http://1914k.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="JS" scheme="http://1914k.github.io/categories/%E7%AE%97%E6%B3%95/JS/"/>
+      <category term="JS算法题" scheme="http://1914k.github.io/categories/JS%E7%AE%97%E6%B3%95%E9%A2%98/"/>
     
     
       <category term="算法" scheme="http://1914k.github.io/tags/%E7%AE%97%E6%B3%95/"/>
@@ -208,7 +202,7 @@
     <link href="http://1914k.github.io/2020/02/21/OOP-%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/"/>
     <id>http://1914k.github.io/2020/02/21/OOP-%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/</id>
     <published>2020-02-21T11:19:16.000Z</published>
-    <updated>2020-03-03T08:02:48.198Z</updated>
+    <updated>2020-04-07T10:07:02.095Z</updated>
     
     <summary type="html">
     
@@ -221,8 +215,6 @@
     
     
       <category term="OPP面对对象" scheme="http://1914k.github.io/tags/OPP%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1/"/>
-    
-      <category term="JS" scheme="http://1914k.github.io/tags/JS/"/>
     
   </entry>
   
@@ -244,9 +236,9 @@
       <category term="web前端" scheme="http://1914k.github.io/categories/web%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="JS" scheme="http://1914k.github.io/tags/JS/"/>
-    
       <category term="web前端" scheme="http://1914k.github.io/tags/web%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="JS" scheme="http://1914k.github.io/tags/JS/"/>
     
   </entry>
   

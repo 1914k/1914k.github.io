@@ -17,7 +17,6 @@
 </ol>
 ]]></content>
       <categories>
-        <category>游戏</category>
         <category>Vue</category>
       </categories>
       <tags>
@@ -50,7 +49,6 @@
 <p>由于一个key只能对应一个value，所以，多次对一个key放入value，后面的值会把前面的值覆盖掉：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> m = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">m.set(<span class="string">'小明'</span>, <span class="number">67</span>);</span><br><span class="line">m.set(<span class="string">'小明'</span>, <span class="number">88</span>);</span><br><span class="line">m.get(<span class="string">'小明'</span>); <span class="comment">// 88</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>JS</category>
         <category>ES6</category>
       </categories>
       <tags>
@@ -127,6 +125,9 @@
 <li><a href="https://blog.csdn.net/qq_34645412/article/details/81170576" target="_blank" rel="noopener external nofollow noreferrer">ES6 Promise用法小结</a>         </li>
 </ol>
 ]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
       <tags>
         <tag>JS</tag>
       </tags>
@@ -182,8 +183,7 @@
 </blockquote>
 <h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;character[][]&#125;</span> <span class="variable">board</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> isValidSudoku = <span class="function"><span class="keyword">function</span>(<span class="params">board</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> arr1 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(board));</span><br><span class="line">	<span class="keyword">var</span> arr2 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(board));</span><br><span class="line">	<span class="keyword">var</span> arr3 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(board));</span><br><span class="line">    <span class="comment">// 检查行</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++)&#123;</span><br><span class="line">    	<span class="keyword">var</span> a = arr1[i];</span><br><span class="line">    	a.sort();</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">8</span>; a[j]*<span class="number">1</span>; j--)&#123;</span><br><span class="line">    		<span class="keyword">if</span>(a[j] === a[j<span class="number">-1</span>])&#123;</span><br><span class="line">    			<span class="comment">// console.log(a);</span></span><br><span class="line">    			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    		&#125;</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 检查列   </span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++)&#123;</span><br><span class="line">    	<span class="keyword">var</span> b = [];</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="number">9</span>; j++)&#123;</span><br><span class="line">    		b.push(arr2[j][i]);</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="comment">// console.log(b);</span></span><br><span class="line">    	b.sort();</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">8</span>; b[j]*<span class="number">1</span>; j--)&#123;</span><br><span class="line">    		<span class="keyword">if</span>(b[j] === b[j<span class="number">-1</span>])&#123;</span><br><span class="line">    			<span class="comment">// console.log(b);</span></span><br><span class="line">    			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    		&#125;</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 检查九宫格</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i+=<span class="number">3</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> ii = i + <span class="number">3</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="number">9</span>; j+=<span class="number">3</span>)&#123;</span><br><span class="line">            <span class="keyword">var</span> jj = j + <span class="number">3</span>;</span><br><span class="line">            <span class="keyword">var</span> c = [];</span><br><span class="line">            <span class="keyword">for</span>(i; i &lt; ii; i++)&#123;</span><br><span class="line">                <span class="keyword">for</span>(j; j &lt; jj; j++)&#123;</span><br><span class="line">                    c.push(arr3[i][j]);</span><br><span class="line">                &#125;</span><br><span class="line">                j = jj - <span class="number">3</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// console.log(i);</span></span><br><span class="line">            i = ii - <span class="number">3</span>;</span><br><span class="line">            <span class="comment">// console.log(c);</span></span><br><span class="line">            c.sort();</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> k = <span class="number">8</span>; c[k]*<span class="number">1</span>; k--)&#123;</span><br><span class="line">                <span class="keyword">if</span>(c[k] === c[k<span class="number">-1</span>])&#123;</span><br><span class="line">                    <span class="comment">// console.log(c);</span></span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>算法</category>
-        <category>JS</category>
+        <category>JS算法题</category>
       </categories>
       <tags>
         <tag>算法</tag>
@@ -204,8 +204,7 @@
 <h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[][]&#125;</span> <span class="variable">matrix</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;void&#125;</span> </span>Do not return anything, modify matrix in-place instead.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> rotate = <span class="function"><span class="keyword">function</span>(<span class="params">matrix</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> count = matrix.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> c = count - <span class="number">1</span>; c &gt;= <span class="number">0</span>; c--)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i  = <span class="number">0</span>; i &lt; count; i++)&#123;</span><br><span class="line">            matrix[i].push(matrix[c][i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> c = <span class="number">0</span>; c &lt; count; c++)&#123;</span><br><span class="line">        matrix[c].splice(<span class="number">0</span>,count);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> matrix;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>算法</category>
-        <category>JS</category>
+        <category>JS算法题</category>
       </categories>
       <tags>
         <tag>算法</tag>
@@ -394,7 +393,6 @@
       </categories>
       <tags>
         <tag>OPP面对对象</tag>
-        <tag>JS</tag>
       </tags>
   </entry>
   <entry>
@@ -453,8 +451,8 @@ Person 没有 say() 方法，但是，我们通过 prototype 给 Person 的原�
         <category>web前端</category>
       </categories>
       <tags>
-        <tag>JS</tag>
         <tag>web前端</tag>
+        <tag>JS</tag>
       </tags>
   </entry>
   <entry>
