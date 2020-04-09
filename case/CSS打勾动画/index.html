@@ -53,8 +53,8 @@
 <meta property="og:site_name" content="顽石不语">
 <meta property="og:description" content="CSS打勾动画        .case-room {       display: flex;       justify-content: center;       align-items: center;       flex-direction: column;       background-color: #878282;     }     .check-in">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-04-09T07:59:29.762Z">
-<meta property="article:modified_time" content="2020-04-09T07:59:29.762Z">
+<meta property="article:published_time" content="2020-04-09T08:08:26.829Z">
+<meta property="article:modified_time" content="2020-04-09T08:08:26.829Z">
 <meta property="article:author" content="石头">
 <meta name="twitter:card" content="summary">
 
@@ -267,7 +267,14 @@
       background-color: #878282;
     }
     .check-input {
+      position: relative;
       margin: 20px 0 20px 0;
+    }
+    .check-input::before {
+      content: attr(data-info);
+      position: absolute;
+      left: -60px;
+      top: -4px;
     }
     .check-h2 {
       font-family: Arial, Helvetica;
@@ -327,7 +334,7 @@
 </head>
 <body>
   <div class="case-room">
-    <input class="check-input" type="checkbox">
+    <input data-info="请点击：" class="check-input" type="checkbox">
     <svg width="300" height="300">
       <circle class="circle" fill="none" stroke-width="15" stroke="#68e534"
        cx="150" cy="150" r="142" stroke-linecap="round"/>
