@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div id="app">
+    <div class="calculator">
+      <div class="result" style="grid-area: result">
+        {{equation}}
+      </div>
+      
+      <button style="grid-area: ac" @click="clear">AC</button>
+      <button style="grid-area: plus_minus" @click="calculateToggle">±</button>
+      <button style="grid-area: percent" @click="calculatePercentage">%</button>
+      <button style="grid-area: add" @click="append('+')">+</button>
+      <button style="grid-area: subtract" @click="append('-')">-</button>
+      <button style="grid-area: multiply" @click="append('×')">×</button>
+      <button style="grid-area: divide" @click="append('÷')">÷</button>
+      <button style="grid-area: equal" @click="calculate">=</button>
+      
+      <button style="grid-area: number-1" @click="append('1')">1</button>
+      <button style="grid-area: number-2" @click="append('2')">2</button>
+      <button style="grid-area: number-3" @click="append('3')">3</button>
+      <button style="grid-area: number-4" @click="append('4')">4</button>
+      <button style="grid-area: number-5" @click="append('5')">5</button>
+      <button style="grid-area: number-6" @click="append('6')">6</button>
+      <button style="grid-area: number-7" @click="append('7')">7</button>
+      <button style="grid-area: number-8" @click="append('8')">8</button>
+      <button style="grid-area: number-9" @click="append('9')">9</button>
+      <button style="grid-area: number-0" @click="append('0')">0</button>
+      
+      <button style="grid-area: dot" @click="append('.')">.</button>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        equation: '0',
+        isDecimalAdded: false, // 判断是否已经输入小数点，防止一组数输入多个小数点
+        isOperatorAdded: false, //判断是否已经点击加减乘除，防止连续点击超过一个运算符号
+        isStarted: false  //判断计算器是否已经开始输入数字
+      },
+      methods: {
+        isOperator(charactor) {  //点击加减乘除时
+          return ['+', '-', '×', '÷'].indexOf(charactor) > -1;
+        },
+        append(charactor) {  // 点击加减乘除 数字或小数点时
+          if(this.equation === '0' && !this.isOperator(charactor)) {  //一开始点只能点击 数字 或 小数点，不能点击运算符号
+            if(charactor === '.') {  //如果一开始输入小数点
+              this.equation += '' + charactor; // 结果不变
+              this.isDecimalAdded = true;  // 是否输入小数点改为是
+            } else {
+              this.equation = '' + charactor;
+            }
+            this.isStarted = true;  //开始计算改为true
+            return;
+          }
+        
+        //如果点击的是 数字
+          if( !this.isOperator(charactor)) {
+            if(charactor === '.' && this.isDecimalAdded) { //如果输入小数点且已经输入过小数点
+              return;
+            }
+
+            if(charactor === '.') {  //如果点击的是小数点
+              this.isDecimalAdded = true;
+              this.isOperatorAdded = true; //防止输入小数点后直接输入运算符
+            }else {
+              this.isOperatorAdded = false; //输入数字后可以输入运算符
+            }
+
+            this.equation += '' + charactor;
+          }
+        
+         //如果输入的是运算符
+          if(this.isOperator(charactor) && !this.isOperatorAdded) {
+            this.equation += '' + charactor;
+            this.isDecimalAdded = false;  //输入运算符后可以再输入小数点
+            this.isOperatorAdded = true;  //防止输入多个运算符
+          }
+        },
+        calculate() {  //点击等于号时
+          let result = this.equation.replace(new RegExp('×','g'), '*').replace(new RegExp('÷','g'), '/');
+
+          this.equation = parseFloat(eval(result).toFixed(9)).toString(); //toEixed 限制位数 ，parseFloat 去除结尾多余的0
+          this.isDecimalAdded = false;
+          this.isOperatorAdded = false;
+        },
+        calculateToggle() {  // 点击正负号时
+          if(this.isOperatorAdded || !this.isStarted) {  //如果刚输入运算符 或未开启计算器，就不能输入正负号
+            return;
+          }
+          this.equation = this.equation + '* -1';
+          this.calculate();
+        },
+        calculatePercentage() {  //点击百分号时
+          if(this.isOperatorAdded || !this.isStarted) {  //如果刚输入运算符 或未开启计算器，就不能输入百分号
+            return;
+          }
+          this.equation = this.equation + '* 0.01';
+          this.calculate();
+        },
+        clear() {  //点击 AC 时
+          this.equation = '0',
+          this.isDecimalAdded = false,
+          this.isOperatorAdded = false,
+          this.isStarted = false  
+        }
+      }
+    })
+  </script>
+</body>
+</html>

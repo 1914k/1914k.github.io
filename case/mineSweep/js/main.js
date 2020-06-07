@@ -5,8 +5,8 @@ new Vue({
       levels: [
         // text:难度名称, value: 行格子数,列格子数,雷数
         {text: '简单', id: 0, value: [10, 10, 12]},
-        {text: '一般', id: 1, value: [20, 20, 40]},
-        {text: '困难', id: 2, value: [20, 20, 90]},
+        {text: '一般', id: 1, value: [20, 20, 80]},
+        {text: '困难', id: 2, value: [20, 20, 100]},
         {text: '自定义', id: 3, value: [5, 5, 2]}
       ],
       rows: 0, //行
