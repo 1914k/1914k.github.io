@@ -219,7 +219,7 @@
 <ol>
 <li><p>创建期间的生命周期函数：</p>
 <ul>
-<li><p><em>beforeCreate（创建前）</em>: 实例完全创建出来之前会调用它，此时刚在内存中创建出实例，还没有初始化好 date 和 methods 属性，我们此时无法调用 data 和 methods 里的数据和方法</p>
+<li><p><em>beforeCreate（创建前）</em>: 实例完全创建出来之前会调用它，此时刚在内存中创建出实例，还没有初始化好 data 和 methods 属性，我们此时无法调用 data 和 methods 里的数据和方法</p>
 <p><img src="/images/artic/lifecycle/img-1.png" alt="截图"><br><img src="/images/artic/lifecycle/img-2.png" alt="截图"></p>
 </li>
 <li><p><em>created（创建后）</em>： 实例已经创建完毕，date 和 methods 属性也初始化完毕,但是 el还未初始化，还没开始编译模板；</p>
