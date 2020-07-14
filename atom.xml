@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://1914k.github.io/"/>
-  <updated>2020-04-07T10:01:36.681Z</updated>
+  <updated>2020-07-14T15:57:42.375Z</updated>
   <id>http://1914k.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>浅拷贝和深拷贝</title>
+    <link href="http://1914k.github.io/2020/07/14/%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/"/>
+    <id>http://1914k.github.io/2020/07/14/%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/</id>
+    <published>2020-07-14T14:29:20.000Z</published>
+    <updated>2020-07-14T15:57:42.375Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;浅拷贝:&lt;/strong&gt; 
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JS" scheme="http://1914k.github.io/categories/JS/"/>
+    
+    
+      <category term="JS" scheme="http://1914k.github.io/tags/JS/"/>
+    
+  </entry>
   
   <entry>
     <title>利用vue制作扫雷游戏</title>
@@ -90,16 +118,17 @@
   </entry>
   
   <entry>
-    <title>LeetCode-有效的数独</title>
-    <link href="http://1914k.github.io/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/"/>
-    <id>http://1914k.github.io/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/</id>
+    <title>LeetCode-旋转图像</title>
+    <link href="http://1914k.github.io/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%20copy/"/>
+    <id>http://1914k.github.io/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%20copy/</id>
     <published>2020-03-03T13:28:13.000Z</published>
-    <updated>2020-04-07T10:03:25.761Z</updated>
+    <updated>2020-04-07T10:03:32.813Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;有效的数独&quot;&gt;&lt;a href=&quot;#有效的数独&quot; class=&quot;headerlink&quot; title=&quot;有效的数独&quot;&gt;&lt;/a&gt;有效的数独&lt;/h2&gt;&lt;p&gt;判断一个 9x9 的数独是否有效。只需要根据以下规则，验证已经填入的数字是否有效即可。&lt;/p&gt;
-&lt;p&gt;数字 1-9 在每一行只能出现一次。&lt;br&gt;数字 1-9 在每一列只能出现一次。&lt;br&gt;数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。&lt;/p&gt;
+      &lt;h2 id=&quot;旋转图像&quot;&gt;&lt;a href=&quot;#旋转图像&quot; class=&quot;headerlink&quot; title=&quot;旋转图像&quot;&gt;&lt;/a&gt;旋转图像&lt;/h2&gt;&lt;p&gt;给定一个 n × n 的二维矩阵表示一个图像。将图像顺时针旋转 90 度。&lt;/p&gt;
+&lt;p&gt;说明：&lt;/p&gt;
+&lt;p&gt;你必须在原地旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要使用另一个矩阵来旋转图像。&lt;/p&gt;
     
     </summary>
     
@@ -112,17 +141,16 @@
   </entry>
   
   <entry>
-    <title>LeetCode-旋转图像</title>
-    <link href="http://1914k.github.io/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%20copy/"/>
-    <id>http://1914k.github.io/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%20copy/</id>
+    <title>LeetCode-有效的数独</title>
+    <link href="http://1914k.github.io/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/"/>
+    <id>http://1914k.github.io/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/</id>
     <published>2020-03-03T13:28:13.000Z</published>
-    <updated>2020-04-07T10:03:32.813Z</updated>
+    <updated>2020-04-07T10:03:25.761Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;旋转图像&quot;&gt;&lt;a href=&quot;#旋转图像&quot; class=&quot;headerlink&quot; title=&quot;旋转图像&quot;&gt;&lt;/a&gt;旋转图像&lt;/h2&gt;&lt;p&gt;给定一个 n × n 的二维矩阵表示一个图像。将图像顺时针旋转 90 度。&lt;/p&gt;
-&lt;p&gt;说明：&lt;/p&gt;
-&lt;p&gt;你必须在原地旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要使用另一个矩阵来旋转图像。&lt;/p&gt;
+      &lt;h2 id=&quot;有效的数独&quot;&gt;&lt;a href=&quot;#有效的数独&quot; class=&quot;headerlink&quot; title=&quot;有效的数独&quot;&gt;&lt;/a&gt;有效的数独&lt;/h2&gt;&lt;p&gt;判断一个 9x9 的数独是否有效。只需要根据以下规则，验证已经填入的数字是否有效即可。&lt;/p&gt;
+&lt;p&gt;数字 1-9 在每一行只能出现一次。&lt;br&gt;数字 1-9 在每一列只能出现一次。&lt;br&gt;数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。&lt;/p&gt;
     
     </summary>
     

@@ -155,7 +155,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">12</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">13</span></a>
 
   </li>
         <li class="menu-item menu-item-小案例">
@@ -222,6 +222,138 @@
             
 
   <div class="posts-expand">
+      
+          
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://1914k.github.io/2020/07/14/%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/asset/touxiang.jpg">
+      <meta itemprop="name" content="石头">
+      <meta itemprop="description" content="提升自己技术的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="顽石不语">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/14/%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/" class="post-title-link" itemprop="url">浅拷贝和深拷贝</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-07-14 22:29:20 / 修改时间：23:57:42" itemprop="dateCreated datePublished" datetime="2020-07-14T22:29:20+08:00">2020-07-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JS/" itemprop="url" rel="index">
+                    <span itemprop="name">JS</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/07/14/%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/" class="post-meta-item leancloud_visitors" data-flag-title="浅拷贝和深拷贝" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/07/14/%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/14/%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li><p><strong>浅拷贝:</strong>  创建一个新对象，对象的属性复制自被拷贝的对象，且只复制一层被拷贝对象的属性。如果被拷贝对象的属性是基础类型的，就复制基础类型的值，如果是引用类型，则复制的是引用类型的内存地址，当改变被拷贝的对象里面的引用类型属性时，拷贝的新对象的属性值也会改变，因为它们都是指向同一个内存地址。</p>
+</li>
+<li><p><strong>深拷贝:</strong>  重新开辟一个新的内存空间，若被拷贝对象的引用类型的值还是引用类型，则可能需要用到递归，直到完全的复制一个对象，新对象和被拷贝的对象看起来一样，但对应的是不同的内存地址，彼此之间互不影响。</p>
+</li>
+</ul>
+<h3 id="JavaScript的数据类型"><a href="#JavaScript的数据类型" class="headerlink" title="JavaScript的数据类型"></a>JavaScript的数据类型</h3><ol>
+<li><p>基本类型:<br>Undefined、Null、Boolean、String、Number、BigInt、Symbol，基本数据类型直接存放在栈内存中，可以直接访问</p>
+</li>
+<li><p>引用类型:<br>Object， 里面包含 function、array、Date，引用类型存放在堆内存中，变量保存的是一个指向该内存地址的指针，当访问引用类型时，先从占栈内存中获取给对象的地址指针，然后再在堆内存中获取该引用类型的数据</p>
+</li>
+</ol>
+<h3 id="浅拷贝的实现"><a href="#浅拷贝的实现" class="headerlink" title="浅拷贝的实现"></a>浅拷贝的实现</h3><ol>
+<li><p>简单的循环复制</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//只拷贝对象</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> obj !== <span class="string">'object'</span>) <span class="keyword">return</span></span><br><span class="line">  <span class="comment">//判断拷贝的是数组还是对象，是数组建一个空数组，否则建一个空对象</span></span><br><span class="line">  <span class="keyword">let</span> result = obj <span class="keyword">instanceof</span> <span class="built_in">Array</span> ? [] : &#123;&#125;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">    result[key] = obj[key]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = &#123;<span class="attr">a</span>:<span class="string">'aa'</span>, <span class="attr">b</span>:<span class="string">'bb'</span>&#125;</span><br><span class="line"><span class="built_in">console</span>.log(clone(arr)) <span class="comment">//&#123;a: "aa", b: "bb"&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Object.assign() 方法<br>Object.assign() 方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。<br>拷贝数组或对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> obj === <span class="string">'object'</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> result = obj <span class="keyword">instanceof</span> <span class="built_in">Array</span> ? [] : &#123;&#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.assign(result, obj)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">54</span>]</span><br><span class="line"><span class="built_in">console</span>.log(clone(arr)) <span class="comment">//[1, 2, 3, 4, 4, 54]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>拓展运算符 …</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> obj === <span class="string">'object'</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> result = obj <span class="keyword">instanceof</span> <span class="built_in">Array</span> ? [...obj] : &#123;...obj&#125;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">54</span>]</span><br><span class="line"><span class="built_in">console</span>.log(clone(arr)) <span class="comment">//[1, 2, 3, 4, 4, 54]</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="深拷贝的实现"><a href="#深拷贝的实现" class="headerlink" title="深拷贝的实现"></a>深拷贝的实现</h3><p>简单的深拷贝，数组和对象,在拷贝的时候判断一下属性值的类型，如果是对象，我们就递归调用深拷贝函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> copy = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> obj !== <span class="string">'object'</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">var</span> newObj = obj <span class="keyword">instanceof</span> <span class="built_in">Array</span> ? [] : &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">        <span class="keyword">if</span> (obj.hasOwnProperty(key)) &#123;</span><br><span class="line">            newObj[key] = <span class="keyword">typeof</span> obj[key] === <span class="string">'object'</span> ? copy(obj[key]) : obj[key];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newObj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">    name: <span class="string">"kyle"</span>,</span><br><span class="line">    flag: &#123;</span><br><span class="line">        title: <span class="string">"Study every day"</span>,</span><br><span class="line">        time: <span class="string">"2020-7-14"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> b = copy(a);</span><br><span class="line">a.flag.title = <span class="string">'aaaa'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a.flag.title) <span class="comment">// aaaa</span></span><br><span class="line"><span class="built_in">console</span>.log(b.flag.title) <span class="comment">// Study every day</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
       
       
           
@@ -470,127 +602,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://1914k.github.io/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/asset/touxiang.jpg">
-      <meta itemprop="name" content="石头">
-      <meta itemprop="description" content="提升自己技术的个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="顽石不语">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/" class="post-title-link" itemprop="url">LeetCode-有效的数独</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-03 21:28:13" itemprop="dateCreated datePublished" datetime="2020-03-03T21:28:13+08:00">2020-03-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-07 18:03:25" itemprop="dateModified" datetime="2020-04-07T18:03:25+08:00">2020-04-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JS%E7%AE%97%E6%B3%95%E9%A2%98/" itemprop="url" rel="index">
-                    <span itemprop="name">JS算法题</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode-有效的数独" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>5.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="有效的数独"><a href="#有效的数独" class="headerlink" title="有效的数独"></a>有效的数独</h2><p>判断一个 9x9 的数独是否有效。只需要根据以下规则，验证已经填入的数字是否有效即可。</p>
-<p>数字 1-9 在每一行只能出现一次。<br>数字 1-9 在每一列只能出现一次。<br>数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-      
-          
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://1914k.github.io/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%20copy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -688,6 +699,127 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%20copy/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+      
+          
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://1914k.github.io/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/asset/touxiang.jpg">
+      <meta itemprop="name" content="石头">
+      <meta itemprop="description" content="提升自己技术的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="顽石不语">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/" class="post-title-link" itemprop="url">LeetCode-有效的数独</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-03 21:28:13" itemprop="dateCreated datePublished" datetime="2020-03-03T21:28:13+08:00">2020-03-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-07 18:03:25" itemprop="dateModified" datetime="2020-04-07T18:03:25+08:00">2020-04-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JS%E7%AE%97%E6%B3%95%E9%A2%98/" itemprop="url" rel="index">
+                    <span itemprop="name">JS算法题</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode-有效的数独" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="有效的数独"><a href="#有效的数独" class="headerlink" title="有效的数独"></a>有效的数独</h2><p>判断一个 9x9 的数独是否有效。只需要根据以下规则，验证已经填入的数字是否有效即可。</p>
+<p>数字 1-9 在每一行只能出现一次。<br>数字 1-9 在每一列只能出现一次。<br>数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1188,127 +1320,6 @@
   
 
       
-      
-          
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://1914k.github.io/2020/02/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B8%80/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/asset/touxiang.jpg">
-      <meta itemprop="name" content="石头">
-      <meta itemprop="description" content="提升自己技术的个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="顽石不语">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B8%80/" class="post-title-link" itemprop="url">前端面试题一</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-20 11:57:49" itemprop="dateCreated datePublished" datetime="2020-02-20T11:57:49+08:00">2020-02-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-27 11:33:31" itemprop="dateModified" datetime="2020-02-27T11:33:31+08:00">2020-02-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
-                    <span itemprop="name">web前端</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/02/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B8%80/" class="post-meta-item leancloud_visitors" data-flag-title="前端面试题一" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/02/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B8%80/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/02/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B8%80/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.9k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="1-call-和-apply-的区别？"><a href="#1-call-和-apply-的区别？" class="headerlink" title="1. call 和 apply 的区别？"></a>1. call 和 apply 的区别？</h2><p>call 和 apply 都可以改变 this 的指向，如下，都是把 B 的 this 指向 A，即使用的是 A 的方法。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A.call(B, argument1， argument2, ...);</span><br><span class="line">A.apply(B, [argument1， argument2, ...]);</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/02/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B8%80/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
   </div>
 
   
@@ -1381,7 +1392,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1476,13 +1487,13 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">29k</span>
+    <span title="站点总字数">31k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">27 分钟</span>
+    <span title="站点阅读时长">28 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a> 强力驱动 v4.2.0
   </div>

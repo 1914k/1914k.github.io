@@ -46,24 +46,20 @@
   };
 </script>
 
-  <meta name="description" content="Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式，按我的理解就是就是一个监控全局状态的一个库，储存在这个库里的数据变化了，各个组件在使用时都会同步变化，省去了组件间反复交错传值的麻烦,即储存在 Vuex 里的数据是响应式的。">
+  <meta name="description" content="浅拷贝:  创建一个新对象，对象的属性复制自被拷贝的对象，且只复制一层被拷贝对象的属性。如果被拷贝对象的属性是基础类型的，就复制基础类型的值，如果是引用类型，则复制的是引用类型的内存地址，当改变被拷贝的对象里面的引用类型属性时，拷贝的新对象的属性值也会改变，因为它们都是指向同一个内存地址。  深拷贝:  重新开辟一个新的内存空间，若被拷贝对象的引用类型的值还是引用类型，则可能需要用到递归，直到完">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vuex简介">
-<meta property="og:url" content="http://1914k.github.io/2020/02/27/Vuex%E7%AE%80%E4%BB%8B/index.html">
+<meta property="og:title" content="浅拷贝和深拷贝">
+<meta property="og:url" content="http://1914k.github.io/2020/07/14/%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/index.html">
 <meta property="og:site_name" content="顽石不语">
-<meta property="og:description" content="Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式，按我的理解就是就是一个监控全局状态的一个库，储存在这个库里的数据变化了，各个组件在使用时都会同步变化，省去了组件间反复交错传值的麻烦,即储存在 Vuex 里的数据是响应式的。">
+<meta property="og:description" content="浅拷贝:  创建一个新对象，对象的属性复制自被拷贝的对象，且只复制一层被拷贝对象的属性。如果被拷贝对象的属性是基础类型的，就复制基础类型的值，如果是引用类型，则复制的是引用类型的内存地址，当改变被拷贝的对象里面的引用类型属性时，拷贝的新对象的属性值也会改变，因为它们都是指向同一个内存地址。  深拷贝:  重新开辟一个新的内存空间，若被拷贝对象的引用类型的值还是引用类型，则可能需要用到递归，直到完">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://1914k.github.io/images/artic/vuex/img-1.png">
-<meta property="og:image" content="http://1914k.github.io/images/artic/vuex/img-2.png">
-<meta property="og:image" content="http://1914k.github.io/images/artic/vuex/img-3.png">
-<meta property="article:published_time" content="2020-02-27T12:40:46.000Z">
-<meta property="article:modified_time" content="2020-02-29T04:41:24.219Z">
+<meta property="article:published_time" content="2020-07-14T14:29:20.000Z">
+<meta property="article:modified_time" content="2020-07-14T15:57:42.375Z">
 <meta property="article:author" content="石头">
-<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="JS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://1914k.github.io/images/artic/vuex/img-1.png">
 
-<link rel="canonical" href="http://1914k.github.io/2020/02/27/Vuex%E7%AE%80%E4%BB%8B/">
+<link rel="canonical" href="http://1914k.github.io/2020/07/14/%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/">
 
 
 <script id="page-configurations">
@@ -75,7 +71,7 @@
   };
 </script>
 
-  <title>Vuex简介 | 顽石不语</title>
+  <title>浅拷贝和深拷贝 | 顽石不语</title>
   
 
 
@@ -233,7 +229,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://1914k.github.io/2020/02/27/Vuex%E7%AE%80%E4%BB%8B/">
+    <link itemprop="mainEntityOfPage" href="http://1914k.github.io/2020/07/14/%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/asset/touxiang.jpg">
@@ -246,7 +242,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Vuex简介
+          浅拷贝和深拷贝
         </h1>
 
         <div class="post-meta">
@@ -255,30 +251,24 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-02-27 20:40:46" itemprop="dateCreated datePublished" datetime="2020-02-27T20:40:46+08:00">2020-02-27</time>
+              <time title="创建时间：2020-07-14 22:29:20 / 修改时间：23:57:42" itemprop="dateCreated datePublished" datetime="2020-07-14T22:29:20+08:00">2020-07-14</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-29 12:41:24" itemprop="dateModified" datetime="2020-02-29T12:41:24+08:00">2020-02-29</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue/" itemprop="url" rel="index">
-                    <span itemprop="name">Vue</span>
+                  <a href="/categories/JS/" itemprop="url" rel="index">
+                    <span itemprop="name">JS</span>
                   </a>
                 </span>
             </span>
 
           
-            <span id="/2020/02/27/Vuex%E7%AE%80%E4%BB%8B/" class="post-meta-item leancloud_visitors" data-flag-title="Vuex简介" title="阅读次数">
+            <span id="/2020/07/14/%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/" class="post-meta-item leancloud_visitors" data-flag-title="浅拷贝和深拷贝" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -293,8 +283,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/02/27/Vuex%E7%AE%80%E4%BB%8B/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/02/27/Vuex%E7%AE%80%E4%BB%8B/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/07/14/%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/14/%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -304,14 +294,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.9k</span>
+              <span>1.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -323,46 +313,32 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式，按我的理解就是就是一个监控全局状态的一个库，储存在这个库里的数据变化了，各个组件在使用时都会同步变化，省去了组件间反复交错传值的麻烦,即储存在 Vuex 里的数据是响应式的。</p>
-<a id="more"></a>
-<h2 id="如何使用-Vuex"><a href="#如何使用-Vuex" class="headerlink" title="如何使用 Vuex"></a>如何使用 Vuex</h2><p>我们首先要在项目里安装 Vuex</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vuex --save</span><br></pre></td></tr></table></figure>
-<p>然后我们创建一个 store，Vuex 的核心就是 store（仓库），创建过程直截了当——仅需要提供一个初始 state 对象和一些 mutation：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果在模块化构建系统中，请确保在开头调用了 Vue.use(Vuex)</span></span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    count: <span class="number">0</span></span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    increment (state) &#123;</span><br><span class="line">      state.count++</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>一般在项目中，我们都在 src 目录下创建一个 store 文件夹，然后创建对应的 js 文件，免得State 、 Mutation、 Getter 和 Action 等都混杂在一个文件里，方便以后的改动。</p>
-<p><img src="/images/artic/vuex/img-1.png" alt="截图"><br>然后初始化 store，在 index.js 里引入相关的 state.js、mutations.js、getters.js、actions.js</p>
-<p><img src="/images/artic/vuex/img-2.png" alt="截图"></p>
-<p>并在 main.js 里挂载 store。</p>
-<p><img src="/images/artic/vuex/img-3.png" alt="截图"></p>
-<h2 id="Vuex-的核心概念"><a href="#Vuex-的核心概念" class="headerlink" title="Vuex 的核心概念"></a>Vuex 的核心概念</h2><h3 id="State"><a href="#State" class="headerlink" title="State"></a>State</h3><blockquote>
-<p>Vuex 使用单一状态树，即 Vuex 仅用一个 state 对象来保存所有的数据状态，</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//state.js</span></span><br><span class="line"><span class="comment">// 创建 state 对象</span></span><br><span class="line"><span class="keyword">const</span> state = &#123;</span><br><span class="line">  count: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> state</span><br></pre></td></tr></table></figure>
-<p>例如我们创建了一个 state 对象，里面有一个 count 属性。在 Vuex 可以通过 store.state.conut 调用它。在模块化组件中使用 算属性返回 state 里面的值,有如下两种方式：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用 mapState 函数时要提前引入 mapState 函数</span></span><br><span class="line"> <span class="keyword">import</span> &#123; mapState &#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"></span><br><span class="line"> <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">'XXX'</span>,</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  computed: &#123;</span><br><span class="line">    <span class="comment">// 方法一  mapState 辅助函数</span></span><br><span class="line">    ...mapState([<span class="string">'count'</span>]),</span><br><span class="line">    <span class="comment">// 或者 方法二</span></span><br><span class="line">    count() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.$store.state.count;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <ul>
+<li><p><strong>浅拷贝:</strong>  创建一个新对象，对象的属性复制自被拷贝的对象，且只复制一层被拷贝对象的属性。如果被拷贝对象的属性是基础类型的，就复制基础类型的值，如果是引用类型，则复制的是引用类型的内存地址，当改变被拷贝的对象里面的引用类型属性时，拷贝的新对象的属性值也会改变，因为它们都是指向同一个内存地址。</p>
+</li>
+<li><p><strong>深拷贝:</strong>  重新开辟一个新的内存空间，若被拷贝对象的引用类型的值还是引用类型，则可能需要用到递归，直到完全的复制一个对象，新对象和被拷贝的对象看起来一样，但对应的是不同的内存地址，彼此之间互不影响。</p>
+</li>
+</ul>
+<h3 id="JavaScript的数据类型"><a href="#JavaScript的数据类型" class="headerlink" title="JavaScript的数据类型"></a>JavaScript的数据类型</h3><ol>
+<li><p>基本类型:<br>Undefined、Null、Boolean、String、Number、BigInt、Symbol，基本数据类型直接存放在栈内存中，可以直接访问</p>
+</li>
+<li><p>引用类型:<br>Object， 里面包含 function、array、Date，引用类型存放在堆内存中，变量保存的是一个指向该内存地址的指针，当访问引用类型时，先从占栈内存中获取给对象的地址指针，然后再在堆内存中获取该引用类型的数据</p>
+</li>
+</ol>
+<h3 id="浅拷贝的实现"><a href="#浅拷贝的实现" class="headerlink" title="浅拷贝的实现"></a>浅拷贝的实现</h3><ol>
+<li><p>简单的循环复制</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//只拷贝对象</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> obj !== <span class="string">'object'</span>) <span class="keyword">return</span></span><br><span class="line">  <span class="comment">//判断拷贝的是数组还是对象，是数组建一个空数组，否则建一个空对象</span></span><br><span class="line">  <span class="keyword">let</span> result = obj <span class="keyword">instanceof</span> <span class="built_in">Array</span> ? [] : &#123;&#125;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">    result[key] = obj[key]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = &#123;<span class="attr">a</span>:<span class="string">'aa'</span>, <span class="attr">b</span>:<span class="string">'bb'</span>&#125;</span><br><span class="line"><span class="built_in">console</span>.log(clone(arr)) <span class="comment">//&#123;a: "aa", b: "bb"&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Object.assign() 方法<br>Object.assign() 方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。<br>拷贝数组或对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> obj === <span class="string">'object'</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> result = obj <span class="keyword">instanceof</span> <span class="built_in">Array</span> ? [] : &#123;&#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.assign(result, obj)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">54</span>]</span><br><span class="line"><span class="built_in">console</span>.log(clone(arr)) <span class="comment">//[1, 2, 3, 4, 4, 54]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>拓展运算符 …</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> obj === <span class="string">'object'</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> result = obj <span class="keyword">instanceof</span> <span class="built_in">Array</span> ? [...obj] : &#123;...obj&#125;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">54</span>]</span><br><span class="line"><span class="built_in">console</span>.log(clone(arr)) <span class="comment">//[1, 2, 3, 4, 4, 54]</span></span><br></pre></td></tr></table></figure>
 
-在 html 中使用时直接 {{count}} 引用就行。
-
-</blockquote>
-<h3 id="Getter"><a href="#Getter" class="headerlink" title="Getter"></a>Getter</h3><blockquote>
-<p>getter就是取值，可以认为是 store 的计算属性，就像计算属性一样，getter 的返回值会根据它的依赖值改变而重新计算。getter 接受 state 作为其第一个参数，也可以接受其他的 getter 作为第二个参数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//getters.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  cartLength(state) &#123;</span><br><span class="line">    <span class="keyword">return</span> state.cartList.length;</span><br><span class="line">  &#125;,</span><br><span class="line">  cartProduct(state) &#123;</span><br><span class="line">    <span class="keyword">return</span> state.cartList;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们在 Vue 中也有两种方式访问到 getter 的值</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用 mapGetters 函数时要提前引入 mapGetters 函数</span></span><br><span class="line"><span class="keyword">import</span> &#123; mapGetters &#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line"> name: <span class="string">'XXX'</span>,</span><br><span class="line"> <span class="comment">// ...</span></span><br><span class="line"> computed: &#123;</span><br><span class="line">   <span class="comment">// 方法一  mapGetters 辅助函数</span></span><br><span class="line">   ...mapGetters([<span class="string">'cartLength'</span>,<span class="string">'cartProduct'</span>]),</span><br><span class="line">   <span class="comment">// 或者 方法二</span></span><br><span class="line">   cartLength() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.$store.getters.cartLength;</span><br><span class="line">   &#125;,</span><br><span class="line">   cartProduct() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.$store.getters.cartProduct;</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-在 html 中的使用方法也是用 {{}} 直接引用。
-
-</blockquote>
-<h3 id="Mutation"><a href="#Mutation" class="headerlink" title="Mutation"></a>Mutation</h3><blockquote>
-<p>更改 Vuex 的 store 中的状态的唯一方法是提交 mutation，mutation 是直接改变 state 中的具体的数据状态的地方，最直接的增删改都是在 mutation 中发生的，mutations 中的每个方法尽可能完成比较单一的事，具体的判断交给我们等下提到的 Action。我们通过调用 store.commit 方法提交 mutation，mutation 的第一个参数为 state，还可以传入额外的参数，即 mutation 的 载荷（payload）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//mutations.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  subtract(state)&#123;</span><br><span class="line">    state.count--;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//传入的 payload 是数字</span></span><br><span class="line">  increase(state, n)&#123;</span><br><span class="line">    state.count += n;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//一般来讲 payLoad 应该是一个对象</span></span><br><span class="line">  cut_off(state, payLoad)&#123;</span><br><span class="line">    <span class="keyword">delete</span> state.payLoad;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如上在 mutation 里我们应该尽量完成者增删改这种简单的操作。</p>
-</blockquote>
-<h3 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h3><blockquote>
-<p>Action 类似于 mutation，不同在于：Action 提交的是 mutation，而不是直接变更状态,即上面所说的判断具体的该不该增删改查的操作在 Action 中进行。而且在 Action 中的参数不是 state ，而是一个与 store 实例具有相同方法和属性的 context 对象，因此你可以调用 context.commit 提交一个 mutation，或者通过 context.state 和 context.getters 来获取 state 和 getters。Action 通过 store.dispatch 方法来提交。<br>例如：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span>&#123;</span><br><span class="line">   name: <span class="string">'XXX'</span>,</span><br><span class="line">   <span class="comment">//...</span></span><br><span class="line">   methods:&#123;</span><br><span class="line">     reduce() &#123;</span><br><span class="line">       <span class="keyword">this</span>.$store.dispatch(<span class="string">'reduce'</span>,item);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们提交了一个 dispatch 触发了 Action</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  reduce(context, payLoad) &#123;</span><br><span class="line">    <span class="comment">//提交 commit 触发上面 mutation 里的 subtract 方法。</span></span><br><span class="line">    context.commit(subtract);</span><br><span class="line">    <span class="comment">//如果 当前对象的 count 是 0，就提交 commit 触发上面 mutation 里的 cut_off 方法，删除当前的对象。</span></span><br><span class="line">    <span class="keyword">if</span>(payLoad.count === <span class="number">0</span>) &#123;</span><br><span class="line">      context.commit(cut_off,payLoad);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
+</li>
+</ol>
+<h3 id="深拷贝的实现"><a href="#深拷贝的实现" class="headerlink" title="深拷贝的实现"></a>深拷贝的实现</h3><p>简单的深拷贝，数组和对象,在拷贝的时候判断一下属性值的类型，如果是对象，我们就递归调用深拷贝函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> copy = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> obj !== <span class="string">'object'</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">var</span> newObj = obj <span class="keyword">instanceof</span> <span class="built_in">Array</span> ? [] : &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">        <span class="keyword">if</span> (obj.hasOwnProperty(key)) &#123;</span><br><span class="line">            newObj[key] = <span class="keyword">typeof</span> obj[key] === <span class="string">'object'</span> ? copy(obj[key]) : obj[key];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newObj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">    name: <span class="string">"kyle"</span>,</span><br><span class="line">    flag: &#123;</span><br><span class="line">        title: <span class="string">"Study every day"</span>,</span><br><span class="line">        time: <span class="string">"2020-7-14"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> b = copy(a);</span><br><span class="line">a.flag.title = <span class="string">'aaaa'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a.flag.title) <span class="comment">// aaaa</span></span><br><span class="line"><span class="built_in">console</span>.log(b.flag.title) <span class="comment">// Study every day</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -398,7 +374,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://1914k.github.io/2020/02/27/Vuex%E7%AE%80%E4%BB%8B/" title="Vuex简介">http://1914k.github.io/2020/02/27/Vuex简介/</a>
+    <a href="http://1914k.github.io/2020/07/14/%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/" title="浅拷贝和深拷贝">http://1914k.github.io/2020/07/14/浅拷贝和深拷贝/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -409,7 +385,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Vue/" rel="tag"> <i class="fa fa-tag"></i> Vue</a>
+              <a href="/tags/JS/" rel="tag"> <i class="fa fa-tag"></i> JS</a>
           </div>
 
         
@@ -418,13 +394,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/02/23/Vue-%E9%9D%A2%E8%AF%95%E9%A2%98-1-5/" rel="prev" title="Vue 面试题 1-5">
-      <i class="fa fa-chevron-left"></i> Vue 面试题 1-5
+    <a href="/2020/04/03/%E5%88%A9%E7%94%A8vue%E5%88%B6%E4%BD%9C%E6%89%AB%E9%9B%B7%E6%B8%B8%E6%88%8F/" rel="prev" title="利用vue制作扫雷游戏">
+      <i class="fa fa-chevron-left"></i> 利用vue制作扫雷游戏
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/03/01/Vue%E5%AE%9E%E4%BE%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" rel="next" title="Vue 实例的生命周期">
-      Vue 实例的生命周期 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -485,7 +458,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用-Vuex"><span class="nav-number">1.</span> <span class="nav-text">如何使用 Vuex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vuex-的核心概念"><span class="nav-number">2.</span> <span class="nav-text">Vuex 的核心概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#State"><span class="nav-number">2.1.</span> <span class="nav-text">State</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Getter"><span class="nav-number">2.2.</span> <span class="nav-text">Getter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mutation"><span class="nav-number">2.3.</span> <span class="nav-text">Mutation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Action"><span class="nav-number">2.4.</span> <span class="nav-text">Action</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript的数据类型"><span class="nav-number">1.</span> <span class="nav-text">JavaScript的数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浅拷贝的实现"><span class="nav-number">2.</span> <span class="nav-text">浅拷贝的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深拷贝的实现"><span class="nav-number">3.</span> <span class="nav-text">深拷贝的实现</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -690,7 +663,7 @@
       quicklink({
         timeout: 3000,
         priority: true,
-        ignores: [uri => uri.includes('#'),uri => uri == 'http://1914k.github.io/2020/02/27/Vuex%E7%AE%80%E4%BB%8B/',]
+        ignores: [uri => uri.includes('#'),uri => uri == 'http://1914k.github.io/2020/07/14/%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/',]
       });
       });
   </script>
