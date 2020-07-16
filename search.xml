@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>JavaScript 原型和原型链</title>
+    <url>/2020/07/16/JavaScript-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/</url>
+    <content><![CDATA[<h3 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h3><p>我们创建的每一个 JavaScript 对象都有一个 prototype (原型) 属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以有特定类型的所有实例共享的属性和方法。以为就是说 prototype 指向一个通过调用构造函数而创建的实例对象的原型对象，使用原型对象的好处是可以让所有实例共享它所包含的属性和方法。也就是说，我们不必在构造函数中定义对象实例的信息，而是将这些信息添加到原型对象中，例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.name = <span class="string">'张三'</span>;</span><br><span class="line">Person.prototype.age = <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person1 = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="keyword">let</span> person2 = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(person1.name); <span class="comment">//张三</span></span><br><span class="line"><span class="built_in">console</span>.log(person2.age);  <span class="comment">// 25</span></span><br></pre></td></tr></table></figure>
+<p>构造函数与实例原型的关系<br><img src="/images/artic/js_prototype/img01.jpg" alt="截图"></p>
+<h3 id="proto"><a href="#proto" class="headerlink" title="proto"></a><strong>proto</strong></h3><p>这是每个 JavaScript 对象(除了 null) 都有的一个属性, <code>__proto__</code>，这个属性指向该对象的原型。<br>例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> person = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(person.__proto__ === Person.prototype); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>实例与实例原型的关系<br><img src="/images/artic/js_prototype/img02.jpg" alt="截图"></p>
+<h3 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h3><p>实例和构造函数都有指向原型的属性，原型虽然没有指向实例的的属性，但是有指向构造函数的属性: constructor，每个原型都有一个指向构造函数的属性。另外我们可以通过 instanceof 关键字 判断它左边的对象是否是它右边的类的实例。<br>例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> person = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype.constructor === Person); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(person <span class="keyword">instanceof</span> Person); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>实例原型与构造函数关系<br><img src="/images/artic/js_prototype/img03.jpg" alt="截图"></p>
+<h3 id="实例与原型"><a href="#实例与原型" class="headerlink" title="实例与原型"></a>实例与原型</h3><p>构造函数、实例原型和实例的关系我们了解了，name实例和实例原型的关系呢？<br>当读取实例的属性时，如果找不到，就会查找该实例的原型中的属性，如果还查不到，就去找原型的原型，一直找到最顶层为止。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.name = <span class="string">'张三'</span>;</span><br><span class="line">Person.prototype.age = <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line">person.name = <span class="string">'李四'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(person.name) <span class="comment">// 李四</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> person.name;</span><br><span class="line"><span class="built_in">console</span>.log(person.name) <span class="comment">// 张三</span></span><br><span class="line"><span class="built_in">console</span>.log(person.sex) <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<p>上面的例子中，我们给实例对象 person 添加了 name 属性，打印为我们添加的 张三<br>但是我们后来删除了这个实例的 name 属性，我们再获取 name 属性时，吗，明明在实例里找不到该属性，我们还是输出了 李四，因为我们从实例对象 person 中招不到 name 属性，就会到它的原型中找，原型中有 name 属性，所以返回了该属性的值，而我们在原型和原型的原型上也没有找到 sex 属性，所以返回了 undefined。 </p>
+<h3 id="原型与原型"><a href="#原型与原型" class="headerlink" title="原型与原型"></a>原型与原型</h3><p>上面的 person.sex 返回的是 undefined，是在原型和原型的原型上查到，一直找到顶端没找到而返回的结果，那么原型的原型和原型的顶端又是什么呢？<br>例如:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(person.__proto__)</span><br></pre></td></tr></table></figure>
+<p><img src="/images/artic/js_prototype/img04.jpg" alt="截图"></p>
+<p>我们可以看到 person 的原型的 <code>__proto__</code> 指向了Object，也就是我们的最原始的对象。即原型与原型的关系:<br><img src="/images/artic/js_prototype/img05.jpg" alt="截图"></p>
+<p>那么</p>
+]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>call() apply()和 bind() 的区别</title>
     <url>/2020/07/15/JS%20%E4%B8%AD%20call()%E3%80%81apply()%E5%92%8C%20bind()%20%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
     <content><![CDATA[<h3 id="JavaScript-call-方法"><a href="#JavaScript-call-方法" class="headerlink" title="JavaScript call() 方法"></a>JavaScript call() 方法</h3><p>  call() 方法是预定义的 JavaScript 方法。它可以用来调用所有者对象作为参数的方法。通过 call()，您能够使用属于另一个对象的方法。<br>  例如调用 person 的 getNAme 方法。并用于person1</p>
