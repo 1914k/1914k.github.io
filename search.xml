@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>什么是闭包</title>
+    <url>/2020/07/17/%E4%BB%80%E4%B9%88%E6%98%AF%E9%97%AD%E5%8C%85/</url>
+    <content><![CDATA[<p>《JavaScript高级程序设计》里面说：</p>
+<blockquote>
+<p>闭包是指有权访问另一个函数作用域中的变量的函数,创建闭包的常见方式就是在一个函数内部创建另一个函数</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Func</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> sex = <span class="string">"男"</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(sex);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> func;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> func = Func();</span><br><span class="line"></span><br><span class="line">func(); <span class="comment">// 男</span></span><br><span class="line"><span class="built_in">console</span>.log(sex);  <span class="comment">//报错</span></span><br></pre></td></tr></table></figure>
+<p>上面的例子中, Func 函数执行返回了一个函数赋值给了变量 func。Func 函数在执行完后会被销毁，其内部的变量 sex 也随之一起销毁了，在作用域外应该是访问不到 sex 变量的，我们直接在外层作用域输出 sex 也确实报错了。但是我们执行 func 函数的时候却成功的输出了变量 sex 的值。<br>因为，JavaScript 中的函数会形成闭包，闭包是由函数以及声明该函数的语法环境组合而成的，该环境包含了创建这个闭包时的作用域内的所有局部变量。也就是例子中 Func 内部的所有变量。外部作用于是不能访问它的内层作用域的，在不同的函数作用域中也不能互相访问，但是我们可以通过闭包做到这一点。就如上面的例子中，我们通过闭包在全局作用域中访问到了一个函数作用域内的变量 sex。</p>
+<h4 id="闭包的-3-个条件"><a href="#闭包的-3-个条件" class="headerlink" title="闭包的 3 个条件"></a>闭包的 3 个条件</h4><ol>
+<li>函数必须有一个内嵌函数;</li>
+<li>内嵌函数必须引用外层函数中的变量;</li>
+<li>外层函数的返回值必须是内嵌函数</li>
+</ol>
+<h3 id="闭包相关的题目"><a href="#闭包相关的题目" class="headerlink" title="闭包相关的题目"></a>闭包相关的题目</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> data = [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  data[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(i) <span class="comment">// 3</span></span><br><span class="line">data[<span class="number">0</span>](); <span class="comment">// 3</span></span><br><span class="line">data[<span class="number">1</span>](); <span class="comment">// 3</span></span><br><span class="line">data[<span class="number">2</span>](); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<p>当 data[0] 函数执行的时候，函数内部作用域没有 变量 i，就像外层作用域查找，此时外层作用域是全局作用域，变量 i 的值为 3 (如例子中打印的)，所以输出 3，data[1]、data[2]同理。<br>使用闭包保存变量 i，例如:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> data = [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  data[i] = (<span class="function"><span class="keyword">function</span> (<span class="params">i</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)(i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(i) <span class="comment">// 3</span></span><br><span class="line">data[<span class="number">0</span>](); <span class="comment">// 0</span></span><br><span class="line">data[<span class="number">1</span>](); <span class="comment">// 1</span></span><br><span class="line">data[<span class="number">2</span>](); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<p>每次循环时，外层匿名函数都会保存传进来的实参，而当 data[0] 函数执行的时候，data[0]函数作用域内部没有变量 i，此时的外层作用域是匿名函数，变量 i 的值为循环时传进来的实参 0 1 2 ，data[0]函数的 i = 0，所以打印结果为 0。data[1] 和 data[2] 同理。</p>
+]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaScript 原型和原型链</title>
     <url>/2020/07/16/JavaScript-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/</url>
     <content><![CDATA[<h3 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h3><p>我们创建的每一个 JavaScript 对象都有一个 prototype (原型) 属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以有特定类型的所有实例共享的属性和方法。以为就是说 prototype 指向一个通过调用构造函数而创建的实例对象的原型对象，使用原型对象的好处是可以让所有实例共享它所包含的属性和方法。也就是说，我们不必在构造函数中定义对象实例的信息，而是将这些信息添加到原型对象中，例如：</p>
