@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>迭代器和可迭代对象</title>
+    <url>/2020/07/20/%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1/</url>
+    <content><![CDATA[<h2 id="迭代器-遍历器"><a href="#迭代器-遍历器" class="headerlink" title="迭代器(遍历器)"></a>迭代器(遍历器)</h2><p>迭代器（Iterator）是一种接口，也可以说是一种机制，为各种不同的数据结构提供统一的访问机制。任何数据结构只要部署 Iterator 接口，就可以完成遍历操作（即依次处理该数据结构的所有成员）。  </p>
+<a id="more"></a>
+<p>迭代器的作用：</p>
+<ol>
+<li>为各种数据结构提供一种一个统一的、简单的访问接口；</li>
+<li>是数据结构的成员能够按某种序列排序；</li>
+<li>ES6 有一种新的遍历命令 <code>for...of</code> 循环，Iterator 主要提供给 <code>for...of</code> 使用。</li>
+</ol>
+<p>迭代器的遍历过程：</p>
+<ol>
+<li>创建一个指针对象，指向当前数据结构的起始位置。也就是说，遍历器对象本质上，就是一个指针对象。</li>
+<li>第一次调用指针对象的next方法，可以将指针指向数据结构的第一个成员。</li>
+<li>第二次调用指针对象的next方法，指针就指向数据结构的第二个成员。</li>
+<li>不断调用指针对象的next方法，直到它指向数据结构的结束位置。</li>
+</ol>
+<p>迭代器是通过使用 next() 方法实现的，该方法一个拥有 value 属性和 done 属性的对象，value，是序列中的 next 值；done ，如果已经迭代到序列中的最后一个值，则它为 true，否则为 false。每次调用 next() 方法，都会返回数据结构中的当前值，也就是 {value, done} 这个对象，其中，value属性是当前成员的值，done属性是一个布尔值，表示遍历是否结束。<br>例如我们获取一个可迭代对象的迭代器</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [&#123;<span class="attr">num</span>:<span class="number">1</span>&#125;,<span class="number">2</span>,<span class="number">3</span>] <span class="comment">//可迭代对象</span></span><br><span class="line"><span class="keyword">let</span> it = arr[<span class="built_in">Symbol</span>.iterator]() <span class="comment">// 获取数组中的迭代器</span></span><br><span class="line"><span class="built_in">console</span>.log(it.next())     <span class="comment">// &#123; value: Object &#123; num: 1 &#125;, done: false &#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(it.next())     <span class="comment">// &#123; value: 2, done: false &#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(it.next())     <span class="comment">// &#123; value: 3, done: false &#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(it.next())     <span class="comment">// &#123; value: undefined, done: true &#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="什么是可迭代对象"><a href="#什么是可迭代对象" class="headerlink" title="什么是可迭代对象"></a>什么是可迭代对象</h2><p>若一个对象拥有迭代行为，比如在 <code>fpr...of</code> 中会循环对象的值，那么这个对象就是可迭代对象，在 JS 中可迭代对象有：</p>
+<ol>
+<li>Array</li>
+<li>String</li>
+<li>Set</li>
+<li>Map</li>
+<li>arguments（类数组对象）</li>
+<li>NodeList（DOM 节点集合）</li>
+</ol>
+<p>一个数据是否可迭代要看它是否具有 Iterator 接口，所以我们可以看这个对象（或其原型链上）是否具有 Symbol.iterator 属性。<br>例如打印一个数组的信息</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.prototype.hasOwnProperty(<span class="built_in">Symbol</span>.iterator)); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Set</span>.prototype.hasOwnProperty(<span class="built_in">Symbol</span>.iterator));  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<p>我们把一个字符串的 Symbol.iterator 属性改为 null，看是否还能使用 <code>for...of</code> 方法</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'abcdefg'</span>)</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">of</span> str) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i); <span class="comment">// a b c d e f g</span></span><br><span class="line">&#125;</span><br><span class="line">str.__proto__[<span class="built_in">Symbol</span>.iterator] = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">of</span> str) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i); <span class="comment">// 报错 str is not iterable</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到当我们改变了一个可迭代对象的 Symbol.iterator 属性后，它就变成不可迭代对象了。</p>
+]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>什么是闭包</title>
     <url>/2020/07/17/%E4%BB%80%E4%B9%88%E6%98%AF%E9%97%AD%E5%8C%85/</url>
     <content><![CDATA[<p>《JavaScript高级程序设计》里面说：</p>
