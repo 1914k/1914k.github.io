@@ -252,7 +252,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-07-21 22:01:56 / 修改时间：23:57:36" itemprop="dateCreated datePublished" datetime="2020-07-21T22:01:56+08:00">2020-07-21</time>
+              <time title="创建时间：2020-07-21 22:01:56 / 修改时间：23:58:23" itemprop="dateCreated datePublished" datetime="2020-07-21T22:01:56+08:00">2020-07-21</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -313,202 +313,14 @@
 
       
           <h3 id="transition-过渡"><a href="#transition-过渡" class="headerlink" title="transition 过渡"></a>transition 过渡</h3><p>transition 属性是一个简写属性，用于设置四个过渡属性。<br>四个过渡属性为：</p>
-<table>
-<thead>
-<tr>
-<th align="center">属性值</th>
-<th align="center">效果</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">transition-property</td>
-<td align="center">指定过渡的 CSS 属性，默认值 all</td>
-</tr>
-<tr>
-<td align="center">transition-duration</td>
-<td align="center">完成过度效果需要时间，默认值 0</td>
-</tr>
-<tr>
-<td align="center">transition-timing-function</td>
-<td align="center">指定过渡的转速曲线，默认值 ease</td>
-</tr>
-<tr>
-<td align="center">transition-delay</td>
-<td align="center">指定过渡的delay，默认值 0</td>
-</tr>
-</tbody></table>
-<p>transition 定义了动画的属性、时间、速度曲线和延迟时间，通常和hover事件配合使用，由事件触发。</p>
-<p>例如，一个100x100px 的 div，在 hover 时 width 变为 500px。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-class">.test</span>&#123;</span></span><br><span class="line">    height: 100px;</span><br><span class="line">    width: 100px;</span><br><span class="line">    background-color: pink;</span><br><span class="line">    transition-duration: 3s; </span><br><span class="line">    transition-property: all;</span><br><span class="line">    transition-timing-function: ease;</span><br><span class="line">    transition-delay: 0s;</span><br><span class="line">&#125;    </span><br><span class="line"><span class="css"><span class="selector-class">.test</span><span class="selector-pseudo">:hover</span>&#123;</span></span><br><span class="line">    width: 500px;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>鼠标移动到 div 元素上，这个正方形会渐变为 500x100 的长方形</p>
-<style>
-.test{
-    height: 100px;
-    width: 100px;
-    background-color: pink;
-    transition-duration: 3s;
-    transition-property: all;
-    transition-timing-function: ease;
-    transition-delay: 0s;
-}    
-.test:hover{
-    width: 500px;
-}
-</style>
-<div class="test"></div>
-
-<p>transition 的 duration（过渡时间）属性值为 0 时不会产生任何效果，所以我们使用 transition 时必须要给这个属性值赋值。其他的三个值可以不赋值，一般我们都是使用 transition 属性，不会分开写它的四个属性值。由于四个子属性中，duration（过渡时间） 和 delay（延迟时间）都是时间，当出现两个时间时，第一个为 duration（过渡时间），第二个为 delay（延迟时间）。<br>默认语法顺序为<code>transition: property duration timing-function delay;</code></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-class">.test</span>&#123;</span></span><br><span class="line">    height: 100px;</span><br><span class="line">    width: 100px;</span><br><span class="line">    background-color: pink;</span><br><span class="line">    transition: 3s;</span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-class">.test</span><span class="selector-pseudo">:hover</span>&#123;</span></span><br><span class="line">    width: 500px;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>效果一样</p>
-<style>
-.test{
-    height: 100px;
-    width: 100px;
-    background-color: pink;
-    transition: 3s;
-}
-.test:hover{
-    width: 500px;
-}
-</style>
-<div class="test"></div>
-
-<p>此外 transition 还可以使用逗号隔开来表示不同的属性，例如 test1 的 width 和 background 默认同时过渡，而 test2 的 width 和 background 我们通过逗号隔开，使其过渡效果不同。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-class">.test1</span> &#123;</span></span><br><span class="line">    height: 100px;</span><br><span class="line">    width: 100px;</span><br><span class="line">    background-color: pink;</span><br><span class="line">    transition: 2s linear 200ms;</span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-class">.test2</span> &#123;</span></span><br><span class="line">    height: 100px;</span><br><span class="line">    width: 100px;</span><br><span class="line">    background-color: pink;</span><br><span class="line">    transition: width 2s linear 200ms, background 1s linear 200ms;</span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-class">.box</span> &#123;</span></span><br><span class="line">  display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.test1</span>,<span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.test2</span> &#123;</span></span><br><span class="line">    width: 500px;</span><br><span class="line"><span class="css">    <span class="selector-tag">background</span>: <span class="selector-id">#000</span>;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test1"</span>&gt;</span>test1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test2"</span>&gt;</span>test2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>test1 的 width 和 background 的过渡时间一样，而 test2 的 background 比 width 先完成过渡，可以看到test2 还在变长时背景就已经全黑了，对比与 test1 特别明显。</p>
-<style>
-.test1 {
-    height: 100px;
-    width: 100px;
-    background-color: pink;
-    transition: 2s linear 200ms;
-}
-.test2 {
-    height: 100px;
-    width: 100px;
-    background-color: pink;
-    transition: width 2s linear 200ms, background 1s linear;
-}
-.box {
-  display: inline-block;
-}
-.box:hover .test1,.box:hover .test2 {
-    width: 500px;
-    background: #000;
-}
-</style>
-<div class="box">
-  <div class="test1">test1</div>
-  <div class="test2">test2</div>
-</div>
-
-<h3 id="transition-的-transition-timing-function-子属性"><a href="#transition-的-transition-timing-function-子属性" class="headerlink" title="transition 的 transition-timing-function 子属性"></a>transition 的 transition-timing-function 子属性</h3><p>transition-timing-function 子属性用于指定过渡效果的速度。过渡时间函数有六种值：</p>
-<table>
-<thead>
-<tr>
-<th>值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>linear</td>
-<td>规定以相同速度开始至结束的过渡效果（等于 cubic-bezier(0,0,1,1)）。</td>
-</tr>
-<tr>
-<td>ease</td>
-<td>规定慢速开始，然后变快，然后慢速结束的过渡效果</td>
-</tr>
-<tr>
-<td>ease-in</td>
-<td>规定以慢速开始的过渡效果（等于 cubic-bezier(0.42,0,1,1)）。</td>
-</tr>
-<tr>
-<td>ease-out</td>
-<td>规定以慢速结束的过渡效果（等于 cubic-bezier(0,0,0.58,1)）。</td>
-</tr>
-<tr>
-<td>ease-in-out</td>
-<td>规定以慢速开始和结束的过渡效果（等于 cubic-bezier(0.42,0,0.58,1)）。</td>
-</tr>
-<tr>
-<td>cubic-bezier(n,n,n,n)</td>
-<td>在 cubic-bezier 函数中定义自己的值。可能的值是 0 至 1 之间的数值。</td>
-</tr>
-</tbody></table>
-<p>具体效果如下：<br>linear 匀速</p>
-<style>
-.box1{
-    height: 100px;
-    width: 100px;
-    background-color: pink;
-    transition: 3s linear;
-}
-.box1:hover{
-    width: 800px;
-}
-</style>
-<div class="box1"></div>
-
-<p>ease 慢-快-慢</p>
-<style>
-.box2{
-    height: 100px;
-    width: 100px;
-    background-color: pink;
-    transition: 3s ease;
-}
-.box2:hover{
-    width: 800px;
-}
-</style>
-<div class="box2"></div>
-
-<p>ease-in 慢-快</p>
-<style>
-.box3{
-    height: 100px;
-    width: 100px;
-    background-color: pink;
-    transition: 3s ease-in;
-}
-.box3:hover{
-    width: 800px;
-}
-</style>
-<div class="box3"></div>
-
-<p>ease-out 快-慢</p>
-<style>
-.box4{
-    height: 100px;
-    width: 100px;
-    background-color: pink;
-    transition: 3s ease-out;
-}
-.box4:hover{
-    width: 800px;
-}
-</style>
-<div class="box4"></div>
-
-<p>ease-in-out 慢开始慢结束</p>
-<style>
-.box5{
-    height: 100px;
-    width: 100px;
-    background-color: pink;
-    transition: 3s ease-in-out;
-}
-.box5:hover{
-    width: 800px;
-}
-</style>
-<div class="box5"></div>
-
-<p>其他具体的进一步了解了再记录，加油！</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/21/CSS-transform-%E5%B1%9E%E6%80%A7/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

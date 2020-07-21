@@ -4,6 +4,7 @@
     <title>CSS transition 属性</title>
     <url>/2020/07/21/CSS-transform-%E5%B1%9E%E6%80%A7/</url>
     <content><![CDATA[<h3 id="transition-过渡"><a href="#transition-过渡" class="headerlink" title="transition 过渡"></a>transition 过渡</h3><p>transition 属性是一个简写属性，用于设置四个过渡属性。<br>四个过渡属性为：</p>
+<a id="more"></a>
 <table>
 <thead>
 <tr>

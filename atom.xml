@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://1914k.github.io/"/>
-  <updated>2020-07-21T15:57:36.493Z</updated>
+  <updated>2020-07-21T15:58:23.708Z</updated>
   <id>http://1914k.github.io/</id>
   
   <author>
@@ -21,17 +21,11 @@
     <link href="http://1914k.github.io/2020/07/21/CSS-transform-%E5%B1%9E%E6%80%A7/"/>
     <id>http://1914k.github.io/2020/07/21/CSS-transform-%E5%B1%9E%E6%80%A7/</id>
     <published>2020-07-21T14:01:56.000Z</published>
-    <updated>2020-07-21T15:57:36.493Z</updated>
+    <updated>2020-07-21T15:58:23.708Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h3 id=&quot;transition-过渡&quot;&gt;&lt;a href=&quot;#transition-过渡&quot; class=&quot;headerlink&quot; title=&quot;transition 过渡&quot;&gt;&lt;/a&gt;transition 过渡&lt;/h3&gt;&lt;p&gt;transition
-        
-      
+      &lt;h3 id=&quot;transition-过渡&quot;&gt;&lt;a href=&quot;#transition-过渡&quot; class=&quot;headerlink&quot; title=&quot;transition 过渡&quot;&gt;&lt;/a&gt;transition 过渡&lt;/h3&gt;&lt;p&gt;transition 属性是一个简写属性，用于设置四个过渡属性。&lt;br&gt;四个过渡属性为：&lt;/p&gt;
     
     </summary>
     
