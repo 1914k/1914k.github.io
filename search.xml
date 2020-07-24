@@ -111,6 +111,7 @@
 <td>为 3D 转换元素定义透视视图。</td>
 </tr>
 </tbody></table>
+<p><img src="/images/artic/CSS_transform/img-01.jpg" alt="截图"></p>
 <style>
 *, *:after, *:before {
   box-sizing: border-box;
