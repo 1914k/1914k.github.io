@@ -46,27 +46,20 @@
   };
 </script>
 
-  <meta name="description" content="prototype我们创建的每一个 JavaScript 对象都有一个 prototype (原型) 属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以有特定类型的所有实例共享的属性和方法。以为就是说 prototype 指向一个通过调用构造函数而创建的实例对象的原型对象，使用原型对象的好处是可以让所有实例共享它所包含的属性和方法。也就是说，我们不必在构造函数中定义对象实例的信息，">
+  <meta name="description" content="transition 过渡transition 属性是一个简写属性，用于设置四个过渡属性。四个过渡属性为：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript 原型和原型链">
-<meta property="og:url" content="http://1914k.github.io/2020/07/16/JavaScript-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/index.html">
+<meta property="og:title" content="CSS transition 属性">
+<meta property="og:url" content="http://1914k.github.io/2020/07/21/CSS-transition-%E5%B1%9E%E6%80%A7/index.html">
 <meta property="og:site_name" content="顽石不语">
-<meta property="og:description" content="prototype我们创建的每一个 JavaScript 对象都有一个 prototype (原型) 属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以有特定类型的所有实例共享的属性和方法。以为就是说 prototype 指向一个通过调用构造函数而创建的实例对象的原型对象，使用原型对象的好处是可以让所有实例共享它所包含的属性和方法。也就是说，我们不必在构造函数中定义对象实例的信息，">
+<meta property="og:description" content="transition 过渡transition 属性是一个简写属性，用于设置四个过渡属性。四个过渡属性为：">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://1914k.github.io/images/artic/js_prototype/img01.jpg">
-<meta property="og:image" content="http://1914k.github.io/images/artic/js_prototype/img02.jpg">
-<meta property="og:image" content="http://1914k.github.io/images/artic/js_prototype/img03.jpg">
-<meta property="og:image" content="http://1914k.github.io/images/artic/js_prototype/img04.jpg">
-<meta property="og:image" content="http://1914k.github.io/images/artic/js_prototype/img05.jpg">
-<meta property="og:image" content="http://1914k.github.io/images/artic/js_prototype/img06.jpg">
-<meta property="article:published_time" content="2020-07-16T14:13:47.000Z">
-<meta property="article:modified_time" content="2020-07-16T16:56:28.525Z">
+<meta property="article:published_time" content="2020-07-21T14:01:56.000Z">
+<meta property="article:modified_time" content="2020-07-24T14:02:47.583Z">
 <meta property="article:author" content="石头">
-<meta property="article:tag" content="JS">
+<meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://1914k.github.io/images/artic/js_prototype/img01.jpg">
 
-<link rel="canonical" href="http://1914k.github.io/2020/07/16/JavaScript-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/">
+<link rel="canonical" href="http://1914k.github.io/2020/07/21/CSS-transition-%E5%B1%9E%E6%80%A7/">
 
 
 <script id="page-configurations">
@@ -78,7 +71,7 @@
   };
 </script>
 
-  <title>JavaScript 原型和原型链 | 顽石不语</title>
+  <title>CSS transition 属性 | 顽石不语</title>
   
 
 
@@ -236,7 +229,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://1914k.github.io/2020/07/16/JavaScript-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/">
+    <link itemprop="mainEntityOfPage" href="http://1914k.github.io/2020/07/21/CSS-transition-%E5%B1%9E%E6%80%A7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/asset/touxiang.jpg">
@@ -249,7 +242,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          JavaScript 原型和原型链
+          CSS transition 属性
         </h1>
 
         <div class="post-meta">
@@ -259,14 +252,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-07-16 22:13:47" itemprop="dateCreated datePublished" datetime="2020-07-16T22:13:47+08:00">2020-07-16</time>
+              <time title="创建时间：2020-07-21 22:01:56" itemprop="dateCreated datePublished" datetime="2020-07-21T22:01:56+08:00">2020-07-21</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-17 00:56:28" itemprop="dateModified" datetime="2020-07-17T00:56:28+08:00">2020-07-17</time>
+                <time title="修改时间：2020-07-24 22:02:47" itemprop="dateModified" datetime="2020-07-24T22:02:47+08:00">2020-07-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -274,14 +267,14 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JS/" itemprop="url" rel="index">
-                    <span itemprop="name">JS</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
             </span>
 
           
-            <span id="/2020/07/16/JavaScript-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/" class="post-meta-item leancloud_visitors" data-flag-title="JavaScript 原型和原型链" title="阅读次数">
+            <span id="/2020/07/21/CSS-transition-%E5%B1%9E%E6%80%A7/" class="post-meta-item leancloud_visitors" data-flag-title="CSS transition 属性" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -296,8 +289,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/07/16/JavaScript-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/16/JavaScript-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/07/21/CSS-transition-%E5%B1%9E%E6%80%A7/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/21/CSS-transition-%E5%B1%9E%E6%80%A7/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -307,14 +300,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.1k</span>
+              <span>3.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -326,26 +319,203 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h3><p>我们创建的每一个 JavaScript 对象都有一个 prototype (原型) 属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以有特定类型的所有实例共享的属性和方法。以为就是说 prototype 指向一个通过调用构造函数而创建的实例对象的原型对象，使用原型对象的好处是可以让所有实例共享它所包含的属性和方法。也就是说，我们不必在构造函数中定义对象实例的信息，而是将这些信息添加到原型对象中，例如：</p>
+        <h3 id="transition-过渡"><a href="#transition-过渡" class="headerlink" title="transition 过渡"></a>transition 过渡</h3><p>transition 属性是一个简写属性，用于设置四个过渡属性。<br>四个过渡属性为：</p>
 <a id="more"></a>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.name = <span class="string">'张三'</span>;</span><br><span class="line">Person.prototype.age = <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person1 = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="keyword">let</span> person2 = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(person1.name); <span class="comment">//张三</span></span><br><span class="line"><span class="built_in">console</span>.log(person2.age);  <span class="comment">// 25</span></span><br></pre></td></tr></table></figure>
-<p>构造函数与实例原型的关系<br><img src="/images/artic/js_prototype/img01.jpg" alt="截图"></p>
-<h3 id="proto"><a href="#proto" class="headerlink" title="proto"></a><strong>proto</strong></h3><p>这是每个 JavaScript 对象(除了 null) 都有的一个属性, <code>__proto__</code>，这个属性指向该对象的原型。<br>例如：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> person = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(person.__proto__ === Person.prototype); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-<p>实例与实例原型的关系<br><img src="/images/artic/js_prototype/img02.jpg" alt="截图"></p>
-<h3 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h3><p>实例和构造函数都有指向原型的属性，原型虽然没有指向实例的的属性，但是有指向构造函数的属性: constructor，每个原型都有一个指向构造函数的属性。另外我们可以通过 instanceof 关键字 判断它左边的对象是否是它右边的类的实例。<br>例如：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> person = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype.constructor === Person); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(person <span class="keyword">instanceof</span> Person); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-<p>实例原型与构造函数关系<br><img src="/images/artic/js_prototype/img03.jpg" alt="截图"></p>
-<h3 id="实例与原型"><a href="#实例与原型" class="headerlink" title="实例与原型"></a>实例与原型</h3><p>构造函数、实例原型和实例的关系我们了解了，name实例和实例原型的关系呢？<br>当读取实例的属性时，如果找不到，就会查找该实例的原型中的属性，如果还查不到，就去找原型的原型，一直找到最顶层为止。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.name = <span class="string">'张三'</span>;</span><br><span class="line">Person.prototype.age = <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line">person.name = <span class="string">'李四'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(person.name) <span class="comment">// 李四</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> person.name;</span><br><span class="line"><span class="built_in">console</span>.log(person.name) <span class="comment">// 张三</span></span><br><span class="line"><span class="built_in">console</span>.log(person.sex) <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-<p>上面的例子中，我们给实例对象 person 添加了 name 属性，打印为我们添加的 张三<br>但是我们后来删除了这个实例的 name 属性，我们再获取 name 属性时，吗，明明在实例里找不到该属性，我们还是输出了 李四，因为我们从实例对象 person 中招不到 name 属性，就会到它的原型中找，原型中有 name 属性，所以返回了该属性的值，而我们在原型和原型的原型上也没有找到 sex 属性，所以返回了 undefined。 </p>
-<h3 id="原型与原型"><a href="#原型与原型" class="headerlink" title="原型与原型"></a>原型与原型</h3><p>上面的 person.sex 返回的是 undefined，是在原型和原型的原型上查到，一直找到顶端没找到而返回的结果，那么原型的原型和原型的顶端又是什么呢？<br>例如:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.name = <span class="string">'Kyle'</span>;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(person.__proto__)</span><br></pre></td></tr></table></figure>
-<p><img src="/images/artic/js_prototype/img04.jpg" alt="截图"></p>
-<p>我们可以看到 person 的原型是构造函数Person 的 Person.prototype，Person.prototype 的 <code>__proto__</code> 指向了Object.prototype，而 Object.prototype 只有 constructor 属性，没有看到 <code>__proto__</code> 属性，也就是 Object.prototype 是原型的顶层。<br>这一点我们可以通过对象的创建方式知道，<code>let obj = new Object()</code>，原型对象也是通过 Object 构造函数创建的，我们可以看到 Object.constructor 指向的是 Object 构造函数。<br>即原型与原型的关系:<br><img src="/images/artic/js_prototype/img05.jpg" alt="截图"></p>
-<p>那么 Object.prototype 的 <code>__proto__</code> 属性呢，我们可有打印：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.__proto__ === <span class="literal">null</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-<p>所以我们可以说 Object.prototype 没有原型，即 Object.prototype 是原型的顶层，查找属性查到 Object.prototype 就停止查找了，这一路的原型、原型的原型组成的链状结构称为原型链<br>原型链示意图:<br><img src="/images/artic/js_prototype/img06.jpg" alt="截图"></p>
+<table>
+<thead>
+<tr>
+<th align="center">属性值</th>
+<th align="center">效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">transition-property</td>
+<td align="center">指定过渡的 CSS 属性，默认值 all</td>
+</tr>
+<tr>
+<td align="center">transition-duration</td>
+<td align="center">完成过度效果需要时间，默认值 0</td>
+</tr>
+<tr>
+<td align="center">transition-timing-function</td>
+<td align="center">指定过渡的转速曲线，默认值 ease</td>
+</tr>
+<tr>
+<td align="center">transition-delay</td>
+<td align="center">指定过渡的delay，默认值 0</td>
+</tr>
+</tbody></table>
+<p>transition 定义了动画的属性、时间、速度曲线和延迟时间，通常和hover事件配合使用，由事件触发。</p>
+<p>例如，一个100x100px 的 div，在 hover 时 width 变为 500px。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-class">.test</span>&#123;</span></span><br><span class="line">    height: 100px;</span><br><span class="line">    width: 100px;</span><br><span class="line">    background-color: pink;</span><br><span class="line">    transition-duration: 3s; </span><br><span class="line">    transition-property: all;</span><br><span class="line">    transition-timing-function: ease;</span><br><span class="line">    transition-delay: 0s;</span><br><span class="line">&#125;    </span><br><span class="line"><span class="css"><span class="selector-class">.test</span><span class="selector-pseudo">:hover</span>&#123;</span></span><br><span class="line">    width: 500px;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>鼠标移动到 div 元素上，这个正方形会渐变为 500x100 的长方形</p>
+<style>
+.test{
+    height: 100px;
+    width: 100px;
+    background-color: pink;
+    transition-duration: 3s;
+    transition-property: all;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}    
+.test:hover{
+    width: 500px;
+}
+</style>
+<div class="test"></div>
+
+<p>transition 的 duration（过渡时间）属性值为 0 时不会产生任何效果，所以我们使用 transition 时必须要给这个属性值赋值。其他的三个值可以不赋值，一般我们都是使用 transition 属性，不会分开写它的四个属性值。由于四个子属性中，duration（过渡时间） 和 delay（延迟时间）都是时间，当出现两个时间时，第一个为 duration（过渡时间），第二个为 delay（延迟时间）。<br>默认语法顺序为<code>transition: property duration timing-function delay;</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-class">.test</span>&#123;</span></span><br><span class="line">    height: 100px;</span><br><span class="line">    width: 100px;</span><br><span class="line">    background-color: pink;</span><br><span class="line">    transition: 3s;</span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-class">.test</span><span class="selector-pseudo">:hover</span>&#123;</span></span><br><span class="line">    width: 500px;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>效果一样</p>
+<style>
+.test{
+    height: 100px;
+    width: 100px;
+    background-color: pink;
+    transition: 3s;
+}
+.test:hover{
+    width: 500px;
+}
+</style>
+<div class="test"></div>
+
+<p>此外 transition 还可以使用逗号隔开来表示不同的属性，例如 test1 的 width 和 background 默认同时过渡，而 test2 的 width 和 background 我们通过逗号隔开，使其过渡效果不同。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-class">.test1</span> &#123;</span></span><br><span class="line">    height: 100px;</span><br><span class="line">    width: 100px;</span><br><span class="line">    background-color: pink;</span><br><span class="line">    transition: 2s linear 200ms;</span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-class">.test2</span> &#123;</span></span><br><span class="line">    height: 100px;</span><br><span class="line">    width: 100px;</span><br><span class="line">    background-color: pink;</span><br><span class="line">    transition: width 2s linear 200ms, background 1s linear 200ms;</span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-class">.box</span> &#123;</span></span><br><span class="line">  display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.test1</span>,<span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.test2</span> &#123;</span></span><br><span class="line">    width: 500px;</span><br><span class="line"><span class="css">    <span class="selector-tag">background</span>: <span class="selector-id">#000</span>;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test1"</span>&gt;</span>test1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test2"</span>&gt;</span>test2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>test1 的 width 和 background 的过渡时间一样，而 test2 的 background 比 width 先完成过渡，可以看到test2 还在变长时背景就已经全黑了，对比与 test1 特别明显。</p>
+<style>
+.test1 {
+    height: 100px;
+    width: 100px;
+    background-color: pink;
+    transition: 2s linear 200ms;
+}
+.test2 {
+    height: 100px;
+    width: 100px;
+    background-color: pink;
+    transition: width 2s linear 200ms, background 1s linear;
+}
+.box {
+  display: inline-block;
+}
+.box:hover .test1,.box:hover .test2 {
+    width: 500px;
+    background: #000;
+}
+</style>
+<div class="box">
+  <div class="test1">test1</div>
+  <div class="test2">test2</div>
+</div>
+
+<h3 id="transition-的-transition-timing-function-子属性"><a href="#transition-的-transition-timing-function-子属性" class="headerlink" title="transition 的 transition-timing-function 子属性"></a>transition 的 transition-timing-function 子属性</h3><p>transition-timing-function 子属性用于指定过渡效果的速度。过渡时间函数有六种值：</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>linear</td>
+<td>规定以相同速度开始至结束的过渡效果（等于 cubic-bezier(0,0,1,1)）。</td>
+</tr>
+<tr>
+<td>ease</td>
+<td>规定慢速开始，然后变快，然后慢速结束的过渡效果</td>
+</tr>
+<tr>
+<td>ease-in</td>
+<td>规定以慢速开始的过渡效果（等于 cubic-bezier(0.42,0,1,1)）。</td>
+</tr>
+<tr>
+<td>ease-out</td>
+<td>规定以慢速结束的过渡效果（等于 cubic-bezier(0,0,0.58,1)）。</td>
+</tr>
+<tr>
+<td>ease-in-out</td>
+<td>规定以慢速开始和结束的过渡效果（等于 cubic-bezier(0.42,0,0.58,1)）。</td>
+</tr>
+<tr>
+<td>cubic-bezier(n,n,n,n)</td>
+<td>在 cubic-bezier 函数中定义自己的值。可能的值是 0 至 1 之间的数值。</td>
+</tr>
+</tbody></table>
+<p>具体效果如下：<br>linear 匀速</p>
+<style>
+.box1{
+    height: 100px;
+    width: 100px;
+    background-color: pink;
+    transition: 3s linear;
+}
+.box1:hover{
+    width: 800px;
+}
+</style>
+<div class="box1"></div>
+
+<p>ease 慢-快-慢</p>
+<style>
+.box2{
+    height: 100px;
+    width: 100px;
+    background-color: pink;
+    transition: 3s ease;
+}
+.box2:hover{
+    width: 800px;
+}
+</style>
+<div class="box2"></div>
+
+<p>ease-in 慢-快</p>
+<style>
+.box3{
+    height: 100px;
+    width: 100px;
+    background-color: pink;
+    transition: 3s ease-in;
+}
+.box3:hover{
+    width: 800px;
+}
+</style>
+<div class="box3"></div>
+
+<p>ease-out 快-慢</p>
+<style>
+.box4{
+    height: 100px;
+    width: 100px;
+    background-color: pink;
+    transition: 3s ease-out;
+}
+.box4:hover{
+    width: 800px;
+}
+</style>
+<div class="box4"></div>
+
+<p>ease-in-out 慢开始慢结束</p>
+<style>
+.box5{
+    height: 100px;
+    width: 100px;
+    background-color: pink;
+    transition: 3s ease-in-out;
+}
+.box5:hover{
+    width: 800px;
+}
+</style>
+<div class="box5"></div>
+
+<p>其他具体的进一步了解了再记录，加油！</p>
 
     </div>
 
@@ -381,7 +551,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://1914k.github.io/2020/07/16/JavaScript-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/" title="JavaScript 原型和原型链">http://1914k.github.io/2020/07/16/JavaScript-原型和原型链/</a>
+    <a href="http://1914k.github.io/2020/07/21/CSS-transition-%E5%B1%9E%E6%80%A7/" title="CSS transition 属性">http://1914k.github.io/2020/07/21/CSS-transition-属性/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -392,7 +562,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/JS/" rel="tag"> <i class="fa fa-tag"></i> JS</a>
+              <a href="/tags/CSS/" rel="tag"> <i class="fa fa-tag"></i> CSS</a>
           </div>
 
         
@@ -401,12 +571,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/07/15/JS%20%E4%B8%AD%20call()%E3%80%81apply()%E5%92%8C%20bind()%20%E7%9A%84%E5%8C%BA%E5%88%AB/" rel="prev" title="call() apply()和 bind() 的区别">
-      <i class="fa fa-chevron-left"></i> call() apply()和 bind() 的区别
+    <a href="/2020/07/20/%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1/" rel="prev" title="迭代器和可迭代对象">
+      <i class="fa fa-chevron-left"></i> 迭代器和可迭代对象
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/07/17/%E4%BB%80%E4%B9%88%E6%98%AF%E9%97%AD%E5%8C%85/" rel="next" title="什么是闭包">
-      什么是闭包 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/07/24/CSS-transform-%E5%B1%9E%E6%80%A7-1/" rel="next" title="CSS transform 属性">
+      CSS transform 属性 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -468,7 +638,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#prototype"><span class="nav-number">1.</span> <span class="nav-text">prototype</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#proto"><span class="nav-number">2.</span> <span class="nav-text">proto</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#constructor-NaN"><span class="nav-number">3.</span> <span class="nav-text">constructor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例与原型"><span class="nav-number">4.</span> <span class="nav-text">实例与原型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型与原型"><span class="nav-number">5.</span> <span class="nav-text">原型与原型</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#transition-过渡"><span class="nav-number">1.</span> <span class="nav-text">transition 过渡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transition-的-transition-timing-function-子属性"><span class="nav-number">2.</span> <span class="nav-text">transition 的 transition-timing-function 子属性</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -673,7 +843,7 @@
       quicklink({
         timeout: 3000,
         priority: true,
-        ignores: [uri => uri.includes('#'),uri => uri == 'http://1914k.github.io/2020/07/16/JavaScript-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/',]
+        ignores: [uri => uri.includes('#'),uri => uri == 'http://1914k.github.io/2020/07/21/CSS-transition-%E5%B1%9E%E6%80%A7/',]
       });
       });
   </script>

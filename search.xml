@@ -1,8 +1,483 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CSS transform 属性</title>
+    <url>/2020/07/24/CSS-transform-%E5%B1%9E%E6%80%A7-1/</url>
+    <content><![CDATA[<p>transform 的意思是变形，改变。在 CSS 中 transform 属性应用于元素的2D或3D转换。这个属性允许我们将元素旋转（rotate），缩放（scale），移动（translate），倾斜（skew）等，为了更好的理解 transform 属性，我们下面会给出实例。</p>
+<a id="more"></a>
+<h3 id="transform-语法"><a href="#transform-语法" class="headerlink" title="transform 语法"></a>transform 语法</h3><p>transform: none|transform-functions;</p>
+<p>transfrom 2D 和 3D 子属性</p>
+<table>
+<thead>
+<tr>
+<th>2D 属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>none</td>
+<td>定义不进行转换。</td>
+</tr>
+<tr>
+<td>rotate(angle)</td>
+<td>定义 2D 旋转，在参数中规定角度。</td>
+</tr>
+<tr>
+<td>translate(x,y)</td>
+<td>定义 2D 转换。</td>
+</tr>
+<tr>
+<td>translateX(x)</td>
+<td>定义转换，只是用 X 轴的值。</td>
+</tr>
+<tr>
+<td>translateY(y)</td>
+<td>定义转换，只是用 Y 轴的值。</td>
+</tr>
+<tr>
+<td>scale(x[,y]?)</td>
+<td>定义 2D 缩放转换。</td>
+</tr>
+<tr>
+<td>scaleX(x)</td>
+<td>通过设置 X 轴的值来定义缩放转换。</td>
+</tr>
+<tr>
+<td>scaleY(y)</td>
+<td>通过设置 Y 轴的值来定义缩放转换。</td>
+</tr>
+<tr>
+<td>skew(x-angle,y-angle)</td>
+<td>定义沿着 X 和 Y 轴的 2D 倾斜转换。</td>
+</tr>
+<tr>
+<td>skewX(angle)</td>
+<td>定义沿着 X 轴的 2D 倾斜转换。</td>
+</tr>
+<tr>
+<td>skewY(angle)</td>
+<td>定义沿着 Y 轴的 2D 倾斜转换。</td>
+</tr>
+<tr>
+<td>matrix(n,n,n,n,n,n)</td>
+<td>定义 2D 转换，使用六个值的矩阵。</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>3D 属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>rotate3d(x,y,z,angle)</td>
+<td>定义 3D 旋转。</td>
+</tr>
+<tr>
+<td>rotateX(angle)</td>
+<td>定义沿着 X 轴的 3D 旋转。</td>
+</tr>
+<tr>
+<td>rotateY(angle)</td>
+<td>定义沿着 Y 轴的 3D 旋转。</td>
+</tr>
+<tr>
+<td>rotateZ(angle)</td>
+<td>定义沿着 Z 轴的 3D 旋转。</td>
+</tr>
+<tr>
+<td>translate3d(x,y,z)</td>
+<td>定义 3D 转换。</td>
+</tr>
+<tr>
+<td>translateZ(z)</td>
+<td>定义 3D 转换，只是用 Z 轴的值。</td>
+</tr>
+<tr>
+<td>scale3d(x,y,z)</td>
+<td>定义 3D 缩放转换。</td>
+</tr>
+<tr>
+<td>scaleZ(z)</td>
+<td>通过设置 Z 轴的值来定义 3D 缩放转换。</td>
+</tr>
+<tr>
+<td>matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)</td>
+<td>定义 3D 转换，使用 16 个值的 4x4 矩阵。</td>
+</tr>
+<tr>
+<td>perspective(n)</td>
+<td>为 3D 转换元素定义透视视图。</td>
+</tr>
+</tbody></table>
+<style>
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+.maxbox {
+  background: #F5F3F4;
+  margin: 0;
+  padding: 10px;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+
+.card {
+  display: inline-block;
+  margin: 10px;
+  background: #fff;
+  padding: 15px;
+  min-width: 200px;
+  box-shadow: 0 3px 5px #ddd;
+  color: #555;
+}
+.card .box {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  background: #ddd;
+  cursor: pointer;
+  box-shadow: 0 0 5px #ccc inset;
+}
+.card .box .fill {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background: #03A9F4;
+  opacity: .5;
+  box-shadow: 0 0 5px #ccc;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.card p {
+  margin: 25px 0 0;
+}
+
+.rotate:hover .fill {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.rotateX:hover .fill {
+  -webkit-transform: rotateX(45deg);
+  transform: rotateX(45deg);
+}
+
+.rotateY:hover .fill {
+  -webkit-transform: rotateY(45deg);
+  transform: rotateY(45deg);
+}
+
+.rotateZ:hover .fill {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.scale:hover .fill {
+  -webkit-transform: scale(2, 2);
+  transform: scale(2, 2);
+}
+
+.scaleX:hover .fill {
+  -webkit-transform: scaleX(2);
+  transform: scaleX(2);
+}
+
+.scaleY:hover .fill {
+  -webkit-transform: scaleY(2);
+  transform: scaleY(2);
+}
+
+.skew:hover .fill {
+  -webkit-transform: skew(45deg, 45deg);
+  transform: skew(45deg, 45deg);
+}
+
+.skewX:hover .fill {
+  -webkit-transform: skewX(45deg);
+  transform: skewX(45deg);
+}
+
+.skewY:hover .fill {
+  -webkit-transform: skewY(45deg);
+  transform: skewY(45deg);
+}
+
+.translate:hover .fill {
+  -webkit-transform: translate(45px, 1em);
+  transform: translate(45px, 1em);
+}
+
+.translateX:hover .fill {
+  -webkit-transform: translateX(45px);
+  transform: translateX(45px);
+}
+
+.translateY:hover .fill {
+  -webkit-transform: translateY(45px);
+  transform: translateY(45px);
+}
+
+.matrix:hover .fill {
+  -webkit-transform: matrix(2, 2, 0, 2, 45, 0);
+  transform: matrix(2, 2, 0, 2, 45, 0);
+}
+
+.perspective-100 .box {
+  -webkit-perspective: 100px;
+  perspective: 100px;
+}
+
+.perspective-200 .box {
+  -webkit-perspective: 200px;
+  perspective: 200px;
+}
+
+.to-100-0-0 {
+  -webkit-transform-origin: 100% 0 0;
+          transform-origin: 100% 0 0;
+}
+
+.to-0-100-0 {
+  -webkit-transform-origin: 0 100% 0;
+          transform-origin: 0 100% 0;
+}
+</style>
+<div class="maxbox">
+  <div class="card">
+    <div class="box rotate">
+      <div class="fill"></div>
+    </div>
+    <p>rotate(45deg)  </p>
+  </div>
+  <div class="card">
+    <div class="box rotateX">
+      <div class="fill"></div>
+    </div>
+    <p>rotateX(45deg)</p>
+  </div>
+  <div class="card">
+    <div class="box rotateY">
+      <div class="fill"></div>
+    </div>
+    <p>rotateY(45deg)</p>
+  </div>
+  <div class="card">
+    <div class="box rotateZ">
+      <div class="fill"></div>
+    </div>
+    <p>rotateZ(45deg)  </p>
+  </div>
+</div>
+<div class="maxbox">
+  <!-- scale-->
+  <div class="card">
+    <div class="box scale">
+      <div class="fill"></div>
+    </div>
+    <p>scale(2)</p>
+  </div>
+  <div class="card">
+    <div class="box scaleX">
+      <div class="fill"></div>
+    </div>
+    <p>scaleX(2)    </p>
+  </div>
+  <div class="card">
+    <div class="box scaleY">
+      <div class="fill"></div>
+    </div>
+    <p>scaleY(2)    </p>
+  </div>
+</div>
+<div class="maxbox">
+  <!-- skew-->
+  <div class="card">
+    <div class="box skew">
+      <div class="fill"></div>
+    </div>
+    <p>skew(45deg, 45deg)  </p>
+  </div>
+  <div class="card">
+    <div class="box skewX">
+      <div class="fill"></div>
+    </div>
+    <p>skewX(45deg)</p>
+  </div>
+  <div class="card">
+    <div class="box skewY">
+      <div class="fill"></div>
+    </div>
+    <p>skewY(45deg)</p>
+  </div>
+</div>
+<div class="maxbox">
+  <!-- translate-->
+  <div class="card">
+    <div class="box translate">
+      <div class="fill"></div>
+    </div>
+    <p>translate(45px)  </p>
+  </div>
+  <div class="card">
+    <div class="box translateX">
+      <div class="fill"></div>
+    </div>
+    <p>translateX(45px)</p>
+  </div>
+  <div class="card">
+    <div class="box translateY">
+      <div class="fill"></div>
+    </div>
+    <p>translateY(45px)</p>
+  </div>
+</div>
+<div class="maxbox">
+  <div class="card">
+    <div class="box matrix">
+      <div class="fill"></div>
+    </div>
+    <p> matrix(2, 2, 0, 2, 45, 0)</p>
+  </div>
+</div> 
+
+<h3 id="Perspective"><a href="#Perspective" class="headerlink" title="Perspective"></a>Perspective</h3><ol>
+<li>Perspective : 100</li>
+</ol>
+<div class="maxbox">
+  <div class="perspective-100">
+    <div class="card">
+      <div class="box rotateX">
+        <div class="fill"></div>
+      </div>
+      <p>rotateX(90deg)</p>
+    </div>
+    <div class="card">
+      <div class="box rotateY">
+        <div class="fill"></div>
+      </div>
+      <p>rotateY(45deg)</p>
+    </div>
+  </div>
+</div>
+
+<ol start="2">
+<li>Perspective : 200</li>
+</ol>
+<div class="maxbox">
+  <div class="perspective-200">
+    <div class="card">
+      <div class="box rotateX">
+        <div class="fill"></div>
+      </div>
+      <p>rotateX(90deg)</p>
+    </div>
+    <div class="card">
+      <div class="box rotateY">
+        <div class="fill"></div>
+      </div>
+      <p>rotateY(45deg)</p>
+    </div>
+  </div>
+  <!-- transform origin-->
+</div>
+
+<h3 id="Transform-origin"><a href="#Transform-origin" class="headerlink" title="Transform origin"></a>Transform origin</h3><div class="maxbox">
+  <div class="card">
+    <div class="box rotate">
+      <div class="fill to-100-0-0"></div>
+    </div>
+    <p>transform-origin : 100% 0 0  <br/>rotate(45deg)</p>
+  </div>
+  <div class="card">
+    <div class="box rotate">
+      <div class="fill to-0-100-0"></div>
+    </div>
+    <p>transform-origin : 0 100%  0<br/>rotate(45deg)</p>
+  </div>
+</div>
+<div class="maxbox">
+  <div class="card perspective-200">
+    <div class="box rotateX">
+      <div class="fill to-0-100-0"></div>
+    </div>
+    <p>transform-origin : 0 100%  0<br/>rotateX(45deg)</p>
+  </div>
+  <div class="card perspective-200">
+    <div class="box rotateX">
+      <div class="fill to-100-0-0"></div>
+    </div>
+    <p>transform-origin : 100% 0 0<br/>rotateX(45deg)</p>
+  </div>
+</div>
+<div class="maxbox">
+  <div class="card perspective-200">
+    <div class="box rotateY">
+      <div class="fill to-0-100-0"></div>
+    </div>
+    <p>transform-origin : 0 100%  0 <br/>rotateY(45deg)</p>
+  </div>
+  <div class="card perspective-200">
+    <div class="box rotateY">
+      <div class="fill to-100-0-0"></div>
+    </div>
+    <p>transform-origin : 100%  0 0<br/>rotateY(45deg)</p>
+  </div>
+</div>
+<div class="maxbox">
+  <div class="card">
+    <div class="box scale">
+      <div class="fill to-100-0-0"></div>
+    </div>
+    <p>transform-origin : 100%  0 0<br/>scale(2)</p>
+  </div>
+  <div class="card">
+    <div class="box scale">
+      <div class="fill to-0-100-0"></div>
+    </div>
+    <p>transform-origin : 0 100%  0<br/>scale(2)</p>
+  </div>
+</div>
+<div class="maxbox">
+  <div class="card">
+    <div class="box scaleX">
+      <div class="fill to-100-0-0"></div>
+    </div>
+    <p>transform-origin : 100%  0 0<br/>scaleX(2)</p>
+  </div>
+  <div class="card">
+    <div class="box scaleX">
+      <div class="fill to-0-100-0"></div>
+    </div>
+    <p>transform-origin : 0 100%  0<br/>scaleX(2)</p>
+  </div>
+</div>
+<div class="maxbox">
+  <div class="card">
+    <div class="box scaleY">
+      <div class="fill to-100-0-0"></div>
+    </div>
+    <p>transform-origin : 100%  0 0<br/>scaleY(2)</p>
+  </div>
+  <div class="card">
+    <div class="box scaleY">
+      <div class="fill to-0-100-0"></div>
+    </div>
+    <p>transform-origin : 0 100%  0<br/>scaleY(2)</p>
+  </div>
+</div>]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS transition 属性</title>
-    <url>/2020/07/21/CSS-transform-%E5%B1%9E%E6%80%A7/</url>
+    <url>/2020/07/21/CSS-transition-%E5%B1%9E%E6%80%A7/</url>
     <content><![CDATA[<h3 id="transition-过渡"><a href="#transition-过渡" class="headerlink" title="transition 过渡"></a>transition 过渡</h3><p>transition 属性是一个简写属性，用于设置四个过渡属性。<br>四个过渡属性为：</p>
 <a id="more"></a>
 <table>
