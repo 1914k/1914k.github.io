@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CSS animation 属性</title>
+    <url>/2020/07/26/CSS-animation-%E5%B1%9E%E6%80%A7/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS transform 属性</title>
-    <url>/2020/07/24/CSS-transform-%E5%B1%9E%E6%80%A7-1/</url>
+    <url>/2020/07/24/CSS-transform-%E5%B1%9E%E6%80%A7/</url>
     <content><![CDATA[<style>
 .maxbox {
   background: #F5F3F4;
