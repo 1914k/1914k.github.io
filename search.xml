@@ -3,7 +3,92 @@
   <entry>
     <title>CSS animation 属性</title>
     <url>/2020/07/26/CSS-animation-%E5%B1%9E%E6%80%A7/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<p>animation 属性和 transition 属性都将可以用来制作 CSS 动画，但是 animation 相比 transition 可以实现更加复杂灵活的动画，而且可以自行触发，不需要事件来触发就能动起来，还能重复发生，通常用来实现复杂的动画效果。</p>
+<p>语法:  动画名称 动画时间 速度曲线 延迟时间 动画次数 是否反向播放动画;<br><code>animation: name duration timing-function delay iteration-count direction;</code></p>
+<p>我们通过 <code>@keyframes</code> 来定义动画名称和动画的具体过程。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: yellow;</span><br><span class="line">    <span class="attribute">animation</span>: changecolor <span class="number">3s</span> ease <span class="number">3s</span> <span class="number">2</span>; </span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> changecolor &#123;</span><br><span class="line">  <span class="selector-tag">from</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">to</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">600px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: blue;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="box"></div>
+
+<p>如上，我们 用 <code>@keyframes</code> 定义了一个 名称为  <code>changecolor</code> 的动画，动画过程是挂载该动画的元素的背景颜色从红色变为蓝色,宽度从 100px 变为 200px。我们在 animation 中要使用</p>
+<style>
+  .box {
+    width: 100px;
+    height:100px;
+    background-color: yellow;
+    animation: changecolor 3s ease 3s 2; 
+  }
+
+  @keyframes changecolor {
+    from {
+      width: 100px;
+      background-color: red;
+    }
+    to {
+      width: 600px;
+      background-color: blue;
+    }
+  }
+
+  .main-circle {
+    position: relative;
+  }
+
+  .container-circle {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    left: calc(50% - 60px);
+  }
+
+  .container-circle div{
+    height: 40%;
+    width: 40%;
+    border-radius: 50%;
+    position: absolute;
+    animation: loading 2s ease infinite; 
+
+  }
+  .container-circle :first-child {
+    background: #4101d5;
+  }
+  .container-circle :nth-child(2) {
+    background: #fffc44;
+    animation-delay: -0.5s; 
+  }
+  .container-circle :nth-child(3) {
+    background: #a439eb;
+    animation-delay: -1s; 
+  }
+  .container-circle :last-child {
+    background: #cf94f7;
+    animation-delay: -1.5s; 
+  }
+
+  @keyframes loading {
+    0%, 100% {
+      transform: translate(0,0)
+    }
+    25% {
+      transform: translate(150%,0)
+    }
+    50% {
+      transform: translate(150%,150%)
+    }
+    75% {
+      transform: translate(0,150%)
+    }
+  }
+</style>
+
+<div class='main-circle'>
+  <div class="container-circle">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+]]></content>
       <categories>
         <category>CSS</category>
       </categories>
