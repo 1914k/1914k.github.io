@@ -46,15 +46,15 @@
   };
 </script>
 
-  <meta name="description" content="animation 属性和 transition 属性都将可以用来制作 CSS 动画，但是 animation 相比 transition 可以实现更加复杂灵活的动画，而且可以自行触发，不需要事件来触发就能动起来，还能重复发生，通常用来实现复杂的动画效果。 语法:  动画名称 动画时间 速度曲线 延迟时间 动画次数 是否反向播放动画;animation: name duration timing-">
+  <meta name="description" content="animation 属性和 transition 属性都将可以用来制作 CSS 动画，但是 animation 相比 transition 可以实现更加复杂灵活的动画，而且可以自行触发，不需要事件来触发就能动起来，还能重复发生，通常用来实现复杂的动画效果。 语法:  动画名称 动画时间 速度曲线 延迟时间 动画次数 是否反向播放动画;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS animation 属性">
 <meta property="og:url" content="http://1914k.github.io/2020/07/26/CSS-animation-%E5%B1%9E%E6%80%A7/index.html">
 <meta property="og:site_name" content="顽石不语">
-<meta property="og:description" content="animation 属性和 transition 属性都将可以用来制作 CSS 动画，但是 animation 相比 transition 可以实现更加复杂灵活的动画，而且可以自行触发，不需要事件来触发就能动起来，还能重复发生，通常用来实现复杂的动画效果。 语法:  动画名称 动画时间 速度曲线 延迟时间 动画次数 是否反向播放动画;animation: name duration timing-">
+<meta property="og:description" content="animation 属性和 transition 属性都将可以用来制作 CSS 动画，但是 animation 相比 transition 可以实现更加复杂灵活的动画，而且可以自行触发，不需要事件来触发就能动起来，还能重复发生，通常用来实现复杂的动画效果。 语法:  动画名称 动画时间 速度曲线 延迟时间 动画次数 是否反向播放动画;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-26T13:09:45.000Z">
-<meta property="article:modified_time" content="2020-07-27T06:47:33.866Z">
+<meta property="article:modified_time" content="2020-07-27T06:49:34.290Z">
 <meta property="article:author" content="石头">
 <meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
@@ -259,7 +259,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-27 14:47:33" itemprop="dateModified" datetime="2020-07-27T14:47:33+08:00">2020-07-27</time>
+                <time title="修改时间：2020-07-27 14:49:34" itemprop="dateModified" datetime="2020-07-27T14:49:34+08:00">2020-07-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -320,7 +320,9 @@
 
       
         <p>animation 属性和 transition 属性都将可以用来制作 CSS 动画，但是 animation 相比 transition 可以实现更加复杂灵活的动画，而且可以自行触发，不需要事件来触发就能动起来，还能重复发生，通常用来实现复杂的动画效果。</p>
-<p>语法:  动画名称 动画时间 速度曲线 延迟时间 动画次数 是否反向播放动画;<br><code>animation: name duration timing-function delay iteration-count direction;</code><br>我们在 animation 属性中要把我们定义的动画的名称捆绑上且规定动画的时长，才能产生动画效果。<br>我们通过 <code>@keyframes</code> 来定义动画名称和动画的具体过程。</p>
+<p>语法:  动画名称 动画时间 速度曲线 延迟时间 动画次数 是否反向播放动画;</p>
+<a id="more"></a>
+<p><code>animation: name duration timing-function delay iteration-count direction;</code><br>我们在 animation 属性中要把我们定义的动画的名称捆绑上且规定动画的时长，才能产生动画效果。<br>我们通过 <code>@keyframes</code> 来定义动画名称和动画的具体过程。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: yellow;</span><br><span class="line">    <span class="attribute">animation</span>: changecolor <span class="number">3s</span> ease <span class="number">3s</span> <span class="number">2</span>; </span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> changecolor &#123;</span><br><span class="line">  <span class="selector-tag">from</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">to</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">600px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: blue;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <div class="box"></div>
 

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://1914k.github.io/"/>
-  <updated>2020-07-27T06:47:33.866Z</updated>
+  <updated>2020-07-27T06:49:34.290Z</updated>
   <id>http://1914k.github.io/</id>
   
   <author>
@@ -21,17 +21,12 @@
     <link href="http://1914k.github.io/2020/07/26/CSS-animation-%E5%B1%9E%E6%80%A7/"/>
     <id>http://1914k.github.io/2020/07/26/CSS-animation-%E5%B1%9E%E6%80%A7/</id>
     <published>2020-07-26T13:09:45.000Z</published>
-    <updated>2020-07-27T06:47:33.866Z</updated>
+    <updated>2020-07-27T06:49:34.290Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;animation 属性和 transition 属性都将可以用来制作 CSS 动画，但是 animation 相比 transition
-        
-      
+      &lt;p&gt;animation 属性和 transition 属性都将可以用来制作 CSS 动画，但是 animation 相比 transition 可以实现更加复杂灵活的动画，而且可以自行触发，不需要事件来触发就能动起来，还能重复发生，通常用来实现复杂的动画效果。&lt;/p&gt;
+&lt;p&gt;语法:  动画名称 动画时间 速度曲线 延迟时间 动画次数 是否反向播放动画;&lt;/p&gt;
     
     </summary>
     
