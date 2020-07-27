@@ -4,18 +4,112 @@
     <title>CSS animation 属性</title>
     <url>/2020/07/26/CSS-animation-%E5%B1%9E%E6%80%A7/</url>
     <content><![CDATA[<p>animation 属性和 transition 属性都将可以用来制作 CSS 动画，但是 animation 相比 transition 可以实现更加复杂灵活的动画，而且可以自行触发，不需要事件来触发就能动起来，还能重复发生，通常用来实现复杂的动画效果。</p>
-<p>语法:  动画名称 动画时间 速度曲线 延迟时间 动画次数 是否反向播放动画;<br><code>animation: name duration timing-function delay iteration-count direction;</code></p>
-<p>我们通过 <code>@keyframes</code> 来定义动画名称和动画的具体过程。</p>
+<p>语法:  动画名称 动画时间 速度曲线 延迟时间 动画次数 是否反向播放动画;<br><code>animation: name duration timing-function delay iteration-count direction;</code><br>我们在 animation 属性中要把我们定义的动画的名称捆绑上且规定动画的时长，才能产生动画效果。<br>我们通过 <code>@keyframes</code> 来定义动画名称和动画的具体过程。</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: yellow;</span><br><span class="line">    <span class="attribute">animation</span>: changecolor <span class="number">3s</span> ease <span class="number">3s</span> <span class="number">2</span>; </span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> changecolor &#123;</span><br><span class="line">  <span class="selector-tag">from</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">to</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">600px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: blue;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <div class="box"></div>
 
-<p>如上，我们 用 <code>@keyframes</code> 定义了一个 名称为  <code>changecolor</code> 的动画，动画过程是挂载该动画的元素的背景颜色从红色变为蓝色,宽度从 100px 变为 200px。我们在 animation 中要使用</p>
+<p>如上，我们 用 <code>@keyframes</code> 定义了一个 名称为  <code>changecolor</code> 的动画，动画过程是挂载该动画的元素的背景颜色从红色变为蓝色,宽度从 100px 变为 200px。然后我们把该动画捆绑到 .box 选择器上，即 animation 的动画名称设置为 <code>changecolor</code>，动画时长为 3s，速度曲线为 ease，延迟时间 3s，动画次数 2 次。整个动画过程就是，延迟 3s 后黄色的正方形瞬间会变成红色然后在 3s 时间内背景颜色变为蓝色，宽度也会变为 600px。且变化过程会重复两次。动画结束后，盒子会变为原来的黄色正方形盒子。</p>
+<p>我们也可以用百分比来规定发生变化的时间。0% 是动画的开始，100% 是动画的完成。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> movecolor &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    <span class="attribute">left</span>:<span class="number">0px</span>;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">0px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  25% &#123;</span><br><span class="line">    <span class="attribute">left</span>:<span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">0px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  50% &#123;</span><br><span class="line">    <span class="attribute">left</span>:<span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">100px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  75% &#123;</span><br><span class="line">    <span class="attribute">left</span>:<span class="number">0px</span>;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">100px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    <span class="attribute">left</span>:<span class="number">0px</span>;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">0px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="main-box1">
+  <div class="box1"></div>
+</div>
+
+<p>上面的例子我们设置 <code>animation: movecolor 4s infinite;</code><br>动画时间是 4s，盒子从 (0, 0) 到 (200, 0) 到 (200, 100) 到 (0, 100) 最后回到 (0, 0) 点。可以分为 四个时间点。100% / 4 是 25%，所以我们每隔 25% 的动画时间就设置一次变化。也就是 0% 25% 50% 75% 100% 各加一次变化。因为最后是回到了原点 (0, 0)，所以 0% 和 100% 可以写到一起。如下：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> movecolor &#123;</span><br><span class="line">  0%, 100%&#123;</span><br><span class="line">    <span class="attribute">left</span>:<span class="number">0px</span>;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">0px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  25% &#123;</span><br><span class="line">    <span class="attribute">left</span>:<span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">0px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  50% &#123;</span><br><span class="line">    <span class="attribute">left</span>:<span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">100px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  75% &#123;</span><br><span class="line">    <span class="attribute">left</span>:<span class="number">0px</span>;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">100px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="animation-的子属性"><a href="#animation-的子属性" class="headerlink" title="animation 的子属性"></a>animation 的子属性</h3><table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://www.w3school.com.cn/cssref/pr_animation-name.asp" target="_blank" rel="noopener external nofollow noreferrer">animation-name</a></td>
+<td>规定需要绑定到选择器的 keyframe(动画) 名称。</td>
+</tr>
+<tr>
+<td><a href="https://www.w3school.com.cn/cssref/pr_animation-duration.asp" target="_blank" rel="noopener external nofollow noreferrer">animation-duration</a></td>
+<td>规定完成一个动画周期所花费的时间，以秒或毫秒计。默认 0</td>
+</tr>
+<tr>
+<td><a href="https://www.w3school.com.cn/cssref/pr_animation-timing-function.asp" target="_blank" rel="noopener external nofollow noreferrer">animation-timing-function</a></td>
+<td>规定动画的速度曲线，默认 ease</td>
+</tr>
+<tr>
+<td><a href="https://www.w3school.com.cn/cssref/pr_animation-delay.asp" target="_blank" rel="noopener external nofollow noreferrer">animation-delay</a></td>
+<td>规定在动画开始之前的延迟，默认 0</td>
+</tr>
+<tr>
+<td><a href="https://www.w3school.com.cn/cssref/pr_animation-iteration-count.asp" target="_blank" rel="noopener external nofollow noreferrer">animation-iteration-count</a></td>
+<td>规定动画应该播放的次数，默认 1，infinite 为动画无限次播放</td>
+</tr>
+<tr>
+<td><a href="https://www.w3school.com.cn/cssref/pr_animation-direction.asp" target="_blank" rel="noopener external nofollow noreferrer">animation-direction</a></td>
+<td>规定是否应该轮流反向播放动画，默认 normal，alternate    动画应该轮流反向播放。</td>
+</tr>
+</tbody></table>
+<h5 id="1-animation-timing-function-速度曲线"><a href="#1-animation-timing-function-速度曲线" class="headerlink" title="1.  animation-timing-function 速度曲线"></a>1.  animation-timing-function 速度曲线</h5><p>这个属性和 transition 的是一样的，也就是：  </p>
+<ul>
+<li>linear ——    动画从头到尾的速度是相同的。    测试</li>
+<li>ease ——    默认。动画以低速开始，然后加快，在结束前变慢。    测试</li>
+<li>ease-in ——    动画以低速开始。    测试</li>
+<li>ease-out ——    动画以低速结束。    测试</li>
+<li>ease-in-out ——    动画以低速开始和结束。    测试</li>
+<li>cubic-bezier(n,n,n,n) ——    在 cubic-bezier 函数中自己的值。可能的值是从 0 到 1 的数值。</li>
+</ul>
+<h5 id="2-animation-iteration-count-动画播放次数"><a href="#2-animation-iteration-count-动画播放次数" class="headerlink" title="2.  animation-iteration-count 动画播放次数"></a>2.  animation-iteration-count 动画播放次数</h5><p>我们想让动画播放几次就写几，想无限循环播放，就写 infinite，如我们把上面的例子改为 infinite</p>
+<div class="box2"></div>
+
+<h5 id="3-animation-direction-动画是否轮流反向播放"><a href="#3-animation-direction-动画是否轮流反向播放" class="headerlink" title="3.  animation-direction 动画是否轮流反向播放"></a>3.  animation-direction 动画是否轮流反向播放</h5><p>我们设置 animation-direction 属性的值为 normal 时，动画正常播放，设置为 alternate 时，动画在每次完成一次动画周期后，都会反向再次播放这个动画，具体效果如下</p>
+<div class="box3"></div>
+<br/>
+
+<p>此时的 animation 设置为：<code>animation: changecolor 3s ease 3s infinite alternate;</code><br>需要注意的是这里的反向播放是要计算动画播放次数的，也就是奇数次播放是正常的，偶数次播放是反向的。如果我们设置动画次数为一次，animation-direction 属性就算设置为 alternate 也不会反向播放。<br>如下面的 animation 设置为： <code>animation: changecolor 3s ease 3s  alternate;</code><br>就只会播放一次。</p>
+<div class="box4"></div>
+
+<h5 id="4-animation-delay-规定在动画开始之前的延迟。"><a href="#4-animation-delay-规定在动画开始之前的延迟。" class="headerlink" title="4.  animation-delay    规定在动画开始之前的延迟。"></a>4.  animation-delay    规定在动画开始之前的延迟。</h5><p>animation-delay    这个属性就是规定在动画开始之前的延迟，很简单的一个属性，你想一段时间后才运行动画，设置这个属性就行。但是，这个属性也有一些很巧妙的用法。和第二个例子一样，让一个小球在一个盒子里做 “回”字运动，但不同的是我们想让四个小球完成如下的运动。</p>
 <style>
   .box {
     width: 100px;
     height:100px;
     background-color: yellow;
     animation: changecolor 3s ease 3s 2; 
+  }
+
+  .main-box1 {
+    position: relative;
+    height: 200px;
+  }
+
+  .box1 {
+    position: relative;
+    width: 100px;
+    height:100px;
+    background-color: yellow;
+    animation: movecolor 4s ease infinite; 
+  }
+
+  .box2 {
+    width: 100px;
+    height:100px;
+    background-color: yellow;
+    animation: changecolor 3s ease 3s infinite; 
+  }
+
+  .box3 {
+    width: 100px;
+    height:100px;
+    background-color: yellow;
+    animation: changecolor 3s ease 3s infinite alternate; 
+  }
+
+  .box4 {
+    width: 100px;
+    height:100px;
+    background-color: yellow;
+    animation: changecolor 3s ease 3s alternate; 
   }
 
   @keyframes changecolor {
@@ -26,6 +120,25 @@
     to {
       width: 600px;
       background-color: blue;
+    }
+  }
+
+  @keyframes movecolor {
+    0%, 100% {
+      left:0px;
+      top:0px;
+    }
+    25% {
+      left:200px;
+      top:0px;
+    }
+    50% {
+      left:200px;
+      top:100px;
+    }
+    75% {
+      left:0px;
+      top:100px;
     }
   }
 
@@ -45,9 +158,12 @@
     width: 40%;
     border-radius: 50%;
     position: absolute;
+    text-align: center;
+    line-height: 48px;
+    font-size: 20px;
     animation: loading 2s ease infinite; 
-
   }
+
   .container-circle :first-child {
     background: #4101d5;
   }
@@ -64,6 +180,51 @@
     animation-delay: -1.5s; 
   }
 
+  .container2 div{
+    animation-play-state: paused;
+  }
+
+  .container2 :first-child {
+    background: #4101d5;
+
+  }
+  .container2 :nth-child(2) {
+    background: #fffc44;
+    animation-delay: 0.5s; 
+  }
+  .container2 :nth-child(3) {
+    background: #a439eb;
+    animation-delay: 1s; 
+  }
+  .container2 :last-child {
+    background: #cf94f7;
+    animation-delay: 1.5s; 
+  }
+
+  .container3 div{
+    animation-play-state: paused;
+  }
+
+  .container3 :first-child {
+    background: #4101d5;
+
+  }
+  .container3 :nth-child(2) {
+    background: #fffc44;
+    animation-delay: -0.5s; 
+  }
+  .container3 :nth-child(3) {
+    background: #a439eb;
+    animation-delay: -1s; 
+  }
+  .container3 :last-child {
+    background: #cf94f7;
+    animation-delay: -1.5s; 
+  }
+
+  .btn {
+    display: inline-block;
+  }
   @keyframes loading {
     0%, 100% {
       transform: translate(0,0)
@@ -88,7 +249,57 @@
     <div></div>
   </div>
 </div>
-]]></content>
+
+<p>假设小球动画时间为 2s，2 / 4 = 0.5，我们让每个小球间隔 0.5s 开始运动就能完成上面的动画。这四个小球按先后运动顺序分别为A B C D。</p>
+<p>假设小球的四个标志性的坐标点为 (0, 0) (1, 0) (1, 1) (0, 1)。</p>
+<ul>
+<li>0.5s 时，A 到达 (1, 0)，B C D 还在 (0, 0);</li>
+<li>1s 时，A 到达 (1, 1)，B 到达 (1, 0)，C D 还在 (0, 0);</li>
+<li>1.5s 时，A 到达 (0, 1)，B 到达 (1, 1)，C 到达 (1, 0)，D 还在 (0, 0);</li>
+<li>2s 时，A 到达 (0, 0)，B 到达 (0, 1)，C 到达 (1, 1)，D 到达 (1, 0);</li>
+</ul>
+<p>如下所示：</p>
+<div class='main-circle'>
+  <div class="container-circle container2">
+    <div>A</div>
+    <div>B</div>
+    <div>C</div>
+    <div>D</div>
+  </div>
+  <button class="btn">开始</button>
+</div>
+
+<p>在一开始运动时，他们是有一个过渡期的，并不是一开始就看得到四个运动的球。但是如果我们把延迟时间改为负的，那么动画开始前，他们就能到达自己一预定的位置，也就是说相当于并不是延迟，而是提前走了。所以能看到四个小球在他们各自的位置上，如下</p>
+<div class='main-circle'>
+  <div class="container-circle container3">
+    <div>A</div>
+    <div>B</div>
+    <div>C</div>
+    <div>D</div>
+  </div>
+  <button class="btn">开始</button>
+</div>
+
+<script>
+  const btn1 = document.getElementsByClassName('btn')[0]
+  const btn2 = document.getElementsByClassName('btn')[1]
+  const circle1 = document.getElementsByClassName('container2')[0].children;
+  const circle2 = document.getElementsByClassName('container3')[0].children;
+
+  btn1.onclick = function() {
+    for(let i of circle1) {
+      i.style['animation-play-state'] = 'paused';
+    }
+    console.log(111)
+  }
+
+  btn2.onclick = function() {
+    console.log(111)
+    for(let i of circle2) {
+      i.style['animation-play-state'] = 'running';
+    }
+  }
+</script>]]></content>
       <categories>
         <category>CSS</category>
       </categories>
@@ -1334,27 +1545,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode-旋转图像</title>
-    <url>/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%20copy/</url>
-    <content><![CDATA[<h2 id="旋转图像"><a href="#旋转图像" class="headerlink" title="旋转图像"></a>旋转图像</h2><p>给定一个 n × n 的二维矩阵表示一个图像。将图像顺时针旋转 90 度。</p>
-<p>说明：</p>
-<p>你必须在原地旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要使用另一个矩阵来旋转图像。</p>
-<a id="more"></a>
-<p>示例 1:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定 matrix &#x3D;</span><br><span class="line">[          </span><br><span class="line">  [1,2,3],  </span><br><span class="line">  [4,5,6],  </span><br><span class="line">  [7,8,9]  </span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">原地旋转输入矩阵，使其变为: </span><br><span class="line">[  </span><br><span class="line">  [7,4,1],  </span><br><span class="line">  [8,5,2],  </span><br><span class="line">  [9,6,3]  </span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<p>示例 2:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定 matrix &#x3D; </span><br><span class="line">[  </span><br><span class="line">  [ 5, 1, 9,11],  </span><br><span class="line">  [ 2, 4, 8,10],  </span><br><span class="line">  [13, 3, 6, 7],  </span><br><span class="line">  [15,14,12,16]  </span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">原地旋转输入矩阵，使其变为:</span><br><span class="line">[  </span><br><span class="line">  [15,13, 2, 5],  </span><br><span class="line">  [14, 3, 4, 1],  </span><br><span class="line">  [12, 6, 8, 9],  </span><br><span class="line">  [16, 7,10,11]  </span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>要实现数组图像的旋转我们可以看做是把数组的第一行变成最后一列，第二行变成倒数第二列，依次类推…<br><img src="/images/artic/LeetCode/01/img-01.png" alt="截图"><br>但是题目规定要在原数组内修改，所以我们可以在每一行的后面加上对应的列，最后再删除前面的原数组对应的列，就得到我们旋转过后的图像。<br><img src="/images/artic/LeetCode/01/img-02.png" alt="截图">4</p>
-<h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[][]&#125;</span> <span class="variable">matrix</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;void&#125;</span> </span>Do not return anything, modify matrix in-place instead.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> rotate = <span class="function"><span class="keyword">function</span>(<span class="params">matrix</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> count = matrix.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> c = count - <span class="number">1</span>; c &gt;= <span class="number">0</span>; c--)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i  = <span class="number">0</span>; i &lt; count; i++)&#123;</span><br><span class="line">            matrix[i].push(matrix[c][i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> c = <span class="number">0</span>; c &lt; count; c++)&#123;</span><br><span class="line">        matrix[c].splice(<span class="number">0</span>,count);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> matrix;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>JS算法题</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode-有效的数独</title>
     <url>/2020/03/03/LeetCode-%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/</url>
     <content><![CDATA[<h2 id="有效的数独"><a href="#有效的数独" class="headerlink" title="有效的数独"></a>有效的数独</h2><p>判断一个 9x9 的数独是否有效。只需要根据以下规则，验证已经填入的数字是否有效即可。</p>
@@ -1404,6 +1594,27 @@
 <p>这时我们行、列和小宫格都判断完了，如果没有重复的我们就 <code>return true</code>。由于 sort 会改变原数组的排列，所以我定义了三个新的数组用于行、列和小宫格的判断。</p>
 </blockquote>
 <h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;character[][]&#125;</span> <span class="variable">board</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> isValidSudoku = <span class="function"><span class="keyword">function</span>(<span class="params">board</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> arr1 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(board));</span><br><span class="line">	<span class="keyword">var</span> arr2 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(board));</span><br><span class="line">	<span class="keyword">var</span> arr3 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(board));</span><br><span class="line">    <span class="comment">// 检查行</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++)&#123;</span><br><span class="line">    	<span class="keyword">var</span> a = arr1[i];</span><br><span class="line">    	a.sort();</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">8</span>; a[j]*<span class="number">1</span>; j--)&#123;</span><br><span class="line">    		<span class="keyword">if</span>(a[j] === a[j<span class="number">-1</span>])&#123;</span><br><span class="line">    			<span class="comment">// console.log(a);</span></span><br><span class="line">    			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    		&#125;</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 检查列   </span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++)&#123;</span><br><span class="line">    	<span class="keyword">var</span> b = [];</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="number">9</span>; j++)&#123;</span><br><span class="line">    		b.push(arr2[j][i]);</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="comment">// console.log(b);</span></span><br><span class="line">    	b.sort();</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">8</span>; b[j]*<span class="number">1</span>; j--)&#123;</span><br><span class="line">    		<span class="keyword">if</span>(b[j] === b[j<span class="number">-1</span>])&#123;</span><br><span class="line">    			<span class="comment">// console.log(b);</span></span><br><span class="line">    			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    		&#125;</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 检查九宫格</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i+=<span class="number">3</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> ii = i + <span class="number">3</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="number">9</span>; j+=<span class="number">3</span>)&#123;</span><br><span class="line">            <span class="keyword">var</span> jj = j + <span class="number">3</span>;</span><br><span class="line">            <span class="keyword">var</span> c = [];</span><br><span class="line">            <span class="keyword">for</span>(i; i &lt; ii; i++)&#123;</span><br><span class="line">                <span class="keyword">for</span>(j; j &lt; jj; j++)&#123;</span><br><span class="line">                    c.push(arr3[i][j]);</span><br><span class="line">                &#125;</span><br><span class="line">                j = jj - <span class="number">3</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// console.log(i);</span></span><br><span class="line">            i = ii - <span class="number">3</span>;</span><br><span class="line">            <span class="comment">// console.log(c);</span></span><br><span class="line">            c.sort();</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> k = <span class="number">8</span>; c[k]*<span class="number">1</span>; k--)&#123;</span><br><span class="line">                <span class="keyword">if</span>(c[k] === c[k<span class="number">-1</span>])&#123;</span><br><span class="line">                    <span class="comment">// console.log(c);</span></span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>JS算法题</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode-旋转图像</title>
+    <url>/2020/03/03/LeetCode-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F%20copy/</url>
+    <content><![CDATA[<h2 id="旋转图像"><a href="#旋转图像" class="headerlink" title="旋转图像"></a>旋转图像</h2><p>给定一个 n × n 的二维矩阵表示一个图像。将图像顺时针旋转 90 度。</p>
+<p>说明：</p>
+<p>你必须在原地旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要使用另一个矩阵来旋转图像。</p>
+<a id="more"></a>
+<p>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定 matrix &#x3D;</span><br><span class="line">[          </span><br><span class="line">  [1,2,3],  </span><br><span class="line">  [4,5,6],  </span><br><span class="line">  [7,8,9]  </span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">原地旋转输入矩阵，使其变为: </span><br><span class="line">[  </span><br><span class="line">  [7,4,1],  </span><br><span class="line">  [8,5,2],  </span><br><span class="line">  [9,6,3]  </span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定 matrix &#x3D; </span><br><span class="line">[  </span><br><span class="line">  [ 5, 1, 9,11],  </span><br><span class="line">  [ 2, 4, 8,10],  </span><br><span class="line">  [13, 3, 6, 7],  </span><br><span class="line">  [15,14,12,16]  </span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">原地旋转输入矩阵，使其变为:</span><br><span class="line">[  </span><br><span class="line">  [15,13, 2, 5],  </span><br><span class="line">  [14, 3, 4, 1],  </span><br><span class="line">  [12, 6, 8, 9],  </span><br><span class="line">  [16, 7,10,11]  </span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>要实现数组图像的旋转我们可以看做是把数组的第一行变成最后一列，第二行变成倒数第二列，依次类推…<br><img src="/images/artic/LeetCode/01/img-01.png" alt="截图"><br>但是题目规定要在原数组内修改，所以我们可以在每一行的后面加上对应的列，最后再删除前面的原数组对应的列，就得到我们旋转过后的图像。<br><img src="/images/artic/LeetCode/01/img-02.png" alt="截图">4</p>
+<h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[][]&#125;</span> <span class="variable">matrix</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;void&#125;</span> </span>Do not return anything, modify matrix in-place instead.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> rotate = <span class="function"><span class="keyword">function</span>(<span class="params">matrix</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> count = matrix.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> c = count - <span class="number">1</span>; c &gt;= <span class="number">0</span>; c--)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i  = <span class="number">0</span>; i &lt; count; i++)&#123;</span><br><span class="line">            matrix[i].push(matrix[c][i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> c = <span class="number">0</span>; c &lt; count; c++)&#123;</span><br><span class="line">        matrix[c].splice(<span class="number">0</span>,count);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> matrix;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
         <category>JS算法题</category>
       </categories>
