@@ -19,7 +19,7 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    hostname: new URL('http://1914k.github.io').hostname,
+    hostname: new URL('https://1914k.github.io').hostname,
     root: '/',
     scheme: 'Gemini',
     version: '7.7.1',
@@ -49,23 +49,23 @@
   <meta name="description" content="1.MVVM 原理的理解传统的架构模型是 MVC，即 Model - View - Controller，是用户操作会请求服务端路由，路由会调用对应的控制器来处理，控制器会获取数据，将结果返回给前端，页面重新渲染。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue 面试题 1-5">
-<meta property="og:url" content="http://1914k.github.io/2020/02/23/Vue-%E9%9D%A2%E8%AF%95%E9%A2%98-1-5/index.html">
+<meta property="og:url" content="https://1914k.github.io/2020/02/23/Vue-%E9%9D%A2%E8%AF%95%E9%A2%98-1-5/index.html">
 <meta property="og:site_name" content="顽石不语">
 <meta property="og:description" content="1.MVVM 原理的理解传统的架构模型是 MVC，即 Model - View - Controller，是用户操作会请求服务端路由，路由会调用对应的控制器来处理，控制器会获取数据，将结果返回给前端，页面重新渲染。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://1914k.github.io/images/artic/Vue-mst-1-5/%E5%93%8D%E5%BA%94%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%8E%9F%E7%90%86.png">
-<meta property="og:image" content="http://1914k.github.io/images/artic/Vue-mst-1-5/%E6%95%B0%E7%BB%84%E5%93%8D%E5%BA%94%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%8E%9F%E7%90%86.png">
-<meta property="og:image" content="http://1914k.github.io/images/artic/Vue-mst-1-5/%E4%B8%BA%E4%BD%95%E5%BC%82%E6%AD%A5%E6%B8%B2%E6%9F%93.png">
-<meta property="og:image" content="http://1914k.github.io/images/artic/Vue-mst-1-5/nextTick%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90.png">
-<meta property="og:image" content="http://1914k.github.io/images/artic/Vue-mst-1-5/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7.png">
+<meta property="og:image" content="https://1914k.github.io/images/artic/Vue-mst-1-5/%E5%93%8D%E5%BA%94%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%8E%9F%E7%90%86.png">
+<meta property="og:image" content="https://1914k.github.io/images/artic/Vue-mst-1-5/%E6%95%B0%E7%BB%84%E5%93%8D%E5%BA%94%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%8E%9F%E7%90%86.png">
+<meta property="og:image" content="https://1914k.github.io/images/artic/Vue-mst-1-5/%E4%B8%BA%E4%BD%95%E5%BC%82%E6%AD%A5%E6%B8%B2%E6%9F%93.png">
+<meta property="og:image" content="https://1914k.github.io/images/artic/Vue-mst-1-5/nextTick%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90.png">
+<meta property="og:image" content="https://1914k.github.io/images/artic/Vue-mst-1-5/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7.png">
 <meta property="article:published_time" content="2020-02-23T13:59:34.000Z">
 <meta property="article:modified_time" content="2020-03-03T07:55:34.250Z">
 <meta property="article:author" content="石头">
 <meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://1914k.github.io/images/artic/Vue-mst-1-5/%E5%93%8D%E5%BA%94%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%8E%9F%E7%90%86.png">
+<meta name="twitter:image" content="https://1914k.github.io/images/artic/Vue-mst-1-5/%E5%93%8D%E5%BA%94%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%8E%9F%E7%90%86.png">
 
-<link rel="canonical" href="http://1914k.github.io/2020/02/23/Vue-%E9%9D%A2%E8%AF%95%E9%A2%98-1-5/">
+<link rel="canonical" href="https://1914k.github.io/2020/02/23/Vue-%E9%9D%A2%E8%AF%95%E9%A2%98-1-5/">
 
 
 <script id="page-configurations">
@@ -164,7 +164,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">20</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">21</span></a>
 
   </li>
         <li class="menu-item menu-item-小案例">
@@ -235,7 +235,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://1914k.github.io/2020/02/23/Vue-%E9%9D%A2%E8%AF%95%E9%A2%98-1-5/">
+    <link itemprop="mainEntityOfPage" href="https://1914k.github.io/2020/02/23/Vue-%E9%9D%A2%E8%AF%95%E9%A2%98-1-5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/asset/touxiang.jpg">
@@ -383,7 +383,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://1914k.github.io/2020/02/23/Vue-%E9%9D%A2%E8%AF%95%E9%A2%98-1-5/" title="Vue 面试题 1-5">http://1914k.github.io/2020/02/23/Vue-面试题-1-5/</a>
+    <a href="https://1914k.github.io/2020/02/23/Vue-%E9%9D%A2%E8%AF%95%E9%A2%98-1-5/" title="Vue 面试题 1-5">https://1914k.github.io/2020/02/23/Vue-面试题-1-5/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -486,7 +486,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -675,7 +675,7 @@
       quicklink({
         timeout: 3000,
         priority: true,
-        ignores: [uri => uri.includes('#'),uri => uri == 'http://1914k.github.io/2020/02/23/Vue-%E9%9D%A2%E8%AF%95%E9%A2%98-1-5/',]
+        ignores: [uri => uri.includes('#'),uri => uri == 'https://1914k.github.io/2020/02/23/Vue-%E9%9D%A2%E8%AF%95%E9%A2%98-1-5/',]
       });
       });
   </script>

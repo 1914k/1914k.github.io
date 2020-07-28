@@ -19,7 +19,7 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    hostname: new URL('http://1914k.github.io').hostname,
+    hostname: new URL('https://1914k.github.io').hostname,
     root: '/',
     scheme: 'Gemini',
     version: '7.7.1',
@@ -49,24 +49,24 @@
   <meta name="description" content="prototype我们创建的每一个 JavaScript 对象都有一个 prototype (原型) 属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以有特定类型的所有实例共享的属性和方法。以为就是说 prototype 指向一个通过调用构造函数而创建的实例对象的原型对象，使用原型对象的好处是可以让所有实例共享它所包含的属性和方法。也就是说，我们不必在构造函数中定义对象实例的信息，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 原型和原型链">
-<meta property="og:url" content="http://1914k.github.io/2020/07/16/JavaScript-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/index.html">
+<meta property="og:url" content="https://1914k.github.io/2020/07/16/JavaScript-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/index.html">
 <meta property="og:site_name" content="顽石不语">
 <meta property="og:description" content="prototype我们创建的每一个 JavaScript 对象都有一个 prototype (原型) 属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以有特定类型的所有实例共享的属性和方法。以为就是说 prototype 指向一个通过调用构造函数而创建的实例对象的原型对象，使用原型对象的好处是可以让所有实例共享它所包含的属性和方法。也就是说，我们不必在构造函数中定义对象实例的信息，">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://1914k.github.io/images/artic/js_prototype/img01.jpg">
-<meta property="og:image" content="http://1914k.github.io/images/artic/js_prototype/img02.jpg">
-<meta property="og:image" content="http://1914k.github.io/images/artic/js_prototype/img03.jpg">
-<meta property="og:image" content="http://1914k.github.io/images/artic/js_prototype/img04.jpg">
-<meta property="og:image" content="http://1914k.github.io/images/artic/js_prototype/img05.jpg">
-<meta property="og:image" content="http://1914k.github.io/images/artic/js_prototype/img06.jpg">
+<meta property="og:image" content="https://1914k.github.io/images/artic/js_prototype/img01.jpg">
+<meta property="og:image" content="https://1914k.github.io/images/artic/js_prototype/img02.jpg">
+<meta property="og:image" content="https://1914k.github.io/images/artic/js_prototype/img03.jpg">
+<meta property="og:image" content="https://1914k.github.io/images/artic/js_prototype/img04.jpg">
+<meta property="og:image" content="https://1914k.github.io/images/artic/js_prototype/img05.jpg">
+<meta property="og:image" content="https://1914k.github.io/images/artic/js_prototype/img06.jpg">
 <meta property="article:published_time" content="2020-07-16T14:13:47.000Z">
 <meta property="article:modified_time" content="2020-07-16T16:56:28.525Z">
 <meta property="article:author" content="石头">
 <meta property="article:tag" content="JS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://1914k.github.io/images/artic/js_prototype/img01.jpg">
+<meta name="twitter:image" content="https://1914k.github.io/images/artic/js_prototype/img01.jpg">
 
-<link rel="canonical" href="http://1914k.github.io/2020/07/16/JavaScript-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/">
+<link rel="canonical" href="https://1914k.github.io/2020/07/16/JavaScript-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/">
 
 
 <script id="page-configurations">
@@ -165,7 +165,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">20</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">21</span></a>
 
   </li>
         <li class="menu-item menu-item-小案例">
@@ -236,7 +236,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://1914k.github.io/2020/07/16/JavaScript-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/">
+    <link itemprop="mainEntityOfPage" href="https://1914k.github.io/2020/07/16/JavaScript-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/asset/touxiang.jpg">
@@ -381,7 +381,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://1914k.github.io/2020/07/16/JavaScript-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/" title="JavaScript 原型和原型链">http://1914k.github.io/2020/07/16/JavaScript-原型和原型链/</a>
+    <a href="https://1914k.github.io/2020/07/16/JavaScript-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/" title="JavaScript 原型和原型链">https://1914k.github.io/2020/07/16/JavaScript-原型和原型链/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -484,7 +484,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -673,7 +673,7 @@
       quicklink({
         timeout: 3000,
         priority: true,
-        ignores: [uri => uri.includes('#'),uri => uri == 'http://1914k.github.io/2020/07/16/JavaScript-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/',]
+        ignores: [uri => uri.includes('#'),uri => uri == 'https://1914k.github.io/2020/07/16/JavaScript-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/',]
       });
       });
   </script>
